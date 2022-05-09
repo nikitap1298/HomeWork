@@ -22,15 +22,15 @@ class ViewController: UIViewController {
         let fractional = sum.truncatingRemainder(dividingBy: 1)
 
         if integer.truncatingRemainder(dividingBy: 2.0) == 0 {
-            print("Even")
+            print("Even. Number: \(integer)")
         } else {
-            print("Not even")
+            print("Not even. Number: \(integer)")
         }
 
         if fractional.truncatingRemainder(dividingBy: 2.0) == 0 {
-            print("Even")
+            print("Even. Number: \(fractional)")
         } else {
-            print("Not even")
+            print("Not even. Number: \(fractional)")
         }
     }
 }
