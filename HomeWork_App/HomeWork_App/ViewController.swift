@@ -17,20 +17,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sum = number0 + number1 + number2 + number3
-        let integer = floor(sum)
-        let fractional = sum.truncatingRemainder(dividingBy: 1)
-
-        if integer.truncatingRemainder(dividingBy: 2.0) == 0 {
-            print("Even. Number: \(integer)")
+        let sumInt = Double(Int(number0)) + Double(Int(number1)) + Double(Int(number2)) + Double(Int(number3))
+        
+        // 1 вариант получения дробной части
+        let sumFr = number0 + number1 + number2 + number3 - sumInt
+        
+        // 2 вариант получения дробной части
+        // let sumFr1 = (number0 - Double(Int(number0))) + (number1 - Double(Int(number1))) + (number2 - Double(Int(number2))) + (number3 - Double(Int(number3)))
+        
+        if sumInt.truncatingRemainder(dividingBy: 2) == 0 {
+            print("Even. Number: \(sumInt)")
         } else {
-            print("Not even. Number: \(integer)")
+            print("Not even. Number: \(sumInt)")
         }
-
-        if fractional.truncatingRemainder(dividingBy: 2.0) == 0 {
-            print("Even. Number: \(fractional)")
+        
+        if sumFr.truncatingRemainder(dividingBy: 2) == 0 {
+            print("Even. Number: \(sumFr)")
         } else {
-            print("Not even. Number: \(fractional)")
+            print("Not even. Number: \(sumFr)")
         }
     }
 }
