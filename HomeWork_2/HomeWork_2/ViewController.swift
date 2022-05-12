@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // Для 4 пункта, чтобы зациклить функцию
     let n = 4
     
     override func viewDidLoad() {
@@ -25,10 +26,13 @@ class ViewController: UIViewController {
         First.multiply(2.4, 5.3)
         
         First.divide(2, 3)
-        First.divide(2.4, 5.3)
+        First.divide(-2.4, 5.3)
         
         // 2
-        Second.sumOfNumbers(3429)
+        Second.sumOfNumbers(2304)
+        
+        // 3
+        Third.compare("авб", "ввш")
         
         // 4. По логике приложение ломается, потому что функция будет вызываться бесконечно. CPU загружается на 90% временами
 //        while n > 0 {
@@ -36,11 +40,13 @@ class ViewController: UIViewController {
 //        }
         
         // 5
-        Fifth.expo(n1: 2, n2: 3)
+        Fifth.degree(n1: 2, n2: 3)
+        Fifth.degree(n1: 3)
         
         //6
-        let factorial = Sixth.factorial(5)
-        print(factorial)
+        let number = 5
+        let factorial = Sixth.factorial(number)
+        print("factorial \(number) is equal: \(factorial)")
         
     }
 
@@ -51,58 +57,68 @@ class First {
     // 1.1. Plus
     static func plus(_ number0: Int, _ number1: Int) {
         let sum = number0 + number1
-        print(sum)
+        print("\(number0) + \(number1) is equal: \(sum)")
     }
     
     static func plus(_ number0: Double, _ number1: Double) {
         let sum = number0 + number1
-        print(sum)
+        print("\(number0) + \(number1) is equal: \(sum)")
     }
     
     // 1.2. Minus
     static func minus(_ number0: Int, _ number1: Int) {
-        let sum = number0 - number1
-        print(sum)
+        let min = number0 - number1
+        print("\(number0) - \(number1) is equal \(min)")
     }
     
     static func minus(_ number0: Double, _ number1: Double) {
-        let sum = number0 - number1
-        print(sum)
+        let min = number0 - number1
+        print("\(number0) - \(number1) is equal \(min)")
     }
     
     // 1.3. Multiply
     static func multiply(_ number0: Int, _ number1: Int) {
-        let sum = number0 * number1
-        print(sum)
+        let mul = number0 * number1
+        print("\(number0) multiply by \(number1) is equal: \(mul)")
     }
     
     static func multiply(_ number0: Double, _ number1: Double) {
-        let sum = number0 * number1
-        print(sum)
+        let mul = number0 * number1
+        print("\(number0) multiply by \(number1) is equal: \(mul)")
     }
     
     // 1.4. Divide
     static func divide(_ number0: Int, _ number1: Int) {
-        let sum = Double(number0) / Double(number1)
-        print(sum)
+        let div = Double(number0) / Double(number1)
+        print("\(number0) divided by \(number1) is equal: \(div)")
     }
     
     static func divide(_ number0: Double, _ number1: Double) {
-        let sum = number0 / number1
-        print(sum)
+        let div = number0 / number1
+        print("\(number0) divided by \(number1) is equal: \(div)")
     }
     
 }
 
 class Second {
     
-    static func sumOfNumbers(_ number: Int) {
-        
+    static func sumOfNumbers(_ mainNumber: Int) {
+    let sum = String(mainNumber).compactMap{$0.wholeNumberValue}.reduce(0, +)
+    print("number: \(mainNumber); sumOfNumbers is equal: \(sum)")
     }
 }
 
 class Third {
     
+    static func compare(_ line0: String, _ line1: String) {
+        if line0 > line1 {
+            print("\(line0) more then \(line1)")
+        } else if line0 < line1 {
+            print("\(line0) less then \(line1)")
+        } else {
+            print("\(line0) is equal to \(line1)")
+        }
+    }
 }
 
 class Fourth {
@@ -114,9 +130,14 @@ class Fourth {
 
 class Fifth {
     
-    static func expo(n1: Int, n2: Double) {
-        let total = Int(pow(Double(n1), n2))
-        print(total)
+    static func degree(n1: Int, n2: Double = 2) {
+        var total = Int(pow(Double(n1), n2))
+        if n2 == 2 {
+            total = Int(pow(Double(n1), 2))
+        } else {
+            total = Int(pow(Double(n1), n2))
+        }
+        print("\(n1) to the \(n2) degree is equal: \(total)")
     }
 }
 
