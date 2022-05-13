@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         First.divide(-2.4, 5.3)
         
         // 2
-        Second.sumOfNumbers(8010)
+        Second.sumOfNumbers(80106)
         
         // 3
         Third.compare("авб", "ввш")
@@ -104,8 +104,8 @@ class Second {
         
         // After
         var sum = 0
-        let strArray = Array(String(mainNumber))
-        for n in strArray {
+        let str = String(mainNumber)
+        for n in str {
             sum += Int(String(n)) ?? 0
         }
         print("sum of \(mainNumber) is equal: \(sum)")
