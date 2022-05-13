@@ -44,9 +44,7 @@ class ViewController: UIViewController {
         Fifth.degree(n1: 3)
         
         //6
-        let number = 5
-        let factorial = Sixth.factorial(number)
-        print("factorial \(number) is equal: \(factorial)")
+        Sixth.factorial(5)
         
     }
 
@@ -148,11 +146,11 @@ class Fifth {
 class Sixth {
     
     // Рекурсивная функция, которая может вызывать сама себя. Используют для нахожения факториала
-    static func factorial(_ number: Int) -> Int{
-        if number == 0{
-            return 1
-        } else {
-            return number * factorial(number-1)
+    static func factorial(_ number: Int) {
+        var n = 1
+        for i in 1...number {
+            n *= i
         }
+        print("factorial \(number) is equal: \(n)")
     }
 }
