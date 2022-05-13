@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         First.divide(-2.4, 5.3)
         
         // 2
-        Second.sumOfNumbers(8790)
+        Second.sumOfNumbers(8010)
         
         // 3
         Third.compare("авб", "ввш")
@@ -101,12 +101,22 @@ class First {
 class Second {
     
     static func sumOfNumbers(_ mainNumber: Int) {
-        let fourthN = mainNumber % 10
-        let thirdN =  (mainNumber / 10) % 10
-        let secondN = (mainNumber / 100) % 10
-        let firstN = (mainNumber / 1000) % 10
-        let sum = firstN + secondN + thirdN + fourthN
+        
+        // After
+        var sum = 0
+        let strArray = Array(String(mainNumber))
+        for n in strArray {
+            sum += Int(String(n)) ?? 0
+        }
         print("sum of \(mainNumber) is equal: \(sum)")
+        
+        // Before
+//        let fourthN = mainNumber % 10
+//        let thirdN =  (mainNumber / 10) % 10
+//        let secondN = (mainNumber / 100) % 10
+//        let firstN = (mainNumber / 1000) % 10
+//        let summ = firstN + secondN + thirdN + fourthN
+//        print("sum of \(mainNumber) is equal: \(summ)")
     }
 }
 
@@ -133,12 +143,7 @@ class Fourth {
 class Fifth {
     
     static func degree(n1: Int, n2: Double = 2) {
-        var total = Int(pow(Double(n1), n2))
-        if n2 == 2 {
-            total = Int(pow(Double(n1), 2))
-        } else {
-            total = Int(pow(Double(n1), n2))
-        }
+        let total = Int(pow(Double(n1), n2))
         print("\(n1) to the \(n2) degree is equal: \(total)")
     }
 }
