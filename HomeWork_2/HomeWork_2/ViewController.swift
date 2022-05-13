@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         First.divide(-2.4, 5.3)
         
         // 2
-        Second.sumOfNumbers(2304)
+        Second.sumOfNumbers(8790)
         
         // 3
         Third.compare("авб", "ввш")
@@ -103,8 +103,12 @@ class First {
 class Second {
     
     static func sumOfNumbers(_ mainNumber: Int) {
-    let sum = String(mainNumber).compactMap{$0.wholeNumberValue}.reduce(0, +)
-    print("number: \(mainNumber); sumOfNumbers is equal: \(sum)")
+        let fourthN = mainNumber % 10
+        let thirdN =  (mainNumber / 10) % 10
+        let secondN = (mainNumber / 100) % 10
+        let firstN = (mainNumber / 1000) % 10
+        let sum = firstN + secondN + thirdN + fourthN
+        print("sum of \(mainNumber) is equal: \(sum)")
     }
 }
 
