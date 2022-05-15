@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - ViewController
 class ViewController: UIViewController {
     
     // Для 4 пункта, чтобы зациклить функцию
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
 
 }
 
+//MARK: - First
 class First {
     
     // 1.1. Plus
@@ -98,6 +100,7 @@ class First {
     
 }
 
+//MARK: - Second
 class Second {
     
     static func sumOfNumbers(_ mainNumber: Int) {
@@ -120,6 +123,7 @@ class Second {
     }
 }
 
+//MARK: - Third
 class Third {
     
     static func compare(_ line0: String, _ line1: String) {
@@ -133,6 +137,7 @@ class Third {
     }
 }
 
+//MARK: - Fourth
 class Fourth {
     
     static func crash(n: Int) {
@@ -140,6 +145,7 @@ class Fourth {
     }
 }
 
+//MARK: - Fifth
 class Fifth {
     
     static func degree(n1: Int, n2: Double = 2) {
@@ -148,6 +154,7 @@ class Fifth {
     }
 }
 
+//MARK: - Sixth
 class Sixth {
     
     // Рекурсивная функция, которая может вызывать сама себя. Используют для нахожения факториала
