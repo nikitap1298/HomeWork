@@ -14,7 +14,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let xReady = x.map { Int(pow(Double($0.0), 2)) }.filter { $0 % 2 == 0 }.sorted { $0 > $1 }
+//        let ewe = x.map { ($0.0 * 2, $0.1)}
+//        print(ewe)
+        
+//        let xyReady = x.filter { $0.0 % 2 == 0 }.sorted { $0 > $1 }.map { (pow(Double($0.0), 2), $0.1)}
+        
+        let xReady = x.map { (Int(pow(Double($0.0), 2)), $0.1) }.filter { $0.0 % 2 == 0 }.sorted { $0 > $1 }
         print(xReady)
     }
 
