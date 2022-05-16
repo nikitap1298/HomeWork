@@ -17,35 +17,54 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 1
-        First.plus(2, 3)
-        First.plus(2.4, 5.3)
+        let plusI = First.plus(2, 3)
+        print(plusI)
         
-        First.minus(2, 3)
-        First.minus(2.4, 5.3)
+        let plusD = First.plus(2.4, 5.3)
+        print(plusD)
         
-        First.multiply(2, 3)
-        First.multiply(2.4, 5.3)
+        let minusI = First.minus(2, 3)
+        print(minusI)
         
-        First.divide(2, 3)
-        First.divide(-2.4, 5.3)
+        let minusD = First.minus(2.4, 5.3)
+        print(minusD)
+        
+        let mulI = First.multiply(2, 3)
+        print(mulI)
+        
+        let mulD = First.multiply(2.4, 5.3)
+        print(mulD)
+        
+        let divI = First.divide(2, 3)
+        print(divI)
+        
+        let divD = First.divide(-2.4, 5.3)
+        print(divD)
         
         // 2
-        Second.sumOfNumbers(80106)
+        let sumOfNumbers = Second.sumOfNumbers(80106)
+        print(sumOfNumbers)
         
         // 3
-        Third.compare("авб", "ввш")
+        let compare = Third.compare("авб", "ввш")
+        print(compare)
         
         // 4. По логике приложение ломается, потому что функция будет вызываться бесконечно. CPU загружается на 90% временами
 //        while n > 0 {
-//            Fourth.crash(n: 1)
+//            let crash = Fourth.crash(n: 1)
+//            print(crash)
 //        }
         
         // 5
-        Fifth.degree(n1: 2, n2: 3)
-        Fifth.degree(n1: 3)
+        let degree0 = Fifth.degree(n1: 2, n2: 3)
+        print(degree0)
+        
+        let degree1 = Fifth.degree(n1: 3)
+        print(degree1)
         
         //6
-        Sixth.factorial(5)
+        let facorial = Sixth.factorial(5)
+        print(facorial)
         
     }
 
@@ -55,47 +74,47 @@ class ViewController: UIViewController {
 class First {
     
     // 1.1. Plus
-    static func plus(_ number0: Int, _ number1: Int) {
+    static func plus(_ number0: Int, _ number1: Int) -> Int {
         let sum = number0 + number1
-        print("\(number0) + \(number1) is equal: \(sum)")
+        return sum
     }
     
-    static func plus(_ number0: Double, _ number1: Double) {
+    static func plus(_ number0: Double, _ number1: Double) -> Double {
         let sum = number0 + number1
-        print("\(number0) + \(number1) is equal: \(sum)")
+        return sum
     }
     
     // 1.2. Minus
-    static func minus(_ number0: Int, _ number1: Int) {
+    static func minus(_ number0: Int, _ number1: Int) -> Int{
         let min = number0 - number1
-        print("\(number0) - \(number1) is equal \(min)")
+        return min
     }
     
-    static func minus(_ number0: Double, _ number1: Double) {
+    static func minus(_ number0: Double, _ number1: Double) -> Double {
         let min = number0 - number1
-        print("\(number0) - \(number1) is equal \(min)")
+        return min
     }
     
     // 1.3. Multiply
-    static func multiply(_ number0: Int, _ number1: Int) {
+    static func multiply(_ number0: Int, _ number1: Int) -> Int {
         let mul = number0 * number1
-        print("\(number0) multiply by \(number1) is equal: \(mul)")
+        return mul
     }
     
-    static func multiply(_ number0: Double, _ number1: Double) {
+    static func multiply(_ number0: Double, _ number1: Double) -> Double{
         let mul = number0 * number1
-        print("\(number0) multiply by \(number1) is equal: \(mul)")
+        return mul
     }
     
     // 1.4. Divide
-    static func divide(_ number0: Int, _ number1: Int) {
+    static func divide(_ number0: Int, _ number1: Int) -> Double {
         let div = Double(number0) / Double(number1)
-        print("\(number0) divided by \(number1) is equal: \(div)")
+        return div
     }
     
-    static func divide(_ number0: Double, _ number1: Double) {
+    static func divide(_ number0: Double, _ number1: Double) -> Double{
         let div = number0 / number1
-        print("\(number0) divided by \(number1) is equal: \(div)")
+        return div
     }
     
 }
@@ -103,36 +122,27 @@ class First {
 //MARK: - Second
 class Second {
     
-    static func sumOfNumbers(_ mainNumber: Int) {
+    static func sumOfNumbers(_ mainNumber: Int) -> Int {
         
-        // After
         var sum = 0
         let str = String(mainNumber)
         for n in str {
             sum += Int(String(n)) ?? 0
         }
-        print("sum of \(mainNumber) is equal: \(sum)")
-        
-        // Before
-//        let fourthN = mainNumber % 10
-//        let thirdN =  (mainNumber / 10) % 10
-//        let secondN = (mainNumber / 100) % 10
-//        let firstN = (mainNumber / 1000) % 10
-//        let summ = firstN + secondN + thirdN + fourthN
-//        print("sum of \(mainNumber) is equal: \(summ)")
+        return sum
     }
 }
 
 //MARK: - Third
 class Third {
     
-    static func compare(_ line0: String, _ line1: String) {
+    static func compare(_ line0: String, _ line1: String) -> String{
         if line0 > line1 {
-            print("\(line0) more then \(line1)")
+            return "line0 > line1"
         } else if line0 < line1 {
-            print("\(line0) less then \(line1)")
+            return "line0 < line1"
         } else {
-            print("\(line0) is equal to \(line1)")
+            return "line0 = line1"
         }
     }
 }
@@ -140,17 +150,17 @@ class Third {
 //MARK: - Fourth
 class Fourth {
     
-    static func crash(n: Int) {
-        print(n)
+    static func crash(n: Int) -> Int {
+        return n
     }
 }
 
 //MARK: - Fifth
 class Fifth {
     
-    static func degree(n1: Int, n2: Double = 2) {
+    static func degree(n1: Int, n2: Double = 2) -> Int {
         let total = Int(pow(Double(n1), n2))
-        print("\(n1) to the \(n2) degree is equal: \(total)")
+        return total
     }
 }
 
@@ -158,11 +168,11 @@ class Fifth {
 class Sixth {
     
     // Рекурсивная функция, которая может вызывать сама себя. Используют для нахожения факториала
-    static func factorial(_ number: Int) {
+    static func factorial(_ number: Int) -> Int{
         var n = 1
         for i in 1...number {
             n *= i
         }
-        print("factorial \(number) is equal: \(n)")
+        return n
     }
 }
