@@ -18,32 +18,32 @@ class ViewController: UIViewController {
         
         // 1
         let plusI = First.plus(2, 3)
-        print(plusI)
+        print("plusI \(plusI)")
         
         let plusD = First.plus(2.4, 5.3)
-        print(plusD)
+        print("plusD \(plusD)")
         
         let minusI = First.minus(2, 3)
-        print(minusI)
+        print("minusI \(minusI)")
         
         let minusD = First.minus(2.4, 5.3)
-        print(minusD)
+        print("minusD \(minusD)")
         
         let mulI = First.multiply(2, 3)
-        print(mulI)
+        print("mulI \(mulI)")
         
         let mulD = First.multiply(2.4, 5.3)
-        print(mulD)
+        print("mulD \(mulD)")
         
         let divI = First.divide(2, 3)
-        print(divI)
+        print("divI \(divI)")
         
         let divD = First.divide(-2.4, 5.3)
-        print(divD)
+        print("divD \(divD)")
         
         // 2
         let sumOfNumbers = Second.sumOfNumbers(80106)
-        print(sumOfNumbers)
+        print("sumOfNumbers \(sumOfNumbers)")
         
         // 3
         let compare = Third.compare("авб", "ввш")
@@ -57,14 +57,14 @@ class ViewController: UIViewController {
         
         // 5
         let degree0 = Fifth.degree(n1: 2, n2: 3)
-        print(degree0)
+        print("degree0 \(degree0)")
         
         let degree1 = Fifth.degree(n1: 3)
-        print(degree1)
+        print("degree1 \(degree1)")
         
         //6
         let facorial = Sixth.factorial(5)
-        print(facorial)
+        print("facorial \(facorial)")
         
     }
 
