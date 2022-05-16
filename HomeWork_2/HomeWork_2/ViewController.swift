@@ -63,8 +63,8 @@ class ViewController: UIViewController {
         print("degree1 \(degree1)")
         
         //6
-        let facorial = Sixth.factorial(5)
-        print("facorial \(facorial)")
+        let factorial = Sixth.factorial(5)
+        print("facorial \(factorial)")
         
     }
 
