@@ -85,7 +85,7 @@ class First {
     }
     
     // 1.2. Minus
-    static func minus(_ number0: Int, _ number1: Int) -> Int{
+    static func minus(_ number0: Int, _ number1: Int) -> Int {
         let min = number0 - number1
         return min
     }
@@ -101,7 +101,7 @@ class First {
         return mul
     }
     
-    static func multiply(_ number0: Double, _ number1: Double) -> Double{
+    static func multiply(_ number0: Double, _ number1: Double) -> Double {
         let mul = number0 * number1
         return mul
     }
@@ -112,7 +112,7 @@ class First {
         return div
     }
     
-    static func divide(_ number0: Double, _ number1: Double) -> Double{
+    static func divide(_ number0: Double, _ number1: Double) -> Double {
         let div = number0 / number1
         return div
     }
@@ -168,7 +168,7 @@ class Fifth {
 class Sixth {
     
     // Рекурсивная функция, которая может вызывать сама себя. Используют для нахожения факториала
-    static func factorial(_ number: Int) -> Int{
+    static func factorial(_ number: Int) -> Int {
         var n = 1
         for i in 1...number {
             n *= i
