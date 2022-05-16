@@ -136,7 +136,7 @@ class Second {
 //MARK: - Third
 class Third {
     
-    static func compare(_ line0: String, _ line1: String) -> String{
+    static func compare(_ line0: String, _ line1: String) -> String {
         if line0 > line1 {
             return "line0 > line1"
         } else if line0 < line1 {
