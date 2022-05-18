@@ -8,25 +8,33 @@
 import Foundation
 
 class Beer {
-    static let shared = Beer(name: "Berliner Kindl", price: 0.4, country: "German", remainingVolume: 50)
+    static let shared = Beer(name: "Berliner Kindl", price: 0.35, country: "Germany", remainingVolume: 50)
     
-    var name: String
-    var price: Double
-    var country: String
-    var remainingVolume: Int
+    var name: String = "Berliner Kindl"
+    var price: Double = 0.35
+    var country: String = "Germany"
+    var remainingVolume: Int = 50
     
-    private init(name: String, price: Double, country: String, remainingVolume: Int) {
+    init(name: String, price: Double, country: String, remainingVolume: Int) {
         self.name = name
         self.price = price
         self.country = country
         self.remainingVolume = remainingVolume
     }
     
-    func remaining() {
-        remainingVolume -= 1
+    func sellOne() {
+        if remainingVolume >= 1 {
+            remainingVolume -= 1
+        }
     }
     
-    func earnings() -> Int {
+    func remaining() -> Int {
         return remainingVolume
+    }
+    
+    func earning() -> Double {
+        let earn = Double(50 - remainingVolume) * price
+        let earnTwoDigits = Double(round(1000 * earn)) / 1000
+        return earnTwoDigits
     }
 }
