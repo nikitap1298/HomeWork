@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        beerName.text = "\(Beer.shared.name). Made in \(Beer.shared.country)"
+        beerName.text = "Berliner Kindl. Made in Germany"
         //Beer.shared.sellOne()
     }
     
@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     
     @IBAction func earnButton(_ sender: UIButton) {
         mainLabel.text = "Earned: \(Beer.shared.earning()) Euro"
+    }
+    
+    @IBAction func newDayButton(_ sender: UIButton) {
+        //mainLabel.text = "\(Beer.shared.startNewDay())"
     }
 }
 
