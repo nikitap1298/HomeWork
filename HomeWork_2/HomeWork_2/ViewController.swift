@@ -74,8 +74,9 @@ class ViewController: UIViewController {
 class First {
     
     // 1.1. Plus
-    static func plus(_ number0: Int, _ number1: Int) -> Int {
-        let sum = number0 + number1
+    static func plus(_ number0: Int, _ number1: Int) -> [Int] {
+        let nArray: [Int] = [number0, number1]
+        let sum = nArray.map { $0 * $0 }
         return sum
     }
     
