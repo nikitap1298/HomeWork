@@ -29,6 +29,12 @@ class Pub {
         let earnTwoDigits = Double(round(1000 * earn)) / 1000
         return earnTwoDigits
     }
+    
+//    func reset() -> Double {
+//        let resetEarn = Double(beer.total - remaining())
+//        let resetEarnTwoDigits = Double(round(1000 * resetEarn)) / 1000
+//        return resetEarnTwoDigits
+//    }
 }
 
 //MARK: - Beer
