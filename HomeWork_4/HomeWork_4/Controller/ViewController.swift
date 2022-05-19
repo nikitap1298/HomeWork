@@ -21,11 +21,12 @@ class ViewController: UIViewController {
         Pub.singleton.beer.price = 0.31
         Pub.singleton.beer.country = "Czech Republic"
         Pub.singleton.beer.remainingVolume = 39
-        Pub.singleton.beer.total = Pub.singleton.beer.remainingVolume
+        Pub.singleton.total = Pub.singleton.beer.remainingVolume
         
         beerName.text = "Beer: \(Pub.singleton.beer.name)"
         beerCountry.text = "Country: \(Pub.singleton.beer.country)"
         beerPrice.text = "Price: \(Pub.singleton.beer.price) Euro for bottle"
+        mainLabel.text = "Remaining: \(Pub.singleton.remaining()) bottles"
         
     }
     
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sellOneButton(_ sender: Any) {
-        mainLabel.text = "\(Pub.singleton.sellOne())"
+        mainLabel.text = "Remaining: \(Pub.singleton.sellOne()) bottles"
     }
     
     @IBAction func earnButton(_ sender: UIButton) {

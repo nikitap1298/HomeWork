@@ -10,14 +10,21 @@ import Foundation
 //MARK: - Pub
 class Pub {
     
-    static let singleton = Pub()
-    var beer = Beer(name: "Berliner Kindl", price: 0.35, country: "Germany", remainingVolume: 50, total: 50)
+    static let singleton = Pub(total: 50)
+    var beer = Beer(name: "Berliner Kindl", price: 0.35, country: "Germany", remainingVolume: 50)
     //let beer = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 35)
     
-    func sellOne() {
+    var total: Int
+    
+    private init(total: Int) {
+        self.total = total
+    }
+    
+    func sellOne() -> Int {
         if beer.remainingVolume >= 1 {
             beer.remainingVolume -= 1
         }
+        return beer.remainingVolume
     }
     
     func remaining() -> Int {
@@ -25,7 +32,7 @@ class Pub {
     }
     
     func earning() -> Double {
-        let earn = Double(beer.total - remaining()) * beer.price
+        let earn = Double(total - remaining()) * beer.price
         let earnTwoDigits = Double(round(1000 * earn)) / 1000
         return earnTwoDigits
     }
@@ -44,13 +51,11 @@ class Beer {
     var price: Double
     var country: String
     var remainingVolume: Int
-    var total: Int
     
-    init(name: String, price: Double, country: String, remainingVolume: Int, total: Int) {
+    init(name: String, price: Double, country: String, remainingVolume: Int) {
         self.name = name
         self.price = price
         self.country = country
         self.remainingVolume = remainingVolume
-        self.total = remainingVolume
     }
 }
