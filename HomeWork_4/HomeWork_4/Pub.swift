@@ -43,7 +43,6 @@ class Pub {
     }
     
     func checkRemaining() -> Int {
-
         return remaining()
     }
     
