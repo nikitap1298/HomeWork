@@ -10,29 +10,39 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var beerName: UILabel!
+    @IBOutlet weak var beerCountry: UILabel!
+    @IBOutlet weak var beerPrice: UILabel!
     @IBOutlet weak var mainLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        beerName.text = "Berliner Kindl. Made in Germany"
-        //Beer.shared.sellOne()
+        Pub.singleton.beer.name = "Pilsner Urquell"
+        Pub.singleton.beer.price = 0.31
+        Pub.singleton.beer.country = "Czech Republic"
+        Pub.singleton.beer.remainingVolume = 39
+        Pub.singleton.beer.total = Pub.singleton.beer.remainingVolume
+        
+        beerName.text = "Beer: \(Pub.singleton.beer.name)"
+        beerCountry.text = "Country: \(Pub.singleton.beer.country)"
+        beerPrice.text = "Price: \(Pub.singleton.beer.price) Euro for bottle"
+        
     }
     
     @IBAction func checkRemaining(_ sender: UIButton) {
-        mainLabel.text = "\(Beer.shared.remaining())"
+        mainLabel.text = "\(Pub.singleton.remaining())"
     }
     
     @IBAction func sellOneButton(_ sender: Any) {
-        mainLabel.text = "\(Beer.shared.sellOne())"
+        mainLabel.text = "\(Pub.singleton.sellOne())"
     }
     
     @IBAction func earnButton(_ sender: UIButton) {
-        mainLabel.text = "Earned: \(Beer.shared.earning()) Euro"
+        mainLabel.text = "Earn: \(Pub.singleton.earning()) Euro"
     }
     
     @IBAction func newDayButton(_ sender: UIButton) {
-        //mainLabel.text = "\(Beer.shared.startNewDay())"
+        
     }
 }
 
