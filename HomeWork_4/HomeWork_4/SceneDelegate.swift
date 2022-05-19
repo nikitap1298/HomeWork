@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  HomeWork_4
 //
-//  Created by Nikita Pishchugin on 18.05.2022.
+//  Created by Nikita Pishchugin on 19.05.2022.
 //
 
 import UIKit

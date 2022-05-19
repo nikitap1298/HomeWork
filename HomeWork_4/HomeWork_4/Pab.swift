@@ -1,5 +1,5 @@
 //
-//  Pub.swift
+//  Pab.swift
 //  HomeWork_4
 //
 //  Created by Nikita Pishchugin on 19.05.2022.
@@ -12,8 +12,6 @@ class Pub {
     
     static let singleton = Pub(total: 50)
     var beer = Beer(name: "Berliner Kindl", price: 0.35, country: "Germany", remainingVolume: 50)
-    //let beer = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 35)
-    
     var total: Int
     
     private init(total: Int) {
@@ -28,7 +26,7 @@ class Pub {
     }
     
     func remaining() -> Int {
-        return beer.remainingVolume 
+        return beer.remainingVolume
     }
     
     func earning() -> Double {

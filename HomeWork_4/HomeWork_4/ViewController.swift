@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  HomeWork_4
 //
-//  Created by Nikita Pishchugin on 18.05.2022.
+//  Created by Nikita Pishchugin on 19.05.2022.
 //
 
 import UIKit
@@ -27,15 +27,11 @@ class ViewController: UIViewController {
         beerCountry.text = "Country: \(Pub.singleton.beer.country)"
         beerPrice.text = "Price: \(Pub.singleton.beer.price) Euro for bottle"
         mainLabel.text = "Remaining: \(Pub.singleton.remaining()) bottles"
-        
     }
     
-    @IBAction func checkRemaining(_ sender: UIButton) {
-        mainLabel.text = "\(Pub.singleton.remaining())"
-    }
-    
-    @IBAction func sellOneButton(_ sender: Any) {
+    @IBAction func sellOneButton(_ sender: UIButton) {
         mainLabel.text = "Remaining: \(Pub.singleton.sellOne()) bottles"
+
     }
     
     @IBAction func earnButton(_ sender: UIButton) {
@@ -45,5 +41,6 @@ class ViewController: UIViewController {
     @IBAction func newDayButton(_ sender: UIButton) {
         //mainLabel.text = "Earn in one day: \(Pub.singleton.reset()) Euro"
     }
+    
 }
 
