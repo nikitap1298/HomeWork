@@ -35,11 +35,18 @@ class Pub {
         return earnTwoDigits
     }
     
-//    func reset() -> Double {
-//        let resetEarn = Double(beer.total - remaining())
-//        let resetEarnTwoDigits = Double(round(1000 * resetEarn)) / 1000
-//        return resetEarnTwoDigits
-//    }
+    func resetEarning() -> Double {
+        total = remaining()
+        let earn = Double(total - remaining()) * beer.price
+        let earnTwoDigits = Double(round(1000 * earn)) / 1000
+        return earnTwoDigits
+    }
+    
+    func checkRemaining() -> Int {
+
+        return remaining()
+    }
+    
 }
 
 //MARK: - Beer
