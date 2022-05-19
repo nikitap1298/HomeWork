@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func newDayButton(_ sender: UIButton) {
-        mainLabel.text = "New Day. Remaining: \(Pub.singleton.checkRemaining()) bottles. Earning: \(Pub.singleton.resetEarning())"
+        mainLabel.text = "New Day. Remaining: \(Pub.singleton.checkRemaining()) bottles. Earn: \(Pub.singleton.resetEarning())"
     }
     
 }
