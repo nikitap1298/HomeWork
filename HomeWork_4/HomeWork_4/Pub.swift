@@ -12,10 +12,10 @@ class Pub {
     
     static let singleton = Pub(total: 50)
     var beer = Beer(name: "Berliner Kindl", price: 0.35, country: "Germany", remainingVolume: 50)
-    private var total: Int
+    var total: Int
     
     private init(total: Int) {
-        self.total = beer.remainingVolume
+        self.total = total
     }
     
     func sellOne() -> Int {

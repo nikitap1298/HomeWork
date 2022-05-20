@@ -17,6 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        Pub.singleton.beer.name = "Pilsner Urquell"
+//        Pub.singleton.beer.price = 0.31
+//        Pub.singleton.beer.country = "Czech Republic"
+//        Pub.singleton.beer.remainingVolume = 39
+//        Pub.singleton.total = Pub.singleton.beer.remainingVolume
+        
         beerName.text = "Beer:"
         beerCountry.text = "Country:"
         beerPrice.text = "Price:"
@@ -27,6 +33,7 @@ class ViewController: UIViewController {
         Pub.singleton.beer.price = 0.42
         Pub.singleton.beer.country = "Germany"
         Pub.singleton.beer.remainingVolume = 45
+        Pub.singleton.total = Pub.singleton.beer.remainingVolume
         
         beerName.text = "Beer: \(Pub.singleton.beer.name)"
         beerCountry.text = "Country: \(Pub.singleton.beer.country)"
@@ -39,6 +46,7 @@ class ViewController: UIViewController {
         Pub.singleton.beer.price = 0.31
         Pub.singleton.beer.country = "Czech Republic"
         Pub.singleton.beer.remainingVolume = 39
+        Pub.singleton.total = Pub.singleton.beer.remainingVolume
         
         beerName.text = "Beer: \(Pub.singleton.beer.name)"
         beerCountry.text = "Country: \(Pub.singleton.beer.country)"
