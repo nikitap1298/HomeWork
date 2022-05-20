@@ -37,9 +37,7 @@ class Pub {
     
     func resetEarning() -> Double {
         total = remaining()
-        let earn = Double(total - remaining()) * beer.price
-        let earnTwoDigits = Double(round(1000 * earn)) / 1000
-        return earnTwoDigits
+        return earning()
     }
     
     func checkRemaining() -> Int {
