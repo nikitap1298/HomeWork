@@ -9,55 +9,48 @@ import Foundation
 
 //MARK: - Pub
 class Pub {
+    static let singleton = Pub(beer: [])
+    var beer: [Beer] = []
     
-    static let singleton = Pub()
-    var beer = Beer(name: "Berliner Kindl", price: 0.39, country: "Germany", remainingVolume: 260)
-    var beer1 = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 195)
+    var sell0: Int = 0
+    var sell1: Int = 0
+    var sell2: Int = 0
+    var isWorking: Int = 0
     
-    var sellNumber: Int = 0
-    var remaining: Int
-    
-    private init() {
-        remaining = beer1.remainingVolume
+    private init(beer: [Beer]) {
+        self.beer = beer
     }
     
-    func sellOne() -> Int {
-        if remaining >= 1 {
-            remaining -= 1
-            sellNumber += 1
+    func sellOne() -> String {
+        if Pub.singleton.beer[0].remainingVolume >= 1 && isWorking == 0 {
+            Pub.singleton.beer[0].remainingVolume -= 1
+            sell0 += 1
+        } else if Pub.singleton.beer[1].remainingVolume >= 1 && isWorking == 1 {
+            Pub.singleton.beer[1].remainingVolume -= 1
+            sell1 += 1
+        } else if Pub.singleton.beer[2].remainingVolume >= 1 && isWorking == 2 {
+            Pub.singleton.beer[2].remainingVolume -= 1
+            sell2 += 1
         }
-        return remaining
+        return String("\(Pub.singleton.beer[0].remainingVolume); \(Pub.singleton.beer[1].remainingVolume); \(Pub.singleton.beer[2].remainingVolume)")
     }
+    
     
     func earning() -> Double {
-        let earn = Double(sellNumber) * beer.price
+        let earn = (Double(sell0) * beer[0].price) + (Double(sell1) * beer[1].price) + (Double(sell2) * beer[2].price)
         let earnTwoDigits = Double(round(1000 * earn)) / 1000
         return earnTwoDigits
     }
     
     func resetEarning() -> Double {
-        sellNumber = 0
+        sell0 = 0
+        sell1 = 0
+        sell2 = 0
         return earning()
     }
     
-    func checkRemaining() -> Int {
-        return remaining
+    func checkRemaining() -> String {
+        return sellOne()
     }
     
-}
-
-//MARK: - Beer
-class Beer {
-    
-    var name: String
-    var price: Double
-    var country: String
-    var remainingVolume: Int
-    
-    init(name: String, price: Double, country: String, remainingVolume: Int) {
-        self.name = name
-        self.price = price
-        self.country = country
-        self.remainingVolume = remainingVolume
-    }
 }
