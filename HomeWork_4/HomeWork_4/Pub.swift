@@ -10,38 +10,38 @@ import Foundation
 //MARK: - Pub
 class Pub {
     
-    static let singleton = Pub(total: 50)
-    var beer = Beer(name: "Berliner Kindl", price: 0.35, country: "Germany", remainingVolume: 50)
-    var total: Int
+    static let singleton = Pub()
+    var beer = Beer(name: "Berliner Kindl", price: 0.39, country: "Germany", remainingVolume: 260)
+    var beer1 = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 195)
     
-    private init(total: Int) {
-        self.total = total
+    var sellNumber: Int = 0
+    var remanining: Int
+    
+    private init() {
+        remanining = beer1.remainingVolume
     }
     
     func sellOne() -> Int {
-        if beer.remainingVolume >= 1 {
-            beer.remainingVolume -= 1
+        if remanining >= 1 {
+            remanining -= 1
+            sellNumber += 1
         }
-        return beer.remainingVolume
-    }
-    
-    func remaining() -> Int {
-        return beer.remainingVolume
+        return remanining
     }
     
     func earning() -> Double {
-        let earn = Double(total - remaining()) * beer.price
+        let earn = Double(sellNumber) * beer.price
         let earnTwoDigits = Double(round(1000 * earn)) / 1000
         return earnTwoDigits
     }
     
     func resetEarning() -> Double {
-        total = remaining()
+        sellNumber = 0
         return earning()
     }
     
     func checkRemaining() -> Int {
-        return remaining()
+        return remanining
     }
     
 }
