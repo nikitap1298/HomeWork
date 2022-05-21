@@ -12,12 +12,6 @@ class Pub {
     static let singleton = Pub(beer: [])
     var beer: [Beer] = []
     
-    var sell0: Int = 0
-    var earn0: Double = 0
-    var sell1: Int = 0
-    var earn1: Double = 0
-    var sell2: Int = 0
-    var earn2: Double = 0
     var isWorking: Int = 0
     
     private init(beer: [Beer]) {
