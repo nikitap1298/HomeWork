@@ -24,41 +24,29 @@ class Pub {
         self.beer = beer
     }
     
-    func sellOne() -> String {
-        if isWorking == 0 {
+    func sellOne(n: Int) -> String {
+        if isWorking == n {
             Pub.singleton.beer[isWorking].remainingVolume -= 1
-            sell0 += 1
-            earn0 = Double(sell0) * Pub.singleton.beer[isWorking].price
-        } else if isWorking == 1 {
-            Pub.singleton.beer[isWorking].remainingVolume -= 1
-            sell1 += 1
-            earn1 = Double(sell1) * Pub.singleton.beer[isWorking].price
-        } else if isWorking == 2 {
-            Pub.singleton.beer[isWorking].remainingVolume -= 1
-            sell2 += 1
-            earn2 = Double(sell2) * Pub.singleton.beer[isWorking].price
+            Pub.singleton.beer[isWorking].total += 1
         }
         return String("\(Pub.singleton.beer[0].remainingVolume); \(Pub.singleton.beer[1].remainingVolume); \(Pub.singleton.beer[2].remainingVolume)")
     }
     
     
     func earning() -> Double {
-        let earn = earn0 + earn1 + earn2
+        let earn = (Double(Pub.singleton.beer[0].total) * Pub.singleton.beer[0].price) + (Double(Pub.singleton.beer[1].total) * Pub.singleton.beer[1].price) + (Double(Pub.singleton.beer[2].total) * Pub.singleton.beer[2].price)
         let earnTwoDigits = Double(round(1000 * earn)) / 1000
         return earnTwoDigits
     }
     
     func resetEarning() -> Double {
-        earn0 = 0
-        earn1 = 0
-        earn2 = 0
+        Pub.singleton.beer[0].total = 0
+        Pub.singleton.beer[1].total = 0
+        Pub.singleton.beer[2].total = 0
         return earning()
     }
     
     func checkRemaining() -> String {
-        sell0 = 0
-        sell1 = 0
-        sell2 = 0
         return String("\(Pub.singleton.beer[0].remainingVolume); \(Pub.singleton.beer[1].remainingVolume); \(Pub.singleton.beer[2].remainingVolume)")
     }
     

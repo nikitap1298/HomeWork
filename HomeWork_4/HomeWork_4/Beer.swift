@@ -13,11 +13,13 @@ class Beer {
     var price: Double
     var country: String
     var remainingVolume: Int
+    var total: Int
     
-    init(name: String, price: Double, country: String, remainingVolume: Int) {
+    init(name: String, price: Double, country: String, remainingVolume: Int, total: Int) {
         self.name = name
         self.price = price
         self.country = country
         self.remainingVolume = remainingVolume
+        self.total = total
     }
 }
