@@ -15,18 +15,18 @@ class Pub {
     var beer1 = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 195)
     
     var sellNumber: Int = 0
-    var remanining: Int
+    var remaining: Int
     
     private init() {
-        remanining = beer1.remainingVolume
+        remaining = beer1.remainingVolume
     }
     
     func sellOne() -> Int {
-        if remanining >= 1 {
-            remanining -= 1
+        if remaining >= 1 {
+            remaining -= 1
             sellNumber += 1
         }
-        return remanining
+        return remaining
     }
     
     func earning() -> Double {
@@ -41,7 +41,7 @@ class Pub {
     }
     
     func checkRemaining() -> Int {
-        return remanining
+        return remaining
     }
     
 }
