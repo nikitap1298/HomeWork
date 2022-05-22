@@ -21,17 +21,22 @@ class ViewController: UIViewController {
         mainLabel.text = "Remaining: 0"
     }
     @IBAction func leftButton(_ sender: UIButton) {
-        Pub.singleton.isWorking = 0
+        
+        // Find index of a specific Item in Array
+        let index = Pub.singleton.beer.firstIndex(where: { $0.name == "Berliner Kindl" })
+        Pub.singleton.isWorking = index ?? 0
         mainLabel.text = ("\(Pub.singleton.sellOne(n: Pub.singleton.isWorking))")
     }
     
     @IBAction func centerButton(_ sender: UIButton) {
-        Pub.singleton.isWorking = 1
+        let index = Pub.singleton.beer.firstIndex(where: { $0.name == "Pilsner Urquell" })
+        Pub.singleton.isWorking = index ?? 0
         mainLabel.text = ("\(Pub.singleton.sellOne(n: Pub.singleton.isWorking))")
     }
     
     @IBAction func rightButton(_ sender: UIButton) {
-        Pub.singleton.isWorking = 2
+        let index = Pub.singleton.beer.firstIndex(where: { $0.name == "Černa Horá Velen" })
+        Pub.singleton.isWorking = index ?? 0
         mainLabel.text = ("\(Pub.singleton.sellOne(n: Pub.singleton.isWorking))")
     }
     
