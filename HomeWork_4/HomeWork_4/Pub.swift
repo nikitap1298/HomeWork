@@ -12,8 +12,6 @@ class Pub {
     static let singleton = Pub(beer: [])
     var beer: [Beer] = []
     
-    //var isWorking: Int = 0
-    
     private init(beer: [Beer]) {
         self.beer = beer
     }
