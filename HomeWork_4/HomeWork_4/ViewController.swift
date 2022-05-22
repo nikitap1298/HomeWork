@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
 
     // Different beeer in the Pub
-    let beer0 = Beer(name: "Berliner Kindl", price: 1, country: "Germany", remainingVolume: 190, total: 0)
-    let beer1 = Beer(name: "Pilsner Urquell", price: 2, country: "Czech Republic", remainingVolume: 169, total: 0)
-    let beer2 = Beer(name: "Černa Horá Velen", price: 3, country: "Czech Republic", remainingVolume: 205, total: 0)
+    let beer0 = Beer(name: "Berliner Kindl", price: 0.39, country: "Germany", remainingVolume: 190, total: 0)
+    let beer1 = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 169, total: 0)
+    let beer2 = Beer(name: "Černa Horá Velen", price: 0.28, country: "Czech Republic", remainingVolume: 205, total: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()

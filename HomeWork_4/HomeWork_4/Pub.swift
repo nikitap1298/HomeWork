@@ -19,7 +19,7 @@ class Pub {
     }
     
     func sellOne(n: Int) -> String {
-        if isWorking == n {
+        if isWorking == n && Pub.singleton.beer[isWorking].remainingVolume >= 1 {
             Pub.singleton.beer[isWorking].remainingVolume -= 1
             Pub.singleton.beer[isWorking].total += 1
         }
