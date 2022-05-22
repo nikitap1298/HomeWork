@@ -12,16 +12,16 @@ class Pub {
     static let singleton = Pub(beer: [])
     var beer: [Beer] = []
     
-    var isWorking: Int = 0
+    //var isWorking: Int = 0
     
     private init(beer: [Beer]) {
         self.beer = beer
     }
     
     func sellOne(n: Int) -> String {
-        if Pub.singleton.beer[isWorking].remainingVolume >= 1 {
-            Pub.singleton.beer[isWorking].remainingVolume -= 1
-            Pub.singleton.beer[isWorking].total += 1
+        if Pub.singleton.beer[n].remainingVolume >= 1 {
+            Pub.singleton.beer[n].remainingVolume -= 1
+            Pub.singleton.beer[n].total += 1
         }
         return String("\(Pub.singleton.beer[0].remainingVolume); \(Pub.singleton.beer[1].remainingVolume); \(Pub.singleton.beer[2].remainingVolume)")
     }
