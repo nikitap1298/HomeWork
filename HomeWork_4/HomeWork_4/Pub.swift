@@ -21,25 +21,37 @@ class Pub {
             Pub.singleton.beer[n].remainingVolume -= 1
             Pub.singleton.beer[n].total += 1
         }
-        return String("\(Pub.singleton.beer[0].remainingVolume); \(Pub.singleton.beer[1].remainingVolume); \(Pub.singleton.beer[2].remainingVolume)")
+        return beer.map { $0.remainingVolume }.toPrint
     }
     
     
     func earning() -> Double {
-        let earn = (Double(Pub.singleton.beer[0].total) * Pub.singleton.beer[0].price) + (Double(Pub.singleton.beer[1].total) * Pub.singleton.beer[1].price) + (Double(Pub.singleton.beer[2].total) * Pub.singleton.beer[2].price)
-        let earnTwoDigits = Double(round(1000 * earn)) / 1000
+        let earnEach = beer.map { Double($0.total) * $0.price }
+        let eachSum = earnEach.reduce(0) { (sum, num) -> Double in
+            sum + num
+        }
+        let earnTwoDigits = Double(round(1000 * eachSum)) / 1000
         return earnTwoDigits
     }
     
     func resetEarning() -> Double {
-        Pub.singleton.beer[0].total = 0
-        Pub.singleton.beer[1].total = 0
-        Pub.singleton.beer[2].total = 0
+        beer = beer.map { Beer(name: $0.name, price: $0.price, country: $0.country, remainingVolume: $0.remainingVolume, total: $0.total * 0 ) }
         return earning()
     }
     
     func checkRemaining() -> String {
-        return String("\(Pub.singleton.beer[0].remainingVolume); \(Pub.singleton.beer[1].remainingVolume); \(Pub.singleton.beer[2].remainingVolume)")
+        return beer.map { $0.remainingVolume }.toPrint
     }
     
+}
+
+// Remove [] in Array
+extension Array {
+    var toPrint: String  {
+        var str = ""
+        for element in self {
+            str += "\(element) "
+        }
+        return str
+    }
 }
