@@ -26,17 +26,17 @@ class ViewController: UIViewController {
     @IBAction func leftButton(_ sender: UIButton) {
         
         // Find index of a specific Item in Array
-        let index = Pub.singleton.beer.firstIndex(where: { $0.name == self.beer0.name })
+        let index = Pub.singleton.beer.firstIndex(where: { $0.name == beer0.name })
         mainLabel.text = ("\(Pub.singleton.sellOne(n: index ?? 0))")
     }
     
     @IBAction func centerButton(_ sender: UIButton) {
-        let index = Pub.singleton.beer.firstIndex(where: { $0.name == self.beer1.name })
+        let index = Pub.singleton.beer.firstIndex(where: { $0.name == beer1.name })
         mainLabel.text = ("\(Pub.singleton.sellOne(n: index ?? 0))")
     }
     
     @IBAction func rightButton(_ sender: UIButton) {
-        let index = Pub.singleton.beer.firstIndex(where: { $0.name == self.beer2.name })
+        let index = Pub.singleton.beer.firstIndex(where: { $0.name == beer2.name })
         mainLabel.text = ("\(Pub.singleton.sellOne(n: index ?? 0))")
     }
     
