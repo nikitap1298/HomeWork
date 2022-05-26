@@ -19,9 +19,11 @@ class SecondViewController: UIViewController {
     let square6 = UIView()
     let square7 = UIView()
     
+    @IBOutlet weak var fillButtonLabel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +56,7 @@ class SecondViewController: UIViewController {
         square4.backgroundColor = .clear
         view.addSubview(square4)
         
-        square5.frame = CGRect(x: maxX / 2, y: maxY / 4, width: maxX / 2, height: maxY / 4)
+        square5.frame = CGRect(x: maxX / 2, y: maxY / 2, width: maxX / 2, height: maxY / 4)
         square5.backgroundColor = .clear
         view.addSubview(square5)
         
@@ -66,6 +68,9 @@ class SecondViewController: UIViewController {
         square7.backgroundColor = .clear
         view.addSubview(square7)
         
+        // Makes fillButton above the squares
+        view.bringSubviewToFront(fillButtonLabel)
+        
     }
     
     @IBAction func fillButton(_ sender: UIButton) {
@@ -73,7 +78,6 @@ class SecondViewController: UIViewController {
     }
     
     func randomColor() {
-        
         square0.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         square1.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         square2.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
@@ -82,6 +86,6 @@ class SecondViewController: UIViewController {
         square5.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         square6.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         square7.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
-        
     }
+    
 }
