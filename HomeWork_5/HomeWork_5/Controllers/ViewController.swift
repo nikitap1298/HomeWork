@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         catToy.backgroundColor = .red
         catToy.frame = CGRect(x: xCenter - catToy.frame.width / 2, y: yCenter - catToy.frame.height / 2, width: catToy.frame.width, height: catToy.frame.height)
-        catToy.layer.cornerRadius = 50
+        catToy.layer.cornerRadius = catToy.frame.width / 2
         view.addSubview(catToy)
         
         catToy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     func randomPlace() {
-        self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height), width: 100, height: 100)
+        self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height), width: catToy.frame.width, height: catToy.frame.width)
     }
     
     func randomColor() {
