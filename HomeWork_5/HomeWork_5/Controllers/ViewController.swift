@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        catToy.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
         let yCenter = view.frame.midY
         
         catToy.backgroundColor = .red
-        catToy.frame = CGRect(x: xCenter - 100 / 2, y: yCenter - 100 / 2, width: 100, height: 100)
+        catToy.frame = CGRect(x: xCenter - catToy.frame.width / 2, y: yCenter - catToy.frame.height / 2, width: catToy.frame.width, height: catToy.frame.height)
         catToy.layer.cornerRadius = 50
         view.addSubview(catToy)
         
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     func randomPlace() {
-        self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - 100), y: .random(in: 0..<view.frame.maxY - 100), width: 100, height: 100)
+        self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height), width: 100, height: 100)
     }
     
     func randomColor() {
