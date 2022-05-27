@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yer-9F-oCo">
-                                <rect key="frame" x="149" y="397" width="92" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lx6-Ig-CZQ">
+                                <rect key="frame" x="143" y="389" width="104" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.41568624970000001" green="0.68235301969999995" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.31764705879999999" green="0.69019607839999997" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Fill"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="fillButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TML-y6-DY8"/>
+                                    <action selector="fullButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tiu-aH-eRx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,7 +33,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="fillButtonLabel" destination="Yer-9F-oCo" id="KFQ-As-gg2"/>
+                        <outlet property="fillButtonLabel" destination="lx6-Ig-CZQ" id="4Va-Or-oSA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
