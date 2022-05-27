@@ -15,7 +15,7 @@ class SecondViewController: UIViewController {
     var y: Int = 0
     
     // User must to change only side value
-    let side = 5
+    let side = 10
     let square = UIView()
     
     @IBOutlet weak var fillButtonLabel: UIButton!
@@ -50,24 +50,25 @@ class SecondViewController: UIViewController {
         let numberV = Int(view.frame.maxY / square.frame.height)
         let total = numberH * numberV
         
-        for _ in 0...total * 2 {
-            let minX = view.frame.minX
-            let minY = view.frame.minY
-            let square = UIView()
-            square.frame = CGRect(x: minX + CGFloat(x * side), y: minY + CGFloat(y * side), width: CGFloat(side), height: CGFloat(side))
-            square.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
-            view.addSubview(square)
-            n += 1
-            x += 1
+        if side >= 10 {
+            for _ in 0...total * 2 {
+                let minX = view.frame.minX
+                let minY = view.frame.minY
+                let square = UIView()
+                square.frame = CGRect(x: minX + CGFloat(x * side), y: minY + CGFloat(y * side), width: CGFloat(side), height: CGFloat(side))
+                square.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
+                view.addSubview(square)
+                n += 1
+                x += 1
 
-            if n % (numberH + 2) == 0 {
-                square.frame = CGRect(x: minX + CGFloat(0), y: minY + CGFloat(side) , width: CGFloat(side), height: CGFloat(side))
-                x = 0
-                y += 1
+                if n % (numberH + 2) == 0 {
+                    square.frame = CGRect(x: minX + CGFloat(0), y: minY + CGFloat(side) , width: CGFloat(side), height: CGFloat(side))
+                    x = 0
+                    y += 1
+                }
+                //print(square.frame)
             }
-            //print(square.frame)
         }
     }
-    
-    
+
 }
