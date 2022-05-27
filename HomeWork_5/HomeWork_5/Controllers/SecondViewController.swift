@@ -15,7 +15,7 @@ class SecondViewController: UIViewController {
     var y: Int = 0
     
     // User must to change only side value
-    let side = 10
+    let side = 15
     let square = UIView()
     
     @IBOutlet weak var fillButtonLabel: UIButton!
@@ -28,13 +28,7 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        let maxX = view.frame.maxX
-//        let maxY = view.frame.maxY
-//        print("Max x: \(maxX): Max y: \(maxY)")
-        
         square.frame = CGRect(x: 30, y: 30, width: side, height: side)
-        square.backgroundColor = .red
-        view.addSubview(square)
         
         // Makes fillButton above the squares
 //        view.bringSubviewToFront(fillButtonLabel)
@@ -51,7 +45,7 @@ class SecondViewController: UIViewController {
         let total = numberH * numberV
         
         if side >= 10 {
-            for _ in 0...total * 2 {
+            for _ in 0...Int(Double(total) * 1.1) {
                 let minX = view.frame.minX
                 let minY = view.frame.minY
                 let square = UIView()
@@ -60,13 +54,12 @@ class SecondViewController: UIViewController {
                 view.addSubview(square)
                 n += 1
                 x += 1
-
-                if n % (numberH + 2) == 0 {
-                    square.frame = CGRect(x: minX + CGFloat(0), y: minY + CGFloat(side) , width: CGFloat(side), height: CGFloat(side))
+                
+                if n % (numberH + 1) == 0 {
                     x = 0
                     y += 1
                 }
-                //print(square.frame)
+//                print(square.frame)
             }
         }
     }
