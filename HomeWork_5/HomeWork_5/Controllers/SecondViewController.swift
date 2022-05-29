@@ -49,7 +49,7 @@ class SecondViewController: UIViewController {
         let total = numberH * numberV
         
         if side >= 10 {
-            for _ in 0...Int(Double(total)) {
+            for _ in 0...total {
                 let minX = view.frame.minX
                 let minY = view.frame.minY
                 let square = UIView()
