@@ -32,6 +32,7 @@ class SecondViewController: UIViewController {
         square.backgroundColor = .red
         view.addSubview(square)
         
+//        print("MaxX: \(view.frame.maxX); MaxY: \(view.frame.maxY)")
         // Makes fillButton above the squares
 //        view.bringSubviewToFront(fillButtonLabel)
         
@@ -42,12 +43,12 @@ class SecondViewController: UIViewController {
     }
     
     func fill() {
-        let numberH = Int(view.frame.maxX / square.frame.width)
-        let numberV = Int(view.frame.maxY / square.frame.height)
+        let numberH = Int(view.frame.maxX / square.frame.width) + 1
+        let numberV = Int(view.frame.maxY / square.frame.height) + 1
         let total = numberH * numberV
         
         if side >= 10 {
-            for _ in 0...Int(Double(total) * 1.5) {
+            for _ in 0...Int(Double(total)) {
                 let minX = view.frame.minX
                 let minY = view.frame.minY
                 let square = UIView()
@@ -57,11 +58,11 @@ class SecondViewController: UIViewController {
                 n += 1
                 x += 1
                 
-                if n % (numberH + 1) == 0 {
+                if n % numberH == 0 {
                     x = 0
                     y += 1
                 }
-//                print(square.frame)
+//                print(square.frame.origin)
             }
         }
     }
