@@ -29,6 +29,8 @@ class SecondViewController: UIViewController {
         super.viewWillAppear(animated)
         
         square.frame = CGRect(x: 30, y: 30, width: side, height: side)
+        square.backgroundColor = .red
+        view.addSubview(square)
         
         // Makes fillButton above the squares
 //        view.bringSubviewToFront(fillButtonLabel)
