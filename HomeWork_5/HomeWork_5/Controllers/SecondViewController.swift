@@ -10,6 +10,8 @@ import UIKit
 // For iPhone 13 Pro
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var fillButtonLabel: UIButton!
+    
     var n: Int = 0
     var x: Int = 0
     var y: Int = 0
@@ -17,8 +19,6 @@ class SecondViewController: UIViewController {
     // User must to change only side value
     let side = 15
     let square = UIView()
-    
-    @IBOutlet weak var fillButtonLabel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +28,18 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+//        print("MaxX: \(view.frame.maxX); MaxY: \(view.frame.maxY)")
+        
         square.frame = CGRect(x: 30, y: 30, width: side, height: side)
         square.backgroundColor = .red
         view.addSubview(square)
-        
-//        print("MaxX: \(view.frame.maxX); MaxY: \(view.frame.maxY)")
+    
         // Makes fillButton above the squares
 //        view.bringSubviewToFront(fillButtonLabel)
         
     }
     
-    @IBAction func fullButton(_ sender: UIButton) {
+    @IBAction func fillButton(_ sender: UIButton) {
         fill()
     }
     
