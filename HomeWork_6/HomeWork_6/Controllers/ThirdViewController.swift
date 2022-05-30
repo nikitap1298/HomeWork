@@ -63,7 +63,7 @@ class ThirdViewController: UIViewController {
     //MARK: - Private Functions
     
     private func move(_ direction: Direction) {
-        switch(direction) {
+        switch direction {
         case .up:
             if circle.frame.minY >= view.frame.minY + 10 {
                 circle.center.y -= 10
@@ -94,35 +94,5 @@ class ThirdViewController: UIViewController {
             }
         }
     }
-    
-//    private func moveUp(_ view: UIView) {
-//        //        let circleCoordinate = circle.frame
-//        //        print(circleCoordinate)
-//        let y = circle.frame.maxY - 60
-//        if y >= CGFloat(10.0) {
-//            view.center.y -= 10
-//        }
-//    }
-//
-//    private func moveLeft(_ view: UIView) {
-//        let x = circle.frame.maxX - 60
-//        if x >= CGFloat(10.0) {
-//            view.center.x -= 10
-//        }
-//    }
-//
-//    private func moveRight(_ view: UIView) {
-//        let x = circle.frame.maxX - 60
-//        if x <= CGFloat(315.0) {
-//            view.center.x += 10
-//        }
-//    }
-//
-//    private func moveDown(_ view: UIView) {
-//        let y = circle.frame.maxY - 60
-//        if y <= CGFloat(512.0) {
-//            view.center.y += 10
-//        }
-//    }
-    
+
 }
