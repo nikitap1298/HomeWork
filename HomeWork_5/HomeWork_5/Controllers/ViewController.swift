@@ -9,8 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let catToy = UIView()
+    //MARK: - Private Properties
+    private let catToy = UIView()
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,16 +34,18 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK: - IBActions
     @objc func didTap() {
         randomPlace()
         randomColor()
     }
     
-    func randomPlace() {
+    //MARK: - Private Functions
+    private func randomPlace() {
         self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height), width: catToy.frame.width, height: catToy.frame.width)
     }
     
-    func randomColor() {
+    private func randomColor() {
         let redR = CGFloat.random(in: 0...1)
         let greenR = CGFloat.random(in: 0...1)
         let blueR = CGFloat.random(in: 0...1)

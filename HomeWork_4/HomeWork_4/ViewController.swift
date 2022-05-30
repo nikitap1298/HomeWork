@@ -9,13 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var mainLabel: UILabel!
-
+    //MARK: - Public Properties
     // Different beeer in the Pub
     let beer0 = Beer(name: "Berliner Kindl", price: 0.39, country: "Germany", remainingVolume: 190, total: 0)
     let beer1 = Beer(name: "Pilsner Urquell", price: 0.31, country: "Czech Republic", remainingVolume: 169, total: 0)
     let beer2 = Beer(name: "Černa Horá Velen", price: 0.28, country: "Czech Republic", remainingVolume: 205, total: 0)
     
+    //MARK: - IBOutlets
+    @IBOutlet weak var mainLabel: UILabel!
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +26,8 @@ class ViewController: UIViewController {
         
         mainLabel.text = "Remaining: 0"
     }
+    
+    //MARK: - IBActions
     @IBAction func leftButton(_ sender: UIButton) {
         
         // Find index of a specific Item in Array

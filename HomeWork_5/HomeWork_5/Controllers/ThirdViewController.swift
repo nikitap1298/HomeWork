@@ -10,11 +10,12 @@ import UIKit
 // For iPhone 13 Pro
 class ThirdViewController: UIViewController {
     
-    let circle = UIView()
+    //MARK: - Private Properties
+    private let circle = UIView()
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
@@ -30,6 +31,7 @@ class ThirdViewController: UIViewController {
         view.addSubview(circle)
     }
     
+    //MARK: - IBActions
     @IBAction func upButton(_ sender: UIButton) {
         moveUp(circle)
     }
@@ -45,8 +47,9 @@ class ThirdViewController: UIViewController {
     @IBAction func downButton(_ sender: UIButton) {
         moveDown(circle)
     }
-
-    func moveUp(_ view: UIView) {
+    
+    //MARK: - Private Functions
+    private func moveUp(_ view: UIView) {
 //        let circleCoordinate = circle.frame
 //        print(circleCoordinate)
         let y = circle.frame.maxY - 60
@@ -55,21 +58,21 @@ class ThirdViewController: UIViewController {
         }
     }
     
-    func moveLeft(_ view: UIView) {
+    private func moveLeft(_ view: UIView) {
         let x = circle.frame.maxX - 60
         if x >= CGFloat(10.0) {
             view.center.x -= 10
         }
     }
     
-    func moveRight(_ view: UIView) {
+    private func moveRight(_ view: UIView) {
         let x = circle.frame.maxX - 60
         if x <= CGFloat(315.0) {
             view.center.x += 10
         }
     }
     
-    func moveDown(_ view: UIView) {
+    private func moveDown(_ view: UIView) {
         let y = circle.frame.maxY - 60
         if y <= CGFloat(512.0) {
             view.center.y += 10

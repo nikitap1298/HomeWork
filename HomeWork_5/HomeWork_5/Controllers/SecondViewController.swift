@@ -10,16 +10,19 @@ import UIKit
 // For iPhone 13 Pro
 class SecondViewController: UIViewController {
     
-    @IBOutlet weak var fillButtonLabel: UIButton!
-    
-    var n: Int = 0
-    var x: Int = 0
-    var y: Int = 0
+    //MARK: - Private Properties
+    private var n: Int = 0
+    private var x: Int = 0
+    private var y: Int = 0
     
     // User must to change only side value
     let side = 15
     let square = UIView()
     
+    //MARK: - IBOutlets
+    @IBOutlet weak var fillButtonLabel: UIButton!
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +42,13 @@ class SecondViewController: UIViewController {
         
     }
     
+    //MARK: - IBAction
     @IBAction func fillButton(_ sender: UIButton) {
         fill()
     }
     
-    func fill() {
+    //MARK: - Private Functions
+    private func fill() {
         let numberH = Int(view.frame.maxX / square.frame.width) + 1
         let numberV = Int(view.frame.maxY / square.frame.height) + 1
         let total = numberH * numberV
@@ -66,6 +71,7 @@ class SecondViewController: UIViewController {
 //                print(square.frame.origin)
             }
         }
+        view.bringSubviewToFront(fillButtonLabel)
     }
 
 }

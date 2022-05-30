@@ -9,12 +9,14 @@ import Foundation
 
 class Beer {
     
+    //MARK: - Public Properties
     var name: String
     var price: Double
     var country: String
     var remainingVolume: Int
     var total: Int
     
+    //MARK: - Life Cycle
     init(name: String, price: Double, country: String, remainingVolume: Int, total: Int) {
         self.name = name
         self.price = price

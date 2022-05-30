@@ -9,13 +9,17 @@ import Foundation
 
 //MARK: - Pub
 class Pub {
+    
+    //MARK: - Public Properties
     static let singleton = Pub(beer: [])
     var beer: [Beer] = []
     
+    //MARK: - Life Cycle
     private init(beer: [Beer]) {
         self.beer = beer
     }
     
+    //MARK: - Public Functions
     func sellOne(n: Int) -> String {
         if Pub.singleton.beer[n].remainingVolume >= 1 {
             Pub.singleton.beer[n].remainingVolume -= 1
@@ -50,6 +54,7 @@ class Pub {
     
 }
 
+//MARK: - Extensions
 // Remove [] in Array
 extension Array {
     var toPrint: String  {
