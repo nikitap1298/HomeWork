@@ -18,6 +18,8 @@ enum Color {
     case orange
     case yellow
     case gray
+    case black
+    case cyan
 }
 
 // For iPhone 13 Pro
@@ -27,7 +29,7 @@ class SecondViewController: UIViewController {
     private var n: Int = 0
     private var x: Int = 0
     private var y: Int = 0
-    private let colorArray: [UIColor] = [.red, .blue, .green, .brown, .magenta, .purple, .orange, .yellow, .gray]
+    private let colorArray: [UIColor] = [.red, .blue, .green, .brown, .magenta, .purple, .orange, .yellow, .gray, .black, .cyan]
     
     // User must to change only side value
     let side = 100
@@ -107,6 +109,10 @@ class SecondViewController: UIViewController {
             return "Yellow"
         case .gray:
             return "Gray"
+        case .black:
+            return "Black"
+        case .cyan:
+            return "Cyan"
         default:
             return "Error"
         }
@@ -146,6 +152,10 @@ extension Color: RawRepresentable {
                 return .yellow
             case .gray:
                 return .gray
+            case .black:
+                return .black
+            case .cyan:
+                return .cyan
             }
         }
 }
