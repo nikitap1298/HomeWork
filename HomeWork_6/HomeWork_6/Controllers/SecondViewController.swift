@@ -7,6 +7,19 @@
 
 import UIKit
 
+//MARK: - Enum
+enum Color {
+    case red
+    case blue
+    case green
+    case brown
+    case magenta
+    case purple
+    case orange
+    case yellow
+    case gray
+}
+
 // For iPhone 13 Pro
 class SecondViewController: UIViewController {
     
@@ -14,6 +27,7 @@ class SecondViewController: UIViewController {
     private var n: Int = 0
     private var x: Int = 0
     private var y: Int = 0
+    private let colorArray: [UIColor] = [.red, .blue, .green, .brown, .magenta, .purple, .orange, .yellow, .gray]
     
     // User must to change only side value
     let side = 100
@@ -48,20 +62,20 @@ class SecondViewController: UIViewController {
         let numberV = Int(view.frame.maxY / square.frame.height) + 1
         let total = numberH * numberV
         
-        if side >= 50 {
+        if side >= 100 {
             for _ in 0...total {
                 let square = UIView()
-                let label = UILabel(frame: CGRect(x: CGFloat(side / 2 ) - 20, y: CGFloat(side / 2 ) - 20, width: 40, height: 40))
+                let label = UILabel(frame: CGRect(x: CGFloat(side / 2 ) - 35, y: CGFloat(side / 2 ) - 20, width: 70, height: 40))
                 label.backgroundColor = .white
                 label.textAlignment = .center
+                label.font = .systemFont(ofSize: 15)
                 square.addSubview(label)
                 
                 square.frame = CGRect(x: CGFloat(x * side), y: CGFloat(y * side), width: CGFloat(side), height: CGFloat(side))
-                square.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
+                square.backgroundColor = colorArray.randomElement()
                 view.addSubview(square)
                 
-                // Только так наверное можно цвет в Label передать. У нас же цвета у квадратов не .red; .green и тд, а такие например: UIExtendedSRGBColorSpace 0.232777 0.74647 0.518613 1. Это же может быть оттенок какого-то цвета.
-                label.text = "\(square.backgroundColor!))"
+                label.text = "\(getColor(square.backgroundColor!))"
                 n += 1
                 x += 1
                 
@@ -73,4 +87,65 @@ class SecondViewController: UIViewController {
         }
     }
     
+    private func getColor(_ color: UIColor) -> String {
+        switch color {
+        case .red:
+            return "Red"
+        case .blue:
+            return "Blue"
+        case .green:
+            return "Green"
+        case .brown:
+            return "Brown"
+        case .magenta:
+            return "Magenta"
+        case .purple:
+            return "Purple"
+        case .orange:
+            return "Orange"
+        case .yellow:
+            return "Yellow"
+        case .gray:
+            return "Gray"
+        default:
+            return "Error"
+        }
+    }
+}
+
+//MARK: - Extensions
+
+// This extension used to add custom value type (UIColor) to the enum
+extension Color: RawRepresentable {
+    typealias RawValue = UIColor
+    
+    init?(rawValue: RawValue) {
+            switch rawValue {
+            default:
+                return nil
+            }
+        }
+
+    var rawValue: RawValue {
+            switch self {
+            case .red:
+                return .red
+            case .blue:
+                return .blue
+            case .green:
+                return . green
+            case .brown:
+                return .brown
+            case .magenta:
+                return .magenta
+            case .purple:
+                return .purple
+            case .orange:
+                return . orange
+            case .yellow:
+                return .yellow
+            case .gray:
+                return .gray
+            }
+        }
 }
