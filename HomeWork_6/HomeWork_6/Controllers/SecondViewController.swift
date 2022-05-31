@@ -16,7 +16,7 @@ class SecondViewController: UIViewController {
     private var y: Int = 0
     
     // User must to change only side value
-    let side = 15
+    let side = 100
     let square = UIView()
     
     //MARK: - IBOutlets
@@ -31,14 +31,9 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        print("MaxX: \(view.frame.maxX); MaxY: \(view.frame.maxY)")
-        
-        square.frame = CGRect(x: 30, y: 30, width: side, height: side)
+        square.frame = CGRect(x: 50, y: 50, width: side, height: side)
         square.backgroundColor = .red
         view.addSubview(square)
-    
-        // Makes fillButton above the squares
-//        view.bringSubviewToFront(fillButtonLabel)
         
     }
     
@@ -53,14 +48,20 @@ class SecondViewController: UIViewController {
         let numberV = Int(view.frame.maxY / square.frame.height) + 1
         let total = numberH * numberV
         
-        if side >= 10 {
+        if side >= 50 {
             for _ in 0...total {
-                let minX = view.frame.minX
-                let minY = view.frame.minY
                 let square = UIView()
-                square.frame = CGRect(x: minX + CGFloat(x * side), y: minY + CGFloat(y * side), width: CGFloat(side), height: CGFloat(side))
+                let label = UILabel(frame: CGRect(x: CGFloat(side / 2 ) - 20, y: CGFloat(side / 2 ) - 20, width: 40, height: 40))
+                label.backgroundColor = .white
+                label.textAlignment = .center
+                square.addSubview(label)
+                
+                square.frame = CGRect(x: CGFloat(x * side), y: CGFloat(y * side), width: CGFloat(side), height: CGFloat(side))
                 square.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
                 view.addSubview(square)
+                
+                // Только так наверное можно цвет в Label передать. У нас же цвета у квадратов не .red; .green и тд, а такие например: UIExtendedSRGBColorSpace 0.232777 0.74647 0.518613 1. Это же может быть оттенок какого-то цвета.
+                label.text = "\(square.backgroundColor!))"
                 n += 1
                 x += 1
                 
@@ -68,10 +69,8 @@ class SecondViewController: UIViewController {
                     x = 0
                     y += 1
                 }
-//                print(square.frame.origin)
             }
         }
-        view.bringSubviewToFront(fillButtonLabel)
     }
-
+    
 }
