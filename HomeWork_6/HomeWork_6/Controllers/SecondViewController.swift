@@ -29,7 +29,17 @@ class SecondViewController: UIViewController {
     private var n: Int = 0
     private var x: Int = 0
     private var y: Int = 0
-    private let colorArray: [UIColor] = [.red, .blue, .green, .brown, .magenta, .purple, .orange, .yellow, .gray, .black, .cyan]
+    private let colorArray: [UIColor] = [.red,
+                                         .blue,
+                                         .green,
+                                         .brown,
+                                         .magenta,
+                                         .purple,
+                                         .orange,
+                                         .yellow,
+                                         .gray,
+                                         .black,
+                                         .cyan]
     
     // User must to change only side value
     let side = 100
