@@ -42,8 +42,8 @@ class SecondViewController: UIViewController {
                                          .cyan]
     
     // User must to change only side value
-    let side = 100
-    let square = UIView()
+    private let side = 100
+    private let square = UIView()
     
     //MARK: - IBOutlets
     @IBOutlet weak var fillButtonLabel: UIButton!
