@@ -7,16 +7,16 @@
 
 import UIKit
 
-//MARK: - Enum
-enum Direction {
-    case up
-    case left
-    case right
-    case down
-}
-
 // For iPhone 13 Pro
 class ThirdViewController: UIViewController {
+    
+    //MARK: - Enum
+    private enum Direction {
+        case up
+        case left
+        case right
+        case down
+    }
     
     //MARK: - Private Properties
     private let circle = UIView()
