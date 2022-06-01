@@ -136,36 +136,36 @@ extension Color: RawRepresentable {
     typealias RawValue = UIColor
     
     init?(rawValue: RawValue) {
-            switch rawValue {
-            default:
-                return nil
-            }
+        switch rawValue {
+        default:
+            return nil
         }
-
+    }
+    
     var rawValue: RawValue {
-            switch self {
-            case .red:
-                return .red
-            case .blue:
-                return .blue
-            case .green:
-                return . green
-            case .brown:
-                return .brown
-            case .magenta:
-                return .magenta
-            case .purple:
-                return .purple
-            case .orange:
-                return . orange
-            case .yellow:
-                return .yellow
-            case .gray:
-                return .gray
-            case .black:
-                return .black
-            case .cyan:
-                return .cyan
-            }
+        switch self {
+        case .red:
+            return .red
+        case .blue:
+            return .blue
+        case .green:
+            return . green
+        case .brown:
+            return .brown
+        case .magenta:
+            return .magenta
+        case .purple:
+            return .purple
+        case .orange:
+            return . orange
+        case .yellow:
+            return .yellow
+        case .gray:
+            return .gray
+        case .black:
+            return .black
+        case .cyan:
+            return .cyan
         }
+    }
 }
