@@ -11,6 +11,10 @@
 		6D482523284870620034D6E5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D482522284870620034D6E5 /* ThirdViewController.swift */; };
 		6D4825252848737F0034D6E5 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4825242848737F0034D6E5 /* FourthViewController.swift */; };
 		6D4825272848767D0034D6E5 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4825262848767D0034D6E5 /* FifthViewController.swift */; };
+		6D48252B2848794C0034D6E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48252A2848794C0034D6E5 /* MainViewController.swift */; };
+		6D48252D284879800034D6E5 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D48252C284879800034D6E5 /* Second.storyboard */; };
+		6D48253028487A0B0034D6E5 /* AdditionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48252F28487A0B0034D6E5 /* AdditionalViewController.swift */; };
+		6D48253228487BFA0034D6E5 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48253128487BFA0034D6E5 /* Animal.swift */; };
 		6DAE7D3A2847FCD90085DF7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAE7D392847FCD90085DF7D /* AppDelegate.swift */; };
 		6DAE7D3C2847FCD90085DF7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAE7D3B2847FCD90085DF7D /* SceneDelegate.swift */; };
 		6DAE7D3E2847FCD90085DF7D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAE7D3D2847FCD90085DF7D /* FirstViewController.swift */; };
@@ -24,6 +28,10 @@
 		6D482522284870620034D6E5 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		6D4825242848737F0034D6E5 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		6D4825262848767D0034D6E5 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		6D48252A2848794C0034D6E5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6D48252C284879800034D6E5 /* Second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		6D48252F28487A0B0034D6E5 /* AdditionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalViewController.swift; sourceTree = "<group>"; };
+		6D48253128487BFA0034D6E5 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		6DAE7D362847FCD90085DF7D /* HomeWork_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAE7D392847FCD90085DF7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DAE7D3B2847FCD90085DF7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,17 @@
 			path = FirstTask;
 			sourceTree = "<group>";
 		};
+		6D48252E284879890034D6E5 /* SecondTask */ = {
+			isa = PBXGroup;
+			children = (
+				6D48253128487BFA0034D6E5 /* Animal.swift */,
+				6D48252A2848794C0034D6E5 /* MainViewController.swift */,
+				6D48252F28487A0B0034D6E5 /* AdditionalViewController.swift */,
+				6D48252C284879800034D6E5 /* Second.storyboard */,
+			);
+			path = SecondTask;
+			sourceTree = "<group>";
+		};
 		6DAE7D2D2847FCD90085DF7D = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 				6DAE7D392847FCD90085DF7D /* AppDelegate.swift */,
 				6DAE7D3B2847FCD90085DF7D /* SceneDelegate.swift */,
 				6D48251F28486AFF0034D6E5 /* FirstTask */,
+				6D48252E284879890034D6E5 /* SecondTask */,
 				6DAE7D422847FCD90085DF7D /* Assets.xcassets */,
 				6DAE7D442847FCD90085DF7D /* LaunchScreen.storyboard */,
 				6DAE7D472847FCD90085DF7D /* Info.plist */,
@@ -145,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D48252D284879800034D6E5 /* Second.storyboard in Resources */,
 				6DAE7D462847FCD90085DF7D /* LaunchScreen.storyboard in Resources */,
 				6DAE7D432847FCD90085DF7D /* Assets.xcassets in Resources */,
 				6DAE7D412847FCD90085DF7D /* Main.storyboard in Resources */,
@@ -158,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D48253028487A0B0034D6E5 /* AdditionalViewController.swift in Sources */,
 				6D4825252848737F0034D6E5 /* FourthViewController.swift in Sources */,
 				6D48252128486B600034D6E5 /* SecondViewController.swift in Sources */,
 				6DAE7D3E2847FCD90085DF7D /* FirstViewController.swift in Sources */,
@@ -165,6 +187,8 @@
 				6DAE7D3A2847FCD90085DF7D /* AppDelegate.swift in Sources */,
 				6DAE7D3C2847FCD90085DF7D /* SceneDelegate.swift in Sources */,
 				6D4825272848767D0034D6E5 /* FifthViewController.swift in Sources */,
+				6D48252B2848794C0034D6E5 /* MainViewController.swift in Sources */,
+				6D48253228487BFA0034D6E5 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
