@@ -10,10 +10,8 @@ import UIKit
 class AdditionalViewController: UIViewController {
     
     //MARK: - Public Properties
-    var animalName = ""
-    var animalMaxAge = 0
-    var animalSpeed = 0
-    
+    var animal = Animal(name: "", maxAge: 0, speed: 0)
+
     //MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -23,8 +21,8 @@ class AdditionalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = animalName
-        ageLabel.text = "Max Age: \(animalMaxAge)"
-        speedLabel.text = "Max Speed: \(animalSpeed)"
+        nameLabel.text = animal.name
+        ageLabel.text = "Max Age: \(animal.maxAge)"
+        speedLabel.text = "Max Speed: \(animal.speed)"
     }
 }

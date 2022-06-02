@@ -20,9 +20,9 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AdditionalViewController" {
             let destinationVC = segue.destination as! AdditionalViewController
-            destinationVC.animalName = animal.name
-            destinationVC.animalMaxAge = animal.maxAge
-            destinationVC.animalSpeed = animal.speed
+            destinationVC.animal = animal
+//            destinationVC.animalMaxAge = animal.maxAge
+//            destinationVC.animalSpeed = animal.speed
         }
     }
     
@@ -37,9 +37,9 @@ class MainViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as! AdditionalViewController
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
-        viewController.animalName = animal.name
-        viewController.animalMaxAge = animal.maxAge
-        viewController.animalSpeed = animal.speed
+        viewController.animal = animal
+//        viewController.animalMaxAge = animal.maxAge
+//        viewController.animalSpeed = animal.speed
         present(viewController, animated: true)
     }
     
