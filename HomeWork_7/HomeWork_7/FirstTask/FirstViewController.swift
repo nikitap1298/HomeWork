@@ -12,7 +12,7 @@ class FirstViewController: UIViewController {
     //MARK: - Public Properties
     var greeting = "Hello World"
     
-    //MARK: - LifeCycle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

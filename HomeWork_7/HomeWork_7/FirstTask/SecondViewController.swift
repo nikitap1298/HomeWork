@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
     //MARK: - Public Properties
     var greeting = ""
     
-    //MARK: - LifeCycle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown

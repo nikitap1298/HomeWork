@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     //MARK: - Public Properties
     let animal = Animal(name: "Leopard", maxAge: 17, speed: 58)
     
-    //MARK: - LifeCycle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }

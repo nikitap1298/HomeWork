@@ -15,7 +15,7 @@ class FifthViewController: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var textLabel: UILabel!
     
-    //MARK: - LifeCycle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
