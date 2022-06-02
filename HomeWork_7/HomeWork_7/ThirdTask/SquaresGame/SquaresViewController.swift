@@ -15,8 +15,9 @@ class SquaresViewController: UIViewController {
     private var y: Int = 0
     
     // User must to change only side value
-    let side = 15
-    let square = UIView()
+    private let side = 15
+    private let square = UIView()
+    private lazy var backButton = makeBackButton()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -31,6 +32,19 @@ class SquaresViewController: UIViewController {
         square.backgroundColor = .red
         view.addSubview(square)
         
+        view.addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            backButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapBackButton() {
+        dismiss(animated: true)
     }
     
     //MARK: - IBAction
@@ -62,6 +76,15 @@ class SquaresViewController: UIViewController {
 //                print(square.frame.origin)
             }
         }
+        view.bringSubviewToFront(backButton)
+    }
+    
+    private func makeBackButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .orange
+        button.setTitle("Onboarding", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }
 
 }

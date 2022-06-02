@@ -11,6 +11,7 @@ class CatGameViewController: UIViewController {
     
     //MARK: - Private Properties
     private let catToy = UIView()
+    private lazy var backButton = makeBackButton()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -32,17 +33,31 @@ class CatGameViewController: UIViewController {
         
         catToy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
         
+        view.addSubview(backButton)
+        NSLayoutConstraint.activate([
+            backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            backButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        
     }
     
     //MARK: - IBActions
-    @objc func didTap() {
+    @objc private func didTap() {
         randomPlace()
         randomColor()
     }
     
+    @objc private func didTapBackButton() {
+        dismiss(animated: true)
+    }
+    
     //MARK: - Private Functions
     private func randomPlace() {
-        self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height), width: catToy.frame.width, height: catToy.frame.width)
+        self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height - 40), width: catToy.frame.width, height: catToy.frame.width)
     }
     
     private func randomColor() {
@@ -52,6 +67,14 @@ class CatGameViewController: UIViewController {
         let randomColor = UIColor(red: redR, green: greenR, blue: blueR, alpha: 1)
         
         catToy.backgroundColor = randomColor
+    }
+    
+    private func makeBackButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .orange
+        button.setTitle("Onboarding", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }
     
 }
