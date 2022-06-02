@@ -21,8 +21,6 @@ class MainViewController: UIViewController {
         if segue.identifier == "AdditionalViewController" {
             let destinationVC = segue.destination as! AdditionalViewController
             destinationVC.animal = animal
-//            destinationVC.animalMaxAge = animal.maxAge
-//            destinationVC.animalSpeed = animal.speed
         }
     }
     
@@ -38,8 +36,6 @@ class MainViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
         viewController.animal = animal
-//        viewController.animalMaxAge = animal.maxAge
-//        viewController.animalSpeed = animal.speed
         present(viewController, animated: true)
     }
     
