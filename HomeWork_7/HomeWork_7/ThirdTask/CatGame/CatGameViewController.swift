@@ -45,7 +45,6 @@ class CatGameViewController: UIViewController {
         
     }
     
-    //MARK: - IBActions
     @objc private func didTap() {
         randomPlace()
         randomColor()
