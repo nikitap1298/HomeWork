@@ -18,13 +18,6 @@ class SecondViewController: UIViewController {
         view.backgroundColor = .brown
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ThirdViewController" {
-            let destinationVC = segue.destination as! ThirdViewController
-            destinationVC.greeting = greeting
-        }
-    }
-    
     //MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
         showThirdVC()

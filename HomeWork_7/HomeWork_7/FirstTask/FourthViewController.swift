@@ -19,13 +19,6 @@ class FourthViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "FifthViewController" {
-            let destinationVC = segue.destination as! FifthViewController
-            destinationVC.greeting = greeting
-        }
-    }
-    
     //MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
         showFifthVC()

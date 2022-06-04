@@ -19,12 +19,12 @@ class FirstViewController: UIViewController {
         view.backgroundColor = .orange
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SecondViewController" {
-            let destinationVC = segue.destination as! SecondViewController
-            destinationVC.greeting = greeting
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "SecondViewController" {
+//            let destinationVC = segue.destination as! SecondViewController
+//            destinationVC.greeting = greeting
+//        }
+//    }
     
     //MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
