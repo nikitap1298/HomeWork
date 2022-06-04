@@ -29,7 +29,7 @@ class OnboardingViewController: UIViewController {
         showRace()
     }
     
-    // MARK: - Private Properties
+    // MARK: - Private Functions
     private func showCatGame() {
         let storyboard = UIStoryboard(name: "CatGame", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CatGameViewController")
