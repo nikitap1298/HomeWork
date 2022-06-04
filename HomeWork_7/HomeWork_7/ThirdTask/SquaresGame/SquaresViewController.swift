@@ -9,7 +9,7 @@ import UIKit
 
 class SquaresViewController: UIViewController {
     
-    //MARK: - Private Properties
+    // MARK: - Private Properties
     private var n: Int = 0
     private var x: Int = 0
     private var y: Int = 0
@@ -19,7 +19,7 @@ class SquaresViewController: UIViewController {
     private let square = UIView()
     private lazy var backButton = makeBackButton()
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,12 +47,12 @@ class SquaresViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    //MARK: - IBAction
+    // MARK: - IBAction
     @IBAction func fillButton(_ sender: UIButton) {
         fill()
     }
     
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func fill() {
         let numberH = Int(view.frame.maxX / square.frame.width) + 1
         let numberV = Int(view.frame.maxY / square.frame.height) + 1

@@ -9,11 +9,11 @@ import UIKit
 
 class CatGameViewController: UIViewController {
     
-    //MARK: - Private Properties
+    // MARK: - Private Properties
     private let catToy = UIView()
     private lazy var backButton = makeBackButton()
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +54,7 @@ class CatGameViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func randomPlace() {
         self.catToy.frame = CGRect(x: .random(in: 0..<view.frame.maxX - catToy.frame.width), y: .random(in: 0..<view.frame.maxY - catToy.frame.height - 40), width: catToy.frame.width, height: catToy.frame.width)
     }

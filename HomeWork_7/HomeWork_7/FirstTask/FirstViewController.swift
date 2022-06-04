@@ -9,10 +9,10 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-    //MARK: - Public Properties
+    // MARK: - Public Properties
     var greeting = "Hello World"
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,12 +26,12 @@ class FirstViewController: UIViewController {
 //        }
 //    }
     
-    //MARK: - IBAction
+    // MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
         showSecondVC()
     }
     
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func showSecondVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController

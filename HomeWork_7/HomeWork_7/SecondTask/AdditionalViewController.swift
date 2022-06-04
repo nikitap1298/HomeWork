@@ -9,15 +9,15 @@ import UIKit
 
 class AdditionalViewController: UIViewController {
     
-    //MARK: - Public Properties
+    // MARK: - Public Properties
     var animal = Animal(name: "", maxAge: 0, speed: 0)
 
-    //MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -9,21 +9,21 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
-    //MARK: - Public Properties
+    // MARK: - Public Properties
     var greeting = ""
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
     }
     
-    //MARK: - IBAction
+    // MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
         showFourthVC()
     }
     
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func showFourthVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "FourthViewController") as! FourthViewController

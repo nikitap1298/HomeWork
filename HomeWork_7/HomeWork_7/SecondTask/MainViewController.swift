@@ -9,10 +9,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    //MARK: - Public Properties
+    // MARK: - Public Properties
     let animal = Animal(name: "Leopard", maxAge: 17, speed: 58)
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,12 +24,12 @@ class MainViewController: UIViewController {
         }
     }
     
-    //MARK: - IBAction
+    // MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
         showAnotherScreen()
     }
     
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func showAnotherScreen() {
         let storyboard = UIStoryboard(name: "Second", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as! AdditionalViewController

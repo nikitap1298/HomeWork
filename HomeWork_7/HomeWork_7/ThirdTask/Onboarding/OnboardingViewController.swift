@@ -9,14 +9,14 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .orange
     }
     
-    //MARK: - IBActions
+    // MARK: - IBActions
     @IBAction func catGameButton(_ sender: UIButton) {
         showCatGame()
     }
@@ -29,7 +29,7 @@ class OnboardingViewController: UIViewController {
         showRace()
     }
     
-    //MARK: - Private Properties
+    // MARK: - Private Properties
     private func showCatGame() {
         let storyboard = UIStoryboard(name: "CatGame", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CatGameViewController")

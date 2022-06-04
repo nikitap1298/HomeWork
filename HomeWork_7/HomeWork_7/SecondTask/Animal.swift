@@ -8,6 +8,8 @@
 import Foundation
 
 class Animal {
+    
+    // MARK: - Public Properties
     var name: String
     var maxAge: Int
     var speed: Int

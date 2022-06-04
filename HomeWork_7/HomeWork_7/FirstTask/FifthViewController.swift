@@ -9,13 +9,13 @@ import UIKit
 
 class FifthViewController: UIViewController {
     
-    //MARK: - Public Properties
+    // MARK: - Public Properties
     var greeting = ""
     
-    //MARK: - IBOutlet
+    // MARK: - IBOutlet
     @IBOutlet weak var textLabel: UILabel!
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -9,11 +9,11 @@ import UIKit
 
 class RaceViewController: UIViewController {
     
-    //MARK: - Private Properties
+    // MARK: - Private Properties
     
     private lazy var backButton = makeBackButton()
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,7 +34,7 @@ class RaceViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func makeBackButton() -> UIButton {
         let button = UIButton()
         button.backgroundColor = .orange
