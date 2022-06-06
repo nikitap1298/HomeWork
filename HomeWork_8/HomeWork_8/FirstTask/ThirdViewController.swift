@@ -15,7 +15,19 @@ class ThirdViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .orange
+        
+        let leftButton = UIButton()
+        leftButton.setTitle("Second Screen", for: .normal)
+        leftButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
+        
+        let leftButtonItem = UIBarButtonItem(customView: leftButton)
+        navigationItem.leftBarButtonItem = leftButtonItem
+    }
+    
+    @objc private func tapBackButton() {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - IBAction
@@ -30,6 +42,6 @@ class ThirdViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
         viewController.greeting = greeting
-        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

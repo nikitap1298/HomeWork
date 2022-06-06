@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
         viewController.animal = animal
-        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

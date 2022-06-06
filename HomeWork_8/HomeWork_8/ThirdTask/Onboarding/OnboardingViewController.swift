@@ -35,7 +35,7 @@ class OnboardingViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "CatGameViewController")
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
-        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func showSquaresGame() {
@@ -43,7 +43,7 @@ class OnboardingViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "SquaresViewController")
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
-        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func showRace() {
@@ -51,6 +51,6 @@ class OnboardingViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "RaceViewController")
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
-        present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

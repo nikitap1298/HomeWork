@@ -15,16 +15,9 @@ class FirstViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         view.backgroundColor = .orange
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SecondViewController" {
-//            let destinationVC = segue.destination as! SecondViewController
-//            destinationVC.greeting = greeting
-//        }
-//    }
     
     // MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
@@ -38,8 +31,7 @@ class FirstViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
         viewController.greeting = greeting
-        present(viewController, animated: true)
-        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
