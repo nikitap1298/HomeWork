@@ -16,13 +16,13 @@ class CircleToyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pressGesture = UITapGestureRecognizer()
-        pressGesture.addTarget(self, action: #selector(pressOnScreen(recognizer: )))
-        view.addGestureRecognizer(pressGesture)
+        let pressScreenGesture = UITapGestureRecognizer()
+        pressScreenGesture.addTarget(self, action: #selector(pressOnScreen(recognizer: )))
+        view.addGestureRecognizer(pressScreenGesture)
         
-        let pressToy = UITapGestureRecognizer()
-        pressToy.addTarget(self, action: #selector(pressOnToy(recogrinzer: )))
-        circleToy.addGestureRecognizer(pressToy)
+        let pressToyGesture = UITapGestureRecognizer()
+        pressToyGesture.addTarget(self, action: #selector(pressOnToy(recogrinzer: )))
+        circleToy.addGestureRecognizer(pressToyGesture)
         
         circleToy.frame.size = CGSize(width: 100, height: 100)
     }
