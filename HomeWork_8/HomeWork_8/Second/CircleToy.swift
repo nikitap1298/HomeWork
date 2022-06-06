@@ -20,6 +20,10 @@ class CircleToyViewController: UIViewController {
         pressGesture.addTarget(self, action: #selector(pressOnScreen(recognizer: )))
         view.addGestureRecognizer(pressGesture)
         
+        let pressToy = UITapGestureRecognizer()
+        pressToy.addTarget(self, action: #selector(pressOnToy(recogrinzer: )))
+        circleToy.addGestureRecognizer(pressToy)
+        
         circleToy.frame.size = CGSize(width: 100, height: 100)
     }
     
@@ -27,10 +31,15 @@ class CircleToyViewController: UIViewController {
         let touchPointX = recognizer.location(in: self.view).x
         let touchPointY = recognizer.location(in: self.view).y
     
+        circleToy.isHidden = false
         circleToy.backgroundColor = .red
         circleToy.frame = CGRect(x: touchPointX - circleToy.frame.height / 2, y: touchPointY - circleToy.frame.width / 2, width: circleToy.frame.width, height: circleToy.frame.height)
         circleToy.layer.cornerRadius = circleToy.frame.width / 2
         view.addSubview(circleToy)
+    }
+    
+    @objc private func pressOnToy(recogrinzer: UITapGestureRecognizer) {
+        circleToy.isHidden = true
     }
     
 }
