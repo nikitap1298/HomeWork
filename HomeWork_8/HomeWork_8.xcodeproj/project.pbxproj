@@ -99,6 +99,16 @@
 			path = SecondTask;
 			sourceTree = "<group>";
 		};
+		6D55A206284E9723009E9A75 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				6D48251F28486AFF0034D6E5 /* FirstTask */,
+				6D48252E284879890034D6E5 /* SecondTask */,
+				6D8572DD2848FC7E00CF7D03 /* ThirdTask */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
 		6D8572DD2848FC7E00CF7D03 /* ThirdTask */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,9 +180,7 @@
 			children = (
 				6DAE7D392847FCD90085DF7D /* AppDelegate.swift */,
 				6DAE7D3B2847FCD90085DF7D /* SceneDelegate.swift */,
-				6D48251F28486AFF0034D6E5 /* FirstTask */,
-				6D48252E284879890034D6E5 /* SecondTask */,
-				6D8572DD2848FC7E00CF7D03 /* ThirdTask */,
+				6D55A206284E9723009E9A75 /* First */,
 				6DAE7D422847FCD90085DF7D /* Assets.xcassets */,
 				6DAE7D442847FCD90085DF7D /* LaunchScreen.storyboard */,
 				6DAE7D472847FCD90085DF7D /* Info.plist */,
