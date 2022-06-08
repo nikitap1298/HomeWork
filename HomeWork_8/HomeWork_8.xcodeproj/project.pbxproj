@@ -23,6 +23,7 @@
 		6D55A214284EB4AA009E9A75 /* CircleMove.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D55A213284EB4AA009E9A75 /* CircleMove.storyboard */; };
 		6D5FC68C2850B0590084E33B /* CircleToyOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FC68B2850B0590084E33B /* CircleToyOnboarding.swift */; };
 		6D5FC68E2850B2690084E33B /* CircleOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FC68D2850B2690084E33B /* CircleOnboarding.swift */; };
+		6D5FC6902850B4260084E33B /* CircleMoveOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FC68F2850B4260084E33B /* CircleMoveOnboarding.swift */; };
 		6D8572DC2848FC1E00CF7D03 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8572DB2848FC1E00CF7D03 /* OnboardingViewController.swift */; };
 		6D8572DF2848FCB000CF7D03 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8572DE2848FCB000CF7D03 /* Onboarding.storyboard */; };
 		6D8572E12848FDCD00CF7D03 /* CatGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8572E02848FDCD00CF7D03 /* CatGameViewController.swift */; };
@@ -59,6 +60,7 @@
 		6D55A213284EB4AA009E9A75 /* CircleMove.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleMove.storyboard; sourceTree = "<group>"; };
 		6D5FC68B2850B0590084E33B /* CircleToyOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleToyOnboarding.swift; sourceTree = "<group>"; };
 		6D5FC68D2850B2690084E33B /* CircleOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleOnboarding.swift; sourceTree = "<group>"; };
+		6D5FC68F2850B4260084E33B /* CircleMoveOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMoveOnboarding.swift; sourceTree = "<group>"; };
 		6D8572DB2848FC1E00CF7D03 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		6D8572DE2848FCB000CF7D03 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		6D8572E02848FDCD00CF7D03 /* CatGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatGameViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		6D55A215284EB4AE009E9A75 /* Fourth */ = {
 			isa = PBXGroup;
 			children = (
+				6D5FC68F2850B4260084E33B /* CircleMoveOnboarding.swift */,
 				6D55A211284EB49C009E9A75 /* CircleMove.swift */,
 				6D55A213284EB4AA009E9A75 /* CircleMove.storyboard */,
 			);
@@ -333,6 +336,7 @@
 				6D8572EE284903A900CF7D03 /* RaceViewController.swift in Sources */,
 				6D4825272848767D0034D6E5 /* FifthViewController.swift in Sources */,
 				6D48252B2848794C0034D6E5 /* MainViewController.swift in Sources */,
+				6D5FC6902850B4260084E33B /* CircleMoveOnboarding.swift in Sources */,
 				6D5FC68E2850B2690084E33B /* CircleOnboarding.swift in Sources */,
 				6D8572DC2848FC1E00CF7D03 /* OnboardingViewController.swift in Sources */,
 				6D48253228487BFA0034D6E5 /* Animal.swift in Sources */,
