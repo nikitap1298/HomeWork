@@ -12,6 +12,9 @@ class CircleViewController: UIViewController {
     // MARK: - Private Properties
     private var circle = UIView()
     
+    // MARK: - IBOutlet
+    @IBOutlet weak var textLabel: UILabel!
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,18 +43,30 @@ class CircleViewController: UIViewController {
         case .up:
             if circle.frame.minY >= view.frame.minY + 60 {
                 circle.frame.origin.y -= 30
+                textLabel.text = "Up"
+            } else {
+                textLabel.text = "Error"
             }
         case .left:
             if circle.frame.minX > view.frame.minX + 30 {
                 circle.center.x -= 30
+                textLabel.text = "Left"
+            } else {
+                textLabel.text = "Error"
             }
         case .right:
             if circle.frame.maxX <= view.frame.maxX - 30 {
                 circle.center.x += 30
+                textLabel.text = "Right"
+            } else {
+                textLabel.text = "Error"
             }
         case .down:
             if circle.frame.maxY <= CGFloat(800.0) {
                 circle.center.y += 30
+                textLabel.text = "Down"
+            } else {
+                textLabel.text = "Error"
             }
         default:
             print("Error")
