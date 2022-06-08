@@ -21,17 +21,16 @@ class CircleMoveViewController: UIViewController {
         view.addGestureRecognizer(panScreenGesture)
         
         circleToy.frame.size = CGSize(width: 100, height: 100)
+        circleToy.isHidden = false
+        circleToy.backgroundColor = .red
+        circleToy.layer.cornerRadius = circleToy.frame.width / 2
+        view.addSubview(circleToy)
     }
     
     @objc private func didPanGesture(recognizer: UIPanGestureRecognizer) {
         let touchPointX = recognizer.location(in: self.view).x
         let touchPointY = recognizer.location(in: self.view).y
-    
-        circleToy.isHidden = false
-        circleToy.backgroundColor = .red
-        circleToy.frame = CGRect(x: touchPointX - circleToy.frame.height / 2, y: touchPointY - circleToy.frame.width / 2, width: circleToy.frame.width, height: circleToy.frame.height)
-        circleToy.layer.cornerRadius = circleToy.frame.width / 2
-        view.addSubview(circleToy)
+        circleToy.frame.origin = CGPoint(x: touchPointX - circleToy.frame.height / 2, y: touchPointY - circleToy.frame.width / 2)
     }
     
 }
