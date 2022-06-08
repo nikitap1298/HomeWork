@@ -54,7 +54,7 @@
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="AC">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVT-OU-Eeh" userLabel="AC">
@@ -63,7 +63,7 @@
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="+/-">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnS-g8-aLx" userLabel="AC">
@@ -72,7 +72,7 @@
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="%">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-AW-saI" userLabel="AC">
@@ -81,7 +81,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="÷">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -95,7 +95,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="7">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgx-fD-4Rm">
@@ -104,7 +104,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="8">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgE-ff-g0Q">
@@ -113,7 +113,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="9">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQb-WF-5hu">
@@ -122,7 +122,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="X">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -136,7 +136,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="4">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-A3-QDe">
@@ -145,7 +145,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="5">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvq-GX-B69">
@@ -154,7 +154,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="6">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-LB-6RB">
@@ -163,7 +163,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="-">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -177,7 +177,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="1">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgF-Ol-kc1">
@@ -186,7 +186,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="2">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-Ip-k22">
@@ -195,7 +195,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="3">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftd-6X-O64">
@@ -204,7 +204,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="+">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -218,7 +218,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="0">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VOU-n8-bvq">
@@ -230,7 +230,7 @@
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title=",">
-                                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                                 </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-Se-k3X">
@@ -239,7 +239,7 @@
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="=">
-                                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                                 </buttonConfiguration>
                                                             </button>
                                                         </subviews>
