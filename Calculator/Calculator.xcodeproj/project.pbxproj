@@ -37,6 +37,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D1DD65028515CEA003C0A18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D66232F285132F500148564 /* CalculatorViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6D1DD65128515CF2003C0A18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D662331285132F500148564 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6D66231F285132F500148564 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +74,8 @@
 			children = (
 				6D66232B285132F500148564 /* AppDelegate.swift */,
 				6D66232D285132F500148564 /* SceneDelegate.swift */,
-				6D66232F285132F500148564 /* CalculatorViewController.swift */,
-				6D662331285132F500148564 /* Main.storyboard */,
+				6D1DD65028515CEA003C0A18 /* Controller */,
+				6D1DD65128515CF2003C0A18 /* View */,
 				6D662334285132F600148564 /* Assets.xcassets */,
 				6D662336285132F600148564 /* LaunchScreen.storyboard */,
 				6D662339285132F600148564 /* Info.plist */,
