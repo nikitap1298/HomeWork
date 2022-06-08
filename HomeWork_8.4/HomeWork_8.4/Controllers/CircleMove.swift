@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  CircleMove.swift
 //  HomeWork_8.4
 //
-//  Created by Nikita Pishchugin on 07.06.2022.
+//  Created by Nikita Pishchugin on 08.06.2022.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class CircleMoveViewController: UIViewController {
+    
     // MARK: - Private Properties
     private let circleToy = UIView()
     
@@ -33,6 +33,5 @@ class ViewController: UIViewController {
         circleToy.layer.cornerRadius = circleToy.frame.width / 2
         view.addSubview(circleToy)
     }
-
+    
 }
-

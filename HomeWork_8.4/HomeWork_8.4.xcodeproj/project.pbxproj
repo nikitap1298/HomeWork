@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		6D394AE9284FBF1B00373322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D394AE8284FBF1B00373322 /* AppDelegate.swift */; };
 		6D394AEB284FBF1B00373322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D394AEA284FBF1B00373322 /* SceneDelegate.swift */; };
-		6D394AED284FBF1B00373322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D394AEC284FBF1B00373322 /* ViewController.swift */; };
 		6D394AF0284FBF1B00373322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D394AEE284FBF1B00373322 /* Main.storyboard */; };
 		6D394AF2284FBF1C00373322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D394AF1284FBF1C00373322 /* Assets.xcassets */; };
 		6D394AF5284FBF1C00373322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D394AF3284FBF1C00373322 /* LaunchScreen.storyboard */; };
+		6D5FC6922850B58A0084E33B /* CircleMoveOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FC6912850B58A0084E33B /* CircleMoveOnboarding.swift */; };
+		6D5FC6942850B7730084E33B /* CircleMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FC6932850B7730084E33B /* CircleMove.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D394AE5284FBF1B00373322 /* HomeWork_8.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_8.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D394AE8284FBF1B00373322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D394AEA284FBF1B00373322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6D394AEC284FBF1B00373322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D394AEF284FBF1B00373322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D394AF1284FBF1C00373322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D394AF4284FBF1C00373322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D394AF6284FBF1C00373322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D5FC6912850B58A0084E33B /* CircleMoveOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMoveOnboarding.swift; sourceTree = "<group>"; };
+		6D5FC6932850B7730084E33B /* CircleMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMove.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,22 @@
 			children = (
 				6D394AE8284FBF1B00373322 /* AppDelegate.swift */,
 				6D394AEA284FBF1B00373322 /* SceneDelegate.swift */,
-				6D394AEC284FBF1B00373322 /* ViewController.swift */,
+				6D5FC6952850B8240084E33B /* Controllers */,
 				6D394AEE284FBF1B00373322 /* Main.storyboard */,
 				6D394AF1284FBF1C00373322 /* Assets.xcassets */,
 				6D394AF3284FBF1C00373322 /* LaunchScreen.storyboard */,
 				6D394AF6284FBF1C00373322 /* Info.plist */,
 			);
 			path = HomeWork_8.4;
+			sourceTree = "<group>";
+		};
+		6D5FC6952850B8240084E33B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D5FC6912850B58A0084E33B /* CircleMoveOnboarding.swift */,
+				6D5FC6932850B7730084E33B /* CircleMove.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D394AED284FBF1B00373322 /* ViewController.swift in Sources */,
+				6D5FC6942850B7730084E33B /* CircleMove.swift in Sources */,
+				6D5FC6922850B58A0084E33B /* CircleMoveOnboarding.swift in Sources */,
 				6D394AE9284FBF1B00373322 /* AppDelegate.swift in Sources */,
 				6D394AEB284FBF1B00373322 /* SceneDelegate.swift in Sources */,
 			);
