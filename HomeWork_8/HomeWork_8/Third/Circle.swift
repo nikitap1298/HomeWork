@@ -38,6 +38,7 @@ class CircleViewController: UIViewController {
         view.addGestureRecognizer(swipeGesture(for: .down))
     }
     
+    // MARK: - Action
     @objc private func didSwipe(recognizer: UISwipeGestureRecognizer) {
         switch recognizer.direction {
         case .up:

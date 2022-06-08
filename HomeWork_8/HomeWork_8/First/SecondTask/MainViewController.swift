@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    // MARK: - IBAction
+    // MARK: - Action
     @IBAction func screenButton(_ sender: UIButton) {
         showAnotherScreen()
     }

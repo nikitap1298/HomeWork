@@ -16,7 +16,7 @@ class CircleMoveOnboardingViewController: UIViewController {
         view.backgroundColor = .orange
     }
     
-    // MARK: - IBAction
+    // MARK: - Action
     @IBAction func screenButton(_ sender: UIButton) {
         showCircleScreen()
     }

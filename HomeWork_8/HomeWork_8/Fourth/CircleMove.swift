@@ -26,6 +26,7 @@ class CircleMoveViewController: UIViewController {
         view.addSubview(circleToy)
     }
     
+    // MARK: - Action
     @objc private func didPanGesture(recognizer: UIPanGestureRecognizer) {
         let touchPointX = recognizer.location(in: self.view).x
         let touchPointY = recognizer.location(in: self.view).y

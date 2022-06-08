@@ -33,11 +33,11 @@ class SquaresViewController: UIViewController {
         
     }
     
+    // MARK: - Action
     @objc private func didTapBackButton() {
         dismiss(animated: true)
     }
-    
-    // MARK: - IBAction
+
     @IBAction func fillButton(_ sender: UIButton) {
         fill()
     }
@@ -47,7 +47,6 @@ class SquaresViewController: UIViewController {
         let numberH = Int(view.frame.maxX / square.frame.width) + 1
         let numberV = Int(view.frame.maxY / square.frame.height) + 1
         let total = numberH * numberV
-        
         if side >= 10 {
             for _ in 0...total {
                 let minX = view.frame.minX

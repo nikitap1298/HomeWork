@@ -24,15 +24,14 @@ class CatGameViewController: UIViewController {
         
         let xCenter = view.frame.midX
         let yCenter = view.frame.midY
-        
         catToy.backgroundColor = .red
         catToy.frame = CGRect(x: xCenter - catToy.frame.width / 2, y: yCenter - catToy.frame.height / 2, width: catToy.frame.width, height: catToy.frame.height)
         catToy.layer.cornerRadius = catToy.frame.width / 2
         view.addSubview(catToy)
-        
         catToy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
     }
     
+    // MARK: - Action
     @objc private func didTap() {
         randomPlace()
         randomColor()
@@ -48,7 +47,6 @@ class CatGameViewController: UIViewController {
         let greenR = CGFloat.random(in: 0...1)
         let blueR = CGFloat.random(in: 0...1)
         let randomColor = UIColor(red: redR, green: greenR, blue: blueR, alpha: 1)
-        
         catToy.backgroundColor = randomColor
     }
     

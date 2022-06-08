@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController {
         view.backgroundColor = .orange
     }
     
-    // MARK: - IBActions
+    // MARK: - Actions
     @IBAction func catGameButton(_ sender: UIButton) {
         showCatGame()
     }

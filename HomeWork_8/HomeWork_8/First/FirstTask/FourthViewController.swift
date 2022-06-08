@@ -26,11 +26,11 @@ class FourthViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButtonItem
     }
     
+    // MARK: - Action
     @objc private func tapBackButton() {
         navigationController?.popViewController(animated: true)
     }
     
-    // MARK: - IBAction
     @IBAction func screenButton(_ sender: UIButton) {
         showFifthVC()
     }

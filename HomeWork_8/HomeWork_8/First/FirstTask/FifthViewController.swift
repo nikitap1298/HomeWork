@@ -20,9 +20,7 @@ class FifthViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .orange
-        
         textLabel.text = greeting
-        
         let leftButton = UIButton()
         leftButton.setTitle("Fourth Screen", for: .normal)
         leftButton.addTarget(self, action: #selector(tapBackButton), for: .touchUpInside)
@@ -31,11 +29,11 @@ class FifthViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButtonItem
     }
     
+    // MARK: - Action
     @objc private func tapBackButton() {
         navigationController?.popViewController(animated: true)
     }
     
-    // MARK: - IBActions
     @IBAction func showFirstVC(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
     }
