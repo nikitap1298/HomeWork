@@ -25,8 +25,6 @@ class CircleOnboardingViewController: UIViewController {
     private func showCircleScreen() {
         let storyboard = UIStoryboard(name: "Circle", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CircleViewController")
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

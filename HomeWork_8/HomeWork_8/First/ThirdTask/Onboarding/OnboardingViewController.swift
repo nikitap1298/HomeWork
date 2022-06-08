@@ -33,24 +33,18 @@ class OnboardingViewController: UIViewController {
     private func showCatGame() {
         let storyboard = UIStoryboard(name: "CatGame", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CatGameViewController")
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func showSquaresGame() {
         let storyboard = UIStoryboard(name: "SquaresGame", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SquaresViewController")
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func showRace() {
         let storyboard = UIStoryboard(name: "RaceMain", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "RaceViewController")
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

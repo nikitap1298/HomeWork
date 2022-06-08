@@ -14,10 +14,4 @@ struct Animal {
     var maxAge: Int
     var speed: Int
     
-    // MARK: - Life Cycle
-    init(name: String, maxAge: Int, speed: Int) {
-        self.name = name
-        self.maxAge = maxAge
-        self.speed = speed
-    }
 }

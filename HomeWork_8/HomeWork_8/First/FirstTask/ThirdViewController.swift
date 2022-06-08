@@ -39,8 +39,6 @@ class ThirdViewController: UIViewController {
     private func showFourthVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "FourthViewController") as! FourthViewController
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
         viewController.greeting = greeting
         self.navigationController?.pushViewController(viewController, animated: true)
     }

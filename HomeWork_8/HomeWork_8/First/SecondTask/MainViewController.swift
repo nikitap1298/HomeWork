@@ -33,8 +33,6 @@ class MainViewController: UIViewController {
     private func showAnotherScreen() {
         let storyboard = UIStoryboard(name: "Second", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as! AdditionalViewController
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
         viewController.animal = animal
         self.navigationController?.pushViewController(viewController, animated: true)
     }
