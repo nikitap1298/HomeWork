@@ -104,7 +104,7 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    @IBAction func clearButton(_ sender: UIButton) {
+    @IBAction func otherButton(_ sender: UIButton) {
         switch sender.currentTitle {
         case "AC":
             firstNumber = 0

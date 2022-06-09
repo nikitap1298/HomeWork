@@ -13,7 +13,6 @@
 		6D662333285132F500148564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D662331285132F500148564 /* Main.storyboard */; };
 		6D662335285132F600148564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D662334285132F600148564 /* Assets.xcassets */; };
 		6D662338285132F600148564 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D662336285132F600148564 /* LaunchScreen.storyboard */; };
-		6DD314352851A3F20018F139 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD314342851A3F20018F139 /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		6D662334285132F600148564 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D662337285132F600148564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D662339285132F600148564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DD314342851A3F20018F139 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +74,6 @@
 			children = (
 				6D66232B285132F500148564 /* AppDelegate.swift */,
 				6D66232D285132F500148564 /* SceneDelegate.swift */,
-				6DD314362851A3FA0018F139 /* Model */,
 				6D1DD65028515CEA003C0A18 /* Controller */,
 				6D1DD65128515CF2003C0A18 /* View */,
 				6D662334285132F600148564 /* Assets.xcassets */,
@@ -84,14 +81,6 @@
 				6D662339285132F600148564 /* Info.plist */,
 			);
 			path = Calculator;
-			sourceTree = "<group>";
-		};
-		6DD314362851A3FA0018F139 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6DD314342851A3F20018F139 /* CalculatorModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +157,6 @@
 				6D662330285132F500148564 /* CalculatorViewController.swift in Sources */,
 				6D66232C285132F500148564 /* AppDelegate.swift in Sources */,
 				6D66232E285132F500148564 /* SceneDelegate.swift in Sources */,
-				6DD314352851A3F20018F139 /* CalculatorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

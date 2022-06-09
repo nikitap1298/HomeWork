@@ -56,7 +56,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="AC"/>
                                                         <connections>
-                                                            <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5t4-ub-KPV"/>
+                                                            <action selector="otherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KR6-De-1An"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVT-OU-Eeh" userLabel="AC">
@@ -67,7 +67,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="+/-"/>
                                                         <connections>
-                                                            <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHg-ul-pVk"/>
+                                                            <action selector="otherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkz-wb-6c4"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnS-g8-aLx" userLabel="AC">
@@ -78,7 +78,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="%"/>
                                                         <connections>
-                                                            <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QrO-om-K2d"/>
+                                                            <action selector="otherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0dn-iQ-tUI"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-AW-saI" userLabel="AC">
@@ -266,7 +266,7 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title=","/>
                                                                 <connections>
-                                                                    <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3sW-RP-Kuv"/>
+                                                                    <action selector="otherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fGS-Hz-CCf"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAE-Se-k3X">
