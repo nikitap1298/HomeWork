@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -14,35 +14,35 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeWork_9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBI-3D-5Xs">
-                                <rect key="frame" x="47" y="293" width="320" height="320"/>
+                                <rect key="frame" x="95" y="327" width="200" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-Q2-1Sn">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.27605934339999999" green="0.85566603539999997" blue="0.73838348300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MKZ-Q2-1Sn" secondAttribute="height" multiplier="1:1" id="Dcn-EB-2cq"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQw-yr-RbU">
-                                        <rect key="frame" x="170" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="110" y="0.0" width="90" height="90"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bQw-yr-RbU" secondAttribute="height" multiplier="1:1" id="KMC-QS-gdm"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VM-MM-jeU">
-                                        <rect key="frame" x="0.0" y="170" width="150" height="150"/>
+                                        <rect key="frame" x="0.0" y="110" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.41568627450000001" green="0.68235294120000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7VM-MM-jeU" secondAttribute="height" multiplier="1:1" id="Qjo-6v-vef"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0V-Aw-3lt">
-                                        <rect key="frame" x="170" y="170" width="150" height="150"/>
+                                        <rect key="frame" x="110" y="110" width="90" height="90"/>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.37647058820000001" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W0V-Aw-3lt" secondAttribute="height" multiplier="1:1" id="hwR-Mz-jWk"/>
@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="width" secondItem="jBI-3D-5Xs" secondAttribute="height" multiplier="160:160" id="K3a-jB-fm8"/>
                                     <constraint firstItem="W0V-Aw-3lt" firstAttribute="top" secondItem="bQw-yr-RbU" secondAttribute="bottom" constant="20" id="KUU-px-7nC"/>
                                     <constraint firstItem="MKZ-Q2-1Sn" firstAttribute="top" secondItem="jBI-3D-5Xs" secondAttribute="top" id="Mru-cj-ZMQ"/>
-                                    <constraint firstAttribute="height" constant="320" id="VGt-Ll-3VN"/>
+                                    <constraint firstAttribute="height" constant="200" id="VGt-Ll-3VN"/>
                                     <constraint firstItem="MKZ-Q2-1Sn" firstAttribute="top" secondItem="bQw-yr-RbU" secondAttribute="top" id="XXe-Yn-480"/>
                                     <constraint firstAttribute="trailing" secondItem="bQw-yr-RbU" secondAttribute="trailing" id="Ztc-VL-kYl"/>
                                     <constraint firstItem="bQw-yr-RbU" firstAttribute="leading" secondItem="MKZ-Q2-1Sn" secondAttribute="trailing" constant="20" id="ekY-73-A1f"/>
@@ -67,6 +67,28 @@
                                     <constraint firstItem="bQw-yr-RbU" firstAttribute="leading" secondItem="W0V-Aw-3lt" secondAttribute="leading" id="xJR-Y3-q36"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl3-H0-coT">
+                                <rect key="frame" x="223" y="737" width="132" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.68235294120000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Hide"/>
+                                <connections>
+                                    <action selector="hideButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjc-gE-elq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifg-q7-u9c">
+                                <rect key="frame" x="35" y="737" width="132" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.68235294120000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reduce"/>
+                                <connections>
+                                    <action selector="reduceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTR-Yd-DAx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,10 +97,16 @@
                             <constraint firstItem="jBI-3D-5Xs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uhB-Ql-VlN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueSquare" destination="7VM-MM-jeU" id="9Vf-qP-NAl"/>
+                        <outlet property="greenSquare" destination="MKZ-Q2-1Sn" id="bAF-PO-QsV"/>
+                        <outlet property="orangeSquare" destination="W0V-Aw-3lt" id="DKt-wL-fZJ"/>
+                        <outlet property="yellowSquare" destination="bQw-yr-RbU" id="Px7-EP-gfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="85"/>
+            <point key="canvasLocation" x="33.846153846153847" y="83.886255924170612"/>
         </scene>
     </scenes>
     <resources>
