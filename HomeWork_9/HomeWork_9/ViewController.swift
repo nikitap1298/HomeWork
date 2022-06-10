@@ -8,30 +8,38 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Private Properties
+    private let squareHeight: CGFloat = 150
+    
     // MARK: - IBOutlets
     @IBOutlet weak var greenSquare: UIView!
     @IBOutlet weak var yellowSquare: UIView!
     @IBOutlet weak var blueSquare: UIView!
     @IBOutlet weak var orangeSquare: UIView!
+    @IBOutlet var buttonsLabel: [UIButton]!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for i in buttonsLabel {
+            i.layer.cornerRadius = i.frame.height / 2
+        }
+        
         let panScreenGesture = UIPanGestureRecognizer()
         panScreenGesture.addTarget(self, action: #selector(didPanGesture(recognizer: )))
         view.addGestureRecognizer(panScreenGesture)
         
-        let tapSquareGesture = UITapGestureRecognizer()
-        tapSquareGesture.addTarget(self, action: #selector(didTapGesture(recognizer: )))
-        greenSquare.addGestureRecognizer(tapSquareGesture)
+        let tapGestureSquare = UITapGestureRecognizer()
+        tapGestureSquare.addTarget(self, action: #selector(didTapGesture(recognizer: )))
+        greenSquare.addGestureRecognizer(tapGestureSquare)
     }
 
     // MARK: - Actions
     @objc private func didPanGesture(recognizer: UIPanGestureRecognizer) {
-        let touchPointX = recognizer.location(in: self.view).x - view.frame.midX
-        let touchPointY = recognizer.location(in: self.view).y - view.frame.midY
+        let touchPointX = recognizer.location(in: self.view).x - 100
+        let touchPointY = recognizer.location(in: self.view).y - 100
         greenSquare.frame.origin = CGPoint(x: touchPointX, y: touchPointY)
         yellowSquare.frame.origin = CGPoint(x: touchPointX + 110, y: touchPointY)
         blueSquare.frame.origin = CGPoint(x: touchPointX, y: touchPointY + 110)
@@ -40,25 +48,40 @@ class ViewController: UIViewController {
     }
     
     @objc private func didTapGesture(recognizer: UITapGestureRecognizer) {
-        greenSquare.frame.size = CGSize(width: 50, height: 50)
+        setSquareHeight()
     }
     
     @IBAction func reduceButton(_ sender: UIButton) {
-        greenSquare.frame.origin = CGPoint(x: 0, y: 0)
-        yellowSquare.frame.origin = CGPoint(x: 110, y: 0)
-        blueSquare.frame.origin = CGPoint(x: 0, y: 110)
-        orangeSquare.frame.origin = CGPoint(x: 110, y: 110)
+        pressReduce()
     }
-    
     
     @IBAction func hideButton(_ sender: UIButton) {
-        greenSquare.isHidden = true
-        yellowSquare.isHidden = true
-        blueSquare.isHidden = true
-        orangeSquare.isHidden = true
-        
+        hideSquares(true)
     }
     
+    // MARK: - Private Functions
+    private func setSquareHeight() {
+        for constraint in self.greenSquare.constraints {
+            if constraint.identifier == "greenSquareHeight" {
+                constraint.constant = squareHeight
+            }
+        }
+    }
+    
+    private func pressReduce() {
+        greenSquare.frame.origin = CGPoint(x: 95, y: 322)
+        yellowSquare.frame.origin = CGPoint(x: 205, y: 322)
+        blueSquare.frame.origin = CGPoint(x: 95, y: 432)
+        orangeSquare.frame.origin = CGPoint(x: 205, y: 432)
+        hideSquares(false)
+    }
+    
+    private func hideSquares(_ isHide: Bool) {
+        greenSquare.isHidden = isHide
+        yellowSquare.isHidden = isHide
+        blueSquare.isHidden = isHide
+        orangeSquare.isHidden = isHide
+    }
 
 }
 
