@@ -124,6 +124,14 @@ class CalculatorViewController: UIViewController {
             }
             isTyping = false
         default:
+            
+            // Можно таким вариантом, но тогда после запятой можно поставить еще одну запятую (max 2). Поэтому проще использовать другой вариант. Там все работает четко)
+//            let isInt = floor(currentValue) == currentValue
+//            if isInt == false {
+//                return
+//            }
+//            valueLabel.text = valueLabel.text! + "."
+            
             if isTyping && commaPlaced == false {
                 valueLabel.text = valueLabel.text! + "."
                 commaPlaced = true
