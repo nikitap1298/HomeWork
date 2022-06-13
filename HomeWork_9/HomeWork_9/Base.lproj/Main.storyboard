@@ -17,6 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-Q2-1Sn">
+                                <rect key="frame" x="95" y="322" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.27605934339999999" green="0.85566603539999997" blue="0.73838348300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" identifier="greenSquareHeight" id="kD8-r0-sqh"/>
+                                    <constraint firstAttribute="width" secondItem="MKZ-Q2-1Sn" secondAttribute="height" multiplier="1:1" id="rI8-4c-qo9"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQw-yr-RbU">
                                 <rect key="frame" x="205" y="322" width="90" height="90"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -39,14 +47,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W0V-Aw-3lt" secondAttribute="height" multiplier="1:1" id="RzA-St-boc"/>
                                     <constraint firstAttribute="height" constant="90" id="p2G-xc-fG8"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKZ-Q2-1Sn">
-                                <rect key="frame" x="95" y="322" width="90" height="90"/>
-                                <color key="backgroundColor" red="0.27605934339999999" green="0.85566603539999997" blue="0.73838348300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" identifier="greenSquareHeight" id="kD8-r0-sqh"/>
-                                    <constraint firstAttribute="width" secondItem="MKZ-Q2-1Sn" secondAttribute="height" multiplier="1:1" id="rI8-4c-qo9"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="egD-oB-oHm">
@@ -86,19 +86,31 @@
                             <constraint firstItem="W0V-Aw-3lt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="55" id="GJi-VN-2b9"/>
                             <constraint firstItem="bQw-yr-RbU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="55" id="Mue-Iw-btE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="egD-oB-oHm" secondAttribute="bottom" constant="20" id="RMc-7t-vAh"/>
-                            <constraint firstItem="7VM-MM-jeU" firstAttribute="top" secondItem="MKZ-Q2-1Sn" secondAttribute="bottom" constant="20" id="TZk-DY-LuT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egD-oB-oHm" secondAttribute="trailing" constant="35" id="WCi-ft-5K5"/>
                             <constraint firstItem="7VM-MM-jeU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-55" id="WSh-5V-WqD"/>
                             <constraint firstItem="egD-oB-oHm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="XOl-04-jvK"/>
                             <constraint firstItem="bQw-yr-RbU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-55" id="cER-ZI-fRD"/>
-                            <constraint firstItem="bQw-yr-RbU" firstAttribute="leading" secondItem="MKZ-Q2-1Sn" secondAttribute="trailing" constant="20" id="mLI-NT-zhc"/>
+                            <constraint firstItem="MKZ-Q2-1Sn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-55" id="g3E-kM-s8e"/>
+                            <constraint firstItem="MKZ-Q2-1Sn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-55" id="t2I-Ba-aik"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blueSquare" destination="7VM-MM-jeU" id="9Vf-qP-NAl"/>
+                        <outlet property="blueSquareConstraint" destination="NaQ-S9-J1u" id="xI4-bL-KqT"/>
+                        <outlet property="blueX" destination="WSh-5V-WqD" id="0YL-5a-Lp1"/>
+                        <outlet property="blueY" destination="0Fi-oS-rsU" id="w16-1r-df2"/>
                         <outlet property="greenSquare" destination="MKZ-Q2-1Sn" id="bAF-PO-QsV"/>
+                        <outlet property="greenSquareConstraint" destination="kD8-r0-sqh" id="NYl-bG-tcR"/>
+                        <outlet property="greenX" destination="g3E-kM-s8e" id="UnR-Ef-gLL"/>
+                        <outlet property="greenY" destination="t2I-Ba-aik" id="Due-Hy-imY"/>
                         <outlet property="orangeSquare" destination="W0V-Aw-3lt" id="DKt-wL-fZJ"/>
+                        <outlet property="orangeSquareConstraint" destination="p2G-xc-fG8" id="wVb-xh-zvU"/>
+                        <outlet property="orangeX" destination="1hG-1z-BIP" id="jTf-up-mcy"/>
+                        <outlet property="orangeY" destination="GJi-VN-2b9" id="ZDx-3k-5yu"/>
                         <outlet property="yellowSquare" destination="bQw-yr-RbU" id="Px7-EP-gfd"/>
+                        <outlet property="yellowSquareConstraint" destination="8e1-VO-wAl" id="yX1-Ee-lvF"/>
+                        <outlet property="yellowX" destination="Mue-Iw-btE" id="7pE-mW-h4f"/>
+                        <outlet property="yellowY" destination="cER-ZI-fRD" id="cgR-Jz-eAt"/>
                         <outletCollection property="buttonsLabel" destination="Ifg-q7-u9c" collectionClass="NSMutableArray" id="W9G-Xi-Rkr"/>
                         <outletCollection property="buttonsLabel" destination="dl3-H0-coT" collectionClass="NSMutableArray" id="qLx-Qn-OIB"/>
                     </connections>
