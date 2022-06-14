@@ -25,6 +25,11 @@ class CircleViewController: UIViewController {
     }()
     
     // MARK: - Public Properties
+    var squareTopAnchor: NSLayoutConstraint?
+    var squareLeadingAnchor: NSLayoutConstraint?
+    var squareTrailingAnchor: NSLayoutConstraint?
+    var squareBottomAnchor: NSLayoutConstraint?
+    
     var circleTopAnchor: NSLayoutConstraint?
     var circleLeadingAnchor: NSLayoutConstraint?
     var circleTrailingAnchor: NSLayoutConstraint?
@@ -35,18 +40,12 @@ class CircleViewController: UIViewController {
     var isTop: Bool = true
     var isLeading: Bool = true
     
-    var squareTopAnchor: NSLayoutConstraint?
-    var squareLeadingAnchor: NSLayoutConstraint?
-    var squareTrailingAnchor: NSLayoutConstraint?
-    var squareBottomAnchor: NSLayoutConstraint?
-    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSquare()
         setupCircle()
-//        createVerticalTimer()
         createHorizontalTimer()
     }
     
@@ -173,8 +172,6 @@ class CircleViewController: UIViewController {
             self.isTop = false
         }
     }
-    
-    
     
 }
 
