@@ -64,16 +64,40 @@
 			children = (
 				6DB8DC442858C7D200AB0659 /* AppDelegate.swift */,
 				6DB8DC462858C7D200AB0659 /* SceneDelegate.swift */,
-				6DB8DC5A2858CB2300AB0659 /* ImageModel.swift */,
-				6DB8DC582858C98700AB0659 /* ImageCollectionView.swift */,
-				6DB8DC5C2858CC3D00AB0659 /* ImageCollectionViewCell.swift */,
-				6DB8DC482858C7D200AB0659 /* ViewController.swift */,
-				6DB8DC4A2858C7D200AB0659 /* Main.storyboard */,
+				6DB8DC602858D8F600AB0659 /* Model */,
+				6DB8DC5F2858D8E900AB0659 /* Controller */,
+				6DB8DC5E2858D8E200AB0659 /* View */,
 				6DB8DC4D2858C7D300AB0659 /* Assets.xcassets */,
 				6DB8DC4F2858C7D300AB0659 /* LaunchScreen.storyboard */,
 				6DB8DC522858C7D300AB0659 /* Info.plist */,
 			);
 			path = Carousel;
+			sourceTree = "<group>";
+		};
+		6DB8DC5E2858D8E200AB0659 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6DB8DC4A2858C7D200AB0659 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6DB8DC5F2858D8E900AB0659 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6DB8DC482858C7D200AB0659 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6DB8DC602858D8F600AB0659 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6DB8DC5A2858CB2300AB0659 /* ImageModel.swift */,
+				6DB8DC582858C98700AB0659 /* ImageCollectionView.swift */,
+				6DB8DC5C2858CC3D00AB0659 /* ImageCollectionViewCell.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
