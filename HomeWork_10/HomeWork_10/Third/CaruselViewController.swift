@@ -10,11 +10,13 @@ import UIKit
 class CaruselViewController: UIViewController {
     
     // MARK: - Private Properties
-   private var imageArray = [UIImageView]()
+    private var imageArray = [UIImageView]()
     
     private var image1: UIImageView = {
         let image1 = UIImageView()
         image1.translatesAutoresizingMaskIntoConstraints = false
+        image1.image = .init(named: "flower1")
+        image1.contentMode = .scaleToFill
         return image1
     }()
     
@@ -48,6 +50,12 @@ class CaruselViewController: UIViewController {
                 self.image1TrailingAnchor?.constant = 0
                 self.view.layoutIfNeeded()
             }
+        case .right:
+            UIView.animate(withDuration: 2.0) {
+                self.image1LeadingAnchor?.constant = 1000
+                self.image1TrailingAnchor?.constant = 1000
+                self.view.layoutIfNeeded()
+            }
         default:
             break
         }
@@ -63,9 +71,9 @@ class CaruselViewController: UIViewController {
         image1BottomAnchor = image1.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
         
         guard let image1TopAnchor = image1TopAnchor,
-        let image1LeadingAnchor = image1LeadingAnchor,
-            let image1TrailingAnchor = image1TrailingAnchor,
-            let image1BottomAnchor = image1BottomAnchor
+              let image1LeadingAnchor = image1LeadingAnchor,
+              let image1TrailingAnchor = image1TrailingAnchor,
+              let image1BottomAnchor = image1BottomAnchor
         else {
             return
         }
@@ -75,9 +83,6 @@ class CaruselViewController: UIViewController {
         image1TrailingAnchor.isActive = true
         image1BottomAnchor.isActive = true
         
-        image1.image = .init(named: "flower1")
-        image1.contentMode = .scaleToFill
-
     }
     
     // Helps to avoid code diplication when create gesture recognizers
