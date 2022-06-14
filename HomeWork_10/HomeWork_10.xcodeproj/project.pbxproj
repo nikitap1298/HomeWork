@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D560E002858EB510024F4AD /* CaruselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D560DFF2858EB510024F4AD /* CaruselViewController.swift */; };
+		6D560E042858EB6C0024F4AD /* Carusel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D560E032858EB6C0024F4AD /* Carusel.storyboard */; };
 		6DB8DC1D28588FB900AB0659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8DC1C28588FB900AB0659 /* AppDelegate.swift */; };
 		6DB8DC1F28588FB900AB0659 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8DC1E28588FB900AB0659 /* SceneDelegate.swift */; };
 		6DB8DC2128588FB900AB0659 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB8DC2028588FB900AB0659 /* CircleViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D560DFF2858EB510024F4AD /* CaruselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaruselViewController.swift; sourceTree = "<group>"; };
+		6D560E032858EB6C0024F4AD /* Carusel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carusel.storyboard; sourceTree = "<group>"; };
 		6DB8DC1928588FB900AB0659 /* HomeWork_10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB8DC1C28588FB900AB0659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DB8DC1E28588FB900AB0659 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D560DFE2858EB370024F4AD /* First */ = {
+			isa = PBXGroup;
+			children = (
+				6DB8DC2028588FB900AB0659 /* CircleViewController.swift */,
+				6DB8DC2228588FB900AB0659 /* Main.storyboard */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		6D560E052858EB720024F4AD /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				6D560DFF2858EB510024F4AD /* CaruselViewController.swift */,
+				6D560E032858EB6C0024F4AD /* Carusel.storyboard */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
 		6DB8DC1028588FB900AB0659 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +80,8 @@
 			children = (
 				6DB8DC1C28588FB900AB0659 /* AppDelegate.swift */,
 				6DB8DC1E28588FB900AB0659 /* SceneDelegate.swift */,
-				6DB8DC2028588FB900AB0659 /* CircleViewController.swift */,
-				6DB8DC2228588FB900AB0659 /* Main.storyboard */,
+				6D560DFE2858EB370024F4AD /* First */,
+				6D560E052858EB720024F4AD /* Third */,
 				6DB8DC2528588FBA00AB0659 /* Assets.xcassets */,
 				6DB8DC2728588FBA00AB0659 /* LaunchScreen.storyboard */,
 				6DB8DC2A28588FBA00AB0659 /* Info.plist */,
@@ -125,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D560E042858EB6C0024F4AD /* Carusel.storyboard in Resources */,
 				6DB8DC2928588FBA00AB0659 /* LaunchScreen.storyboard in Resources */,
 				6DB8DC2628588FBA00AB0659 /* Assets.xcassets in Resources */,
 				6DB8DC2428588FB900AB0659 /* Main.storyboard in Resources */,
@@ -138,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D560E002858EB510024F4AD /* CaruselViewController.swift in Sources */,
 				6DB8DC2128588FB900AB0659 /* CircleViewController.swift in Sources */,
 				6DB8DC1D28588FB900AB0659 /* AppDelegate.swift in Sources */,
 				6DB8DC1F28588FB900AB0659 /* SceneDelegate.swift in Sources */,
