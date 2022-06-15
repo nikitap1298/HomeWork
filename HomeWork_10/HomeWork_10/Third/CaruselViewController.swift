@@ -149,10 +149,7 @@ class CaruselViewController: UIViewController {
         guard let image1TopAnchor = image1TopAnchor,
               let image1LeadingAnchor = image1LeadingAnchor,
               let image1TrailingAnchor = image1TrailingAnchor,
-              let image1BottomAnchor = image1BottomAnchor
-        else {
-            return
-        }
+              let image1BottomAnchor = image1BottomAnchor else { return }
         
         image1TopAnchor.isActive = true
         image1LeadingAnchor.isActive = true
@@ -172,10 +169,7 @@ class CaruselViewController: UIViewController {
         guard let image2TopAnchor = image2TopAnchor,
               let image2LeadingAnchor = image2LeadingAnchor,
               let image2TrailingAnchor = image2TrailingAnchor,
-              let image2BottomAnchor = image2BottomAnchor
-        else {
-            return
-        }
+              let image2BottomAnchor = image2BottomAnchor else { return }
         
         image2TopAnchor.isActive = true
         image2LeadingAnchor.isActive = true
@@ -195,10 +189,7 @@ class CaruselViewController: UIViewController {
         guard let image3TopAnchor = image3TopAnchor,
               let image3LeadingAnchor = image3LeadingAnchor,
               let image3TrailingAnchor = image3TrailingAnchor,
-              let image3BottomAnchor = image3BottomAnchor
-        else {
-            return
-        }
+              let image3BottomAnchor = image3BottomAnchor else { return }
         
         image3TopAnchor.isActive = true
         image3LeadingAnchor.isActive = true
@@ -218,10 +209,7 @@ class CaruselViewController: UIViewController {
         guard let image4TopAnchor = image4TopAnchor,
               let image4LeadingAnchor = image4LeadingAnchor,
               let image4TrailingAnchor = image4TrailingAnchor,
-              let image4BottomAnchor = image4BottomAnchor
-        else {
-            return
-        }
+              let image4BottomAnchor = image4BottomAnchor else { return }
         
         image4TopAnchor.isActive = true
         image4LeadingAnchor.isActive = true

@@ -10,7 +10,6 @@ import UIKit
 class RaceViewController: UIViewController {
     
     // MARK: - Private Properties
-    
     private var road: UIView = {
         let road = UIView()
         road.backgroundColor = UIColor(named: "colorRoad")
@@ -62,7 +61,7 @@ class RaceViewController: UIViewController {
         setupCar()
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         leftButton.layer.cornerRadius = leftButton.frame.height / 2
@@ -71,17 +70,21 @@ class RaceViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func tapLeftButton() {
-        carCenterX?.constant -= 25
-        
-        if carCenterX!.constant <= -70 {
+        guard let carCenterX = carCenterX else {
+            return
+        }
+        carCenterX.constant -= 25
+        if carCenterX.constant <= -70 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
     
     @objc private func tapRightButton() {
-        carCenterX?.constant += 25
-        
-        if carCenterX!.constant >= 70 {
+        guard let carCenterX = carCenterX else {
+            return
+        }
+        carCenterX.constant += 25
+        if carCenterX.constant >= 70 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -151,7 +154,10 @@ class RaceViewController: UIViewController {
             car.heightAnchor.constraint(equalToConstant: 150)
         ])
         
-        carCenterX?.isActive = true
+        guard let carCenterX = carCenterX else {
+            return
+        }
+        carCenterX.isActive = true
     }
     
 }
