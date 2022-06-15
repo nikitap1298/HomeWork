@@ -16,26 +16,24 @@ class CaruselViewController: UIViewController {
     
     private var imageArray = ImageModel.fetchImages()
     
-    // First Image
-    private var image1: UIImageView = {
-        let image1 = UIImageView()
-        image1.translatesAutoresizingMaskIntoConstraints = false
-        image1.image = .init(named: "flower1")
-        image1.contentMode = .scaleToFill
-        return image1
-    }()
+//    private var image1: UIImageView = {
+//        let image1 = UIImageView()
+//        image1.translatesAutoresizingMaskIntoConstraints = false
+//        image1.image = .init(named: "flower1")
+//        image1.contentMode = .scaleToFill
+//        return image1
+//    }()
     
     // MARK: - Public Properties
-    var image1TopAnchor: NSLayoutConstraint?
-    var image1LeadingAnchor: NSLayoutConstraint?
-    var image1TrailingAnchor: NSLayoutConstraint?
-    var image1BottomAnchor: NSLayoutConstraint?
+    var imageTopAnchor: NSLayoutConstraint?
+    var imageLeadingAnchor: NSLayoutConstraint?
+    var imageTrailingAnchor: NSLayoutConstraint?
+    var imageBottomAnchor: NSLayoutConstraint?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(imageArray)
         setupUI()
     }
     
@@ -52,16 +50,16 @@ class CaruselViewController: UIViewController {
         case .left:
             if numberLeftSwipes == 0 {
                 UIView.animate(withDuration: 2.0) {
-                    self.image1LeadingAnchor?.constant = 0
-                    self.image1TrailingAnchor?.constant = 0
+                    self.imageLeadingAnchor?.constant = 0
+                    self.imageTrailingAnchor?.constant = 0
                     self.view.layoutIfNeeded()
                 }
             }
             numberLeftSwipes += 1
             if numberLeftSwipes == 2 {
                 UIView.animate(withDuration: 2.0) {
-                    self.image1LeadingAnchor?.constant = -1000
-                    self.image1TrailingAnchor?.constant = -1000
+                    self.imageLeadingAnchor?.constant = -1000
+                    self.imageTrailingAnchor?.constant = -1000
                     self.view.layoutIfNeeded()
                 }
                 numberLeftSwipes -= 1
@@ -69,8 +67,8 @@ class CaruselViewController: UIViewController {
         case .right:
             if numberLeftSwipes == 1 && numberRightSwipe == 0 {
                 UIView.animate(withDuration: 2.0) {
-                    self.image1LeadingAnchor?.constant = 0
-                    self.image1TrailingAnchor?.constant = 0
+                    self.imageLeadingAnchor?.constant = 0
+                    self.imageTrailingAnchor?.constant = 0
                     self.view.layoutIfNeeded()
                 }
             }
@@ -81,25 +79,25 @@ class CaruselViewController: UIViewController {
     
     // MARK: - Private Functions
     private func setupUI() {
-        view.addSubview(image1)
+        view.addSubview(imageArray[0])
         
-        image1TopAnchor = image1.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100)
-        image1LeadingAnchor = image1.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 1000)
-        image1TrailingAnchor = image1.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 1000)
-        image1BottomAnchor = image1.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
+        imageTopAnchor = imageArray[n].topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100)
+        imageLeadingAnchor = imageArray[n].leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 1000)
+        imageTrailingAnchor = imageArray[n].trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 1000)
+        imageBottomAnchor = imageArray[n].bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
         
-        guard let image1TopAnchor = image1TopAnchor,
-              let image1LeadingAnchor = image1LeadingAnchor,
-              let image1TrailingAnchor = image1TrailingAnchor,
-              let image1BottomAnchor = image1BottomAnchor
+        guard let imageTopAnchor = imageTopAnchor,
+              let imageLeadingAnchor = imageLeadingAnchor,
+              let imageTrailingAnchor = imageTrailingAnchor,
+              let imageBottomAnchor = imageBottomAnchor
         else {
             return
         }
         
-        image1TopAnchor.isActive = true
-        image1LeadingAnchor.isActive = true
-        image1TrailingAnchor.isActive = true
-        image1BottomAnchor.isActive = true
+        imageTopAnchor.isActive = true
+        imageLeadingAnchor.isActive = true
+        imageTrailingAnchor.isActive = true
+        imageBottomAnchor.isActive = true
         
     }
     
