@@ -9,6 +9,48 @@ import UIKit
 
 class RaceViewController: UIViewController {
     
+    // MARK: - Private Properties
+    
+    private var road: UIView = {
+        let road = UIView()
+        road.backgroundColor = UIColor(named: "colorRoad")
+        road.translatesAutoresizingMaskIntoConstraints = false
+        return road
+    }()
+    
+    private  var leftButton: UIButton = {
+        let leftButton = UIButton()
+        leftButton.backgroundColor = UIColor(named: "colorYellow")
+        leftButton.setTitle("<-", for: .normal)
+        leftButton.translatesAutoresizingMaskIntoConstraints = false
+        return leftButton
+    }()
+    
+    private  var rightButton: UIButton = {
+        let rightButton = UIButton()
+        rightButton.backgroundColor = UIColor(named: "colorYellow")
+        rightButton.setTitle("->", for: .normal)
+        rightButton.translatesAutoresizingMaskIntoConstraints = false
+        return rightButton
+    }()
+    
+    private var whiteLine: UIView = {
+        let whiteLine = UIView()
+        whiteLine.backgroundColor = .white
+        whiteLine.translatesAutoresizingMaskIntoConstraints = false
+        return whiteLine
+    }()
+    
+    private var car: UIImageView = {
+        let car = UIImageView()
+        car.image = UIImage(named: "car")
+        car.translatesAutoresizingMaskIntoConstraints = false
+        return car
+    }()
+    
+    // MARK: - Public Properties
+    var carCenterX: NSLayoutConstraint?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,23 +65,23 @@ class RaceViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        UI.leftButton.layer.cornerRadius = UI.leftButton.frame.height / 2
-        UI.rightButton.layer.cornerRadius = UI.rightButton.frame.height / 2
+        leftButton.layer.cornerRadius = leftButton.frame.height / 2
+        rightButton.layer.cornerRadius = rightButton.frame.height / 2
     }
     
     // MARK: - Actions
     @objc private func tapLeftButton() {
-        UI.carCenterX?.constant -= 25
+        carCenterX?.constant -= 25
         
-        if UI.carCenterX!.constant <= -70 {
+        if carCenterX!.constant <= -70 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
     
     @objc private func tapRightButton() {
-        UI.carCenterX?.constant += 25
+        carCenterX?.constant += 25
         
-        if UI.carCenterX!.constant >= 70 {
+        if carCenterX!.constant >= 70 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -48,68 +90,68 @@ class RaceViewController: UIViewController {
     
     // road constraints
     private func setupRoad() {
-        view.addSubview(UI.road)
+        view.addSubview(road)
         
         NSLayoutConstraint.activate([
-            UI.road.topAnchor.constraint(equalTo: view.topAnchor),
-            UI.road.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            UI.road.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            UI.road.widthAnchor.constraint(equalToConstant: 170)
+            road.topAnchor.constraint(equalTo: view.topAnchor),
+            road.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            road.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            road.widthAnchor.constraint(equalToConstant: 170)
         ])
     }
     
     // leftButton constraints
     private func setupLeftButton() {
-        view.addSubview(UI.leftButton)
+        view.addSubview(leftButton)
         
         NSLayoutConstraint.activate([
-            UI.leftButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            UI.leftButton.trailingAnchor.constraint(equalTo: UI.road.leadingAnchor, constant: -15),
-            UI.leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
-            UI.leftButton.heightAnchor.constraint(equalToConstant: 50)
+            leftButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            leftButton.trailingAnchor.constraint(equalTo: road.leadingAnchor, constant: -15),
+            leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
+            leftButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        UI.leftButton.addTarget(self, action: #selector(tapLeftButton), for: .touchUpInside)
+        leftButton.addTarget(self, action: #selector(tapLeftButton), for: .touchUpInside)
     }
     
     // rightButton constraints
     private func setupRightButton() {
-        view.addSubview(UI.rightButton)
+        view.addSubview(rightButton)
         
         NSLayoutConstraint.activate([
-            UI.rightButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            UI.rightButton.leadingAnchor.constraint(equalTo: UI.road.trailingAnchor, constant: 15),
-            UI.rightButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
-            UI.rightButton.heightAnchor.constraint(equalToConstant: 50)
+            rightButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            rightButton.leadingAnchor.constraint(equalTo: road.trailingAnchor, constant: 15),
+            rightButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
+            rightButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        UI.rightButton.addTarget(self, action: #selector(tapRightButton), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(tapRightButton), for: .touchUpInside)
     }
     
     // whiteLine constraints
     private func setupWhiteLine() {
-        UI.road.addSubview(UI.whiteLine)
+        road.addSubview(whiteLine)
         
         NSLayoutConstraint.activate([
-            UI.whiteLine.centerXAnchor.constraint(equalTo: UI.road.centerXAnchor),
-            UI.whiteLine.topAnchor.constraint(equalTo: UI.road.topAnchor, constant: 0),
-            UI.whiteLine.bottomAnchor.constraint(equalTo: UI.road.bottomAnchor, constant: 0),
-            UI.whiteLine.widthAnchor.constraint(equalToConstant: 10)
+            whiteLine.centerXAnchor.constraint(equalTo: road.centerXAnchor),
+            whiteLine.topAnchor.constraint(equalTo: road.topAnchor, constant: 0),
+            whiteLine.bottomAnchor.constraint(equalTo: road.bottomAnchor, constant: 0),
+            whiteLine.widthAnchor.constraint(equalToConstant: 10)
         ])
     }
     
     private func setupCar() {
-        view.addSubview(UI.car)
+        view.addSubview(car)
         
-        UI.carCenterX = UI.car.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        carCenterX = car.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         
         NSLayoutConstraint.activate([
-            UI.car.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200),
-            UI.car.widthAnchor.constraint(equalToConstant: 60),
-            UI.car.heightAnchor.constraint(equalToConstant: 150)
+            car.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200),
+            car.widthAnchor.constraint(equalToConstant: 60),
+            car.heightAnchor.constraint(equalToConstant: 150)
         ])
         
-        UI.carCenterX?.isActive = true
+        carCenterX?.isActive = true
     }
     
 }
