@@ -30,10 +30,18 @@ class RaceViewController: UIViewController {
     // MARK: - Actions
     @objc private func tapLeftButton() {
         UI.carCenterX?.constant -= 25
+        
+        if UI.carCenterX!.constant <= -70 {
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     @objc private func tapRightButton() {
         UI.carCenterX?.constant += 25
+        
+        if UI.carCenterX!.constant >= 70 {
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     // MARK: - Private Functions
