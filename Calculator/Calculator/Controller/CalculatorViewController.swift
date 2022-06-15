@@ -61,7 +61,7 @@ class CalculatorViewController: UIViewController {
         if isTyping {
             
             // Max 10 digits for label
-            if valueLabel.text!.count < 10 {
+            if valueLabel.text?.count ?? 1 < 10 {
                 valueLabel.text = valueLabel.text! + number
             }
         } else if number == "0" {
@@ -130,7 +130,7 @@ class CalculatorViewController: UIViewController {
             if isInt == false {
                 return
             }
-            if !valueLabel.text!.contains(".") {
+            if !(valueLabel.text?.contains(".") ?? true) {
                 valueLabel.text = valueLabel.text! + "."
             }
             
