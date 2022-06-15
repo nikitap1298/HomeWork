@@ -43,8 +43,17 @@ class RaceViewController: UIViewController {
     private var car: UIImageView = {
         let car = UIImageView()
         car.image = UIImage(named: "car")
+        car.contentMode = .scaleToFill
         car.translatesAutoresizingMaskIntoConstraints = false
         return car
+    }()
+    
+    private var stone: UIImageView = {
+        let stone = UIImageView()
+        stone.image = UIImage(named: "stone")
+        stone.contentMode = .scaleToFill
+        stone.translatesAutoresizingMaskIntoConstraints = false
+        return stone
     }()
     
     // MARK: - Public Properties
@@ -59,6 +68,7 @@ class RaceViewController: UIViewController {
         setupRightButton()
         setupWhiteLine()
         setupCar()
+        setupStone()
     }
     
     override func viewDidLayoutSubviews() {
@@ -70,9 +80,7 @@ class RaceViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func tapLeftButton() {
-        guard let carCenterX = carCenterX else {
-            return
-        }
+        guard let carCenterX = carCenterX else { return }
         carCenterX.constant -= 25
         if carCenterX.constant <= -70 {
             navigationController?.popToRootViewController(animated: true)
@@ -80,9 +88,7 @@ class RaceViewController: UIViewController {
     }
     
     @objc private func tapRightButton() {
-        guard let carCenterX = carCenterX else {
-            return
-        }
+        guard let carCenterX = carCenterX else { return }
         carCenterX.constant += 25
         if carCenterX.constant >= 70 {
             navigationController?.popToRootViewController(animated: true)
@@ -108,7 +114,7 @@ class RaceViewController: UIViewController {
         view.addSubview(leftButton)
         
         NSLayoutConstraint.activate([
-            leftButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            leftButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             leftButton.trailingAnchor.constraint(equalTo: road.leadingAnchor, constant: -15),
             leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
             leftButton.heightAnchor.constraint(equalToConstant: 50)
@@ -122,7 +128,7 @@ class RaceViewController: UIViewController {
         view.addSubview(rightButton)
         
         NSLayoutConstraint.activate([
-            rightButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            rightButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
             rightButton.leadingAnchor.constraint(equalTo: road.trailingAnchor, constant: 15),
             rightButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
             rightButton.heightAnchor.constraint(equalToConstant: 50)
@@ -158,6 +164,17 @@ class RaceViewController: UIViewController {
             return
         }
         carCenterX.isActive = true
+    }
+    
+    private func setupStone() {
+        road.addSubview(stone)
+        
+        NSLayoutConstraint.activate([
+            stone.topAnchor.constraint(equalTo: road.topAnchor, constant: 100),
+            stone.widthAnchor.constraint(equalToConstant: 50),
+            stone.heightAnchor.constraint(equalToConstant: 50),
+            stone.centerXAnchor.constraint(equalTo: road.centerXAnchor, constant: -42.5)
+        ])
     }
     
 }
