@@ -10,8 +10,13 @@ import UIKit
 class CaruselViewController: UIViewController {
     
     // MARK: - Private Properties
-    private var imageArray = [UIImageView]()
+    private var numberLeftSwipes = 0
+    private var numberRightSwipe = 0
+    private var n = 0
     
+    private var imageArray = ImageModel.fetchImages()
+    
+    // First Image
     private var image1: UIImageView = {
         let image1 = UIImageView()
         image1.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +35,7 @@ class CaruselViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageArray.append(image1)
+        print(imageArray)
         setupUI()
     }
     
@@ -45,16 +50,29 @@ class CaruselViewController: UIViewController {
     @objc private func didSwipe(recognizer: UISwipeGestureRecognizer) {
         switch recognizer.direction {
         case .left:
-            UIView.animate(withDuration: 2.0) {
-                self.image1LeadingAnchor?.constant = 0
-                self.image1TrailingAnchor?.constant = 0
-                self.view.layoutIfNeeded()
+            if numberLeftSwipes == 0 {
+                UIView.animate(withDuration: 2.0) {
+                    self.image1LeadingAnchor?.constant = 0
+                    self.image1TrailingAnchor?.constant = 0
+                    self.view.layoutIfNeeded()
+                }
+            }
+            numberLeftSwipes += 1
+            if numberLeftSwipes == 2 {
+                UIView.animate(withDuration: 2.0) {
+                    self.image1LeadingAnchor?.constant = -1000
+                    self.image1TrailingAnchor?.constant = -1000
+                    self.view.layoutIfNeeded()
+                }
+                numberLeftSwipes -= 1
             }
         case .right:
-            UIView.animate(withDuration: 2.0) {
-                self.image1LeadingAnchor?.constant = 1000
-                self.image1TrailingAnchor?.constant = 1000
-                self.view.layoutIfNeeded()
+            if numberLeftSwipes == 1 && numberRightSwipe == 0 {
+                UIView.animate(withDuration: 2.0) {
+                    self.image1LeadingAnchor?.constant = 0
+                    self.image1TrailingAnchor?.constant = 0
+                    self.view.layoutIfNeeded()
+                }
             }
         default:
             break
