@@ -9,10 +9,10 @@ import UIKit
 
 class RaceViewController: UIViewController {
     
-    let roadWidth: CGFloat = 170
-    var trueOrFalse: Bool = true
-    
     // MARK: - Private Properties
+    private let roadWidth: CGFloat = 170
+    private var trueOrFalse: Bool = true
+    
     private var road: UIView = {
         let road = UIView()
         road.backgroundColor = UIColor(named: "colorRoad")
@@ -212,7 +212,7 @@ class RaceViewController: UIViewController {
     private func animateBottom() {
         trueOrFalse = Bool.random()
         guard let stoneTopAnchor = stoneTopAnchor,
-        let stoneBottomAnchor = stoneBottomAnchor else {
+              let stoneBottomAnchor = stoneBottomAnchor else {
             return
         }
         stoneTopAnchor.isActive = false
@@ -220,7 +220,7 @@ class RaceViewController: UIViewController {
         UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat]) {
             self.road.layoutIfNeeded()
         } completion: { _ in
-            self.stoneCenterX?.constant = self.trueOrFalse ? -42.5 : 42.5
+            self.stoneCenterX?.constant = self.trueOrFalse ? -self.roadWidth / 4 : self.roadWidth / 4
         }
     }
     
