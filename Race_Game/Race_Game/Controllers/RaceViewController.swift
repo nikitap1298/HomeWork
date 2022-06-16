@@ -162,9 +162,9 @@ class RaceViewController: UIViewController {
     }
     
     private func setupCar() {
-        view.addSubview(car)
+        road.addSubview(car)
         
-        carCenterX = car.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        carCenterX = car.centerXAnchor.constraint(equalTo: road.centerXAnchor)
         carTopAnchor = car.topAnchor.constraint(equalTo: road.topAnchor, constant: 500)
         
         NSLayoutConstraint.activate([
@@ -184,7 +184,7 @@ class RaceViewController: UIViewController {
         road.addSubview(stone)
         
         stoneTopAnchor = stone.topAnchor.constraint(equalTo: road.topAnchor, constant: -30)
-        stoneCenterX = stone.centerXAnchor.constraint(equalTo: road.centerXAnchor, constant: -42.5)
+        stoneCenterX = stone.centerXAnchor.constraint(equalTo: road.centerXAnchor, constant: -roadWidth / 4)
         stoneBottomAnchor = stone.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100)
         
         NSLayoutConstraint.activate([
@@ -197,7 +197,6 @@ class RaceViewController: UIViewController {
               let stoneBottomAnchor = stoneBottomAnchor else {
             return
         }
-        
         stoneTopAnchor.isActive = true
         stoneCenterX.isActive = true
         stoneBottomAnchor.isActive = false
