@@ -9,6 +9,8 @@ import UIKit
 
 class RaceViewController: UIViewController {
     
+    var n = 0
+    
     // MARK: - Private Properties
     private var road: UIView = {
         let road = UIView()
@@ -63,7 +65,7 @@ class RaceViewController: UIViewController {
     var stoneTopAnchor: NSLayoutConstraint?
     var stoneCenterX: NSLayoutConstraint?
     var stoneBottomAnchor: NSLayoutConstraint?
-   
+    
     var stoneIsTop: Bool = true
     var stoneIsBottom: Bool = true
     
@@ -77,10 +79,7 @@ class RaceViewController: UIViewController {
         setupWhiteLine()
         setupCar()
         setupStone()
-        
-        for _ in 0...5 {
-            createVerticalTimer()
-        }
+        createVerticalTimer()
     }
     
     override func viewDidLayoutSubviews() {
@@ -168,13 +167,13 @@ class RaceViewController: UIViewController {
         carTopAnchor = car.topAnchor.constraint(equalTo: road.topAnchor, constant: 500)
         
         NSLayoutConstraint.activate([
-//            car.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200),
+            //            car.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200),
             car.widthAnchor.constraint(equalToConstant: 60),
             car.heightAnchor.constraint(equalToConstant: 150)
         ])
         
         guard let carCenterX = carCenterX,
-            let carTopAnchor = carTopAnchor else {
+              let carTopAnchor = carTopAnchor else {
             return
         }
         carCenterX.isActive = true
@@ -184,7 +183,7 @@ class RaceViewController: UIViewController {
     private func setupStone() {
         road.addSubview(stone)
         
-        stoneTopAnchor = stone.topAnchor.constraint(equalTo: road.topAnchor, constant: -100)
+        stoneTopAnchor = stone.topAnchor.constraint(equalTo: road.topAnchor, constant: -30)
         stoneCenterX = stone.centerXAnchor.constraint(equalTo: road.centerXAnchor, constant: -42.5)
         stoneBottomAnchor = stone.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100)
         
@@ -194,37 +193,28 @@ class RaceViewController: UIViewController {
         ])
         
         guard let stoneTopAnchor = stoneTopAnchor,
-            let stoneCenterX = stoneCenterX else {
+              let stoneCenterX = stoneCenterX else {
             return
         }
-
+        
         stoneTopAnchor.isActive = true
         stoneCenterX.isActive = true
     }
     
     private func createVerticalTimer() {
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] timer in
-            guard let self = self else {
-                return
-            }
-            if self.stoneIsTop {
-                self.animateBottom()
-            }
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { (timer) in
+            self.animateBottom()
         }
     }
     
     private func animateBottom() {
         stoneTopAnchor?.isActive = false
         stoneBottomAnchor?.isActive = true
-        if stoneBottomAnchor?.constant == carTopAnchor?.constant {
-            print("g")
-        }
-        UIView.animate(withDuration: 5.0) {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat]) {
             self.road.layoutIfNeeded()
         } completion: { _ in
-            self.stoneIsTop = false
+            print("fff")
         }
     }
-    
     
 }
