@@ -9,7 +9,8 @@ import UIKit
 
 class RaceViewController: UIViewController {
     
-    var n = 0
+    let roadWidth: CGFloat = 170
+    var trueOrFalse: Bool = true
     
     // MARK: - Private Properties
     private var road: UIView = {
@@ -93,7 +94,7 @@ class RaceViewController: UIViewController {
     @objc private func tapLeftButton() {
         guard let carCenterX = carCenterX else { return }
         carCenterX.constant -= 25
-        if carCenterX.constant <= -70 {
+        if carCenterX.constant <= -roadWidth / 3 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -101,7 +102,7 @@ class RaceViewController: UIViewController {
     @objc private func tapRightButton() {
         guard let carCenterX = carCenterX else { return }
         carCenterX.constant += 25
-        if carCenterX.constant >= 70 {
+        if carCenterX.constant >= roadWidth / 3 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -116,7 +117,7 @@ class RaceViewController: UIViewController {
             road.topAnchor.constraint(equalTo: view.topAnchor),
             road.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             road.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            road.widthAnchor.constraint(equalToConstant: 170)
+            road.widthAnchor.constraint(equalToConstant: roadWidth)
         ])
     }
     
@@ -167,7 +168,6 @@ class RaceViewController: UIViewController {
         carTopAnchor = car.topAnchor.constraint(equalTo: road.topAnchor, constant: 500)
         
         NSLayoutConstraint.activate([
-            //            car.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200),
             car.widthAnchor.constraint(equalToConstant: 60),
             car.heightAnchor.constraint(equalToConstant: 150)
         ])
@@ -193,28 +193,42 @@ class RaceViewController: UIViewController {
         ])
         
         guard let stoneTopAnchor = stoneTopAnchor,
-              let stoneCenterX = stoneCenterX else {
+              let stoneCenterX = stoneCenterX,
+              let stoneBottomAnchor = stoneBottomAnchor else {
             return
         }
         
         stoneTopAnchor.isActive = true
         stoneCenterX.isActive = true
+        stoneBottomAnchor.isActive = false
     }
     
     private func createVerticalTimer() {
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (timer) in
             self.animateBottom()
         }
     }
     
     private func animateBottom() {
-        stoneTopAnchor?.isActive = false
-        stoneBottomAnchor?.isActive = true
+        trueOrFalse = Bool.random()
+        guard let stoneTopAnchor = stoneTopAnchor,
+        let stoneBottomAnchor = stoneBottomAnchor else {
+            return
+        }
+        stoneTopAnchor.isActive = false
+        stoneBottomAnchor.isActive = true
         UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat]) {
             self.road.layoutIfNeeded()
         } completion: { _ in
-            print("fff")
+            self.stoneCenterX?.constant = self.trueOrFalse ? -42.5 : 42.5
         }
     }
     
+}
+
+// MARK: - Extension (Random  true or false)
+extension Bool {
+    static func random() -> Bool {
+        return arc4random_uniform(2) == 0
+    }
 }
