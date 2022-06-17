@@ -92,7 +92,9 @@ class SecondViewController: UIViewController {
         
         if side >= 100 {
             for _ in 0...total {
-                let randomColor = Color.allCases.randomElement()!
+                guard let randomColor = Color.allCases.randomElement() else {
+                    return
+                }
                 let square = UIView()
                 square.frame = CGRect(x: CGFloat(x * side), y: CGFloat(y * side), width: CGFloat(side), height: CGFloat(side))
                 square.backgroundColor = randomColor.customColor

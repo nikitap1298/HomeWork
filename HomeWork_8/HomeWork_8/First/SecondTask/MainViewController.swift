@@ -17,12 +17,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AdditionalViewController" {
-            let destinationVC = segue.destination as! AdditionalViewController
-            destinationVC.animal = animal
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "AdditionalViewController" {
+//            guard let destinationVC = segue.destination as? AdditionalViewController else {
+//                return
+//            }
+//            destinationVC.animal = animal
+//        }
+//    }
     
     // MARK: - Action
     @IBAction func screenButton(_ sender: UIButton) {
@@ -32,7 +34,9 @@ class MainViewController: UIViewController {
     // MARK: - Private Functions
     private func showAnotherScreen() {
         let storyboard = UIStoryboard(name: "Second", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as! AdditionalViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as? AdditionalViewController else {
+            return
+        }
         viewController.animal = animal
         self.navigationController?.pushViewController(viewController, animated: true)
     }

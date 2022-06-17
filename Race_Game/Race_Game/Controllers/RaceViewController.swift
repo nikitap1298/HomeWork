@@ -10,7 +10,7 @@ import UIKit
 class RaceViewController: UIViewController {
     
     // MARK: - Private Properties
-    private let roadWidth: CGFloat = 170
+    private let roadWidth: CGFloat = 200
     private var trueOrFalse: Bool = true
     
     private var road: UIView = {
@@ -93,16 +93,16 @@ class RaceViewController: UIViewController {
     // MARK: - Actions
     @objc private func tapLeftButton() {
         guard let carCenterX = carCenterX else { return }
-        carCenterX.constant -= 25
-        if carCenterX.constant <= -roadWidth / 3 {
+        carCenterX.constant -= roadWidth / 9
+        if carCenterX.constant <= -roadWidth / 2.5 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
     
     @objc private func tapRightButton() {
         guard let carCenterX = carCenterX else { return }
-        carCenterX.constant += 25
-        if carCenterX.constant >= roadWidth / 3 {
+        carCenterX.constant += roadWidth / 9
+        if carCenterX.constant >= roadWidth / 2.5 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -161,6 +161,7 @@ class RaceViewController: UIViewController {
         ])
     }
     
+    // car constraints
     private func setupCar() {
         road.addSubview(car)
         
@@ -180,6 +181,7 @@ class RaceViewController: UIViewController {
         carTopAnchor.isActive = true
     }
     
+    // stone constraints
     private func setupStone() {
         road.addSubview(stone)
         
@@ -221,6 +223,9 @@ class RaceViewController: UIViewController {
         } completion: { _ in
             self.stoneCenterX?.constant = self.trueOrFalse ? -self.roadWidth / 4 : self.roadWidth / 4
         }
+        
+        print(stone.frame.origin)
+        print(car.frame.origin)
     }
     
 }

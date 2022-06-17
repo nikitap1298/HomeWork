@@ -38,7 +38,9 @@ class ThirdViewController: UIViewController {
     // MARK: - Private Functions
     private func showFourthVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "FourthViewController") as! FourthViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "FourthViewController") as? FourthViewController else {
+            return
+        }
         viewController.greeting = greeting
         self.navigationController?.pushViewController(viewController, animated: true)
     }

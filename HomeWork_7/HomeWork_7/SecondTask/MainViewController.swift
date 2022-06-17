@@ -19,7 +19,9 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AdditionalViewController" {
-            let destinationVC = segue.destination as! AdditionalViewController
+            guard let destinationVC = segue.destination as? AdditionalViewController else {
+                return
+            }
             destinationVC.animal = animal
         }
     }
@@ -32,7 +34,9 @@ class MainViewController: UIViewController {
     // MARK: - Private Functions
     private func showAnotherScreen() {
         let storyboard = UIStoryboard(name: "Second", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as! AdditionalViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "AdditionalViewController") as? AdditionalViewController else {
+            return
+        }
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
         viewController.animal = animal

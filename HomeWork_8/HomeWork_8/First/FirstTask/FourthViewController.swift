@@ -38,7 +38,9 @@ class FourthViewController: UIViewController {
     // MARK: - Private Functions
     private func showFifthVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "FifthViewController") as! FifthViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "FifthViewController") as? FifthViewController else {
+            return
+        }
         viewController.greeting = greeting
         self.navigationController?.pushViewController(viewController, animated: true)
     }

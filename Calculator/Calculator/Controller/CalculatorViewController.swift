@@ -25,7 +25,7 @@ class CalculatorViewController: UIViewController {
     // Computed Property. Transform String into Double
     private var currentValue: Double {
         get {
-            return Double(valueLabel.text!)!
+            return Double(valueLabel.text ?? "0") ?? 0
         }
         set {
             let value = "\(newValue)"
@@ -55,14 +55,14 @@ class CalculatorViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func numberButton(_ sender: UIButton) {
-        let number = sender.currentTitle!
+        let number = sender.currentTitle ?? "0"
         
         // If isTyping = true then we add new digit on the screen
         if isTyping {
             
             // Max 10 digits for label
             if valueLabel.text?.count ?? 1 < 10 {
-                valueLabel.text = valueLabel.text! + number
+                valueLabel.text = (valueLabel.text ?? "0") + number
             }
         } else if number == "0" {
             isTyping = false
@@ -73,7 +73,7 @@ class CalculatorViewController: UIViewController {
         
     }
     @IBAction func simpleMathButton(_ sender: UIButton) {
-        sign = sender.currentTitle!
+        sign = sender.currentTitle ?? "."
         firstNumber = currentValue
         
         // When user press " +, -, *, / " programm understand that user stop entering digit
@@ -131,12 +131,12 @@ class CalculatorViewController: UIViewController {
                 return
             }
             if !(valueLabel.text?.contains(".") ?? true) {
-                valueLabel.text = valueLabel.text! + "."
+                valueLabel.text = (valueLabel.text ?? "0") + "."
             }
             
             // Вариант кода который был в четверг
 //            if isTyping && commaPlaced == false {
-//                valueLabel.text = valueLabel.text! + "."
+//                valueLabel.text = (valueLabel.text ?? "0") + "."
 //                commaPlaced = true
 //            } else if isTyping == false && commaPlaced == false  {
 //                valueLabel.text = "0."

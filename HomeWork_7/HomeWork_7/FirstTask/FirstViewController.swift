@@ -8,7 +8,7 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
+    
     // MARK: - Public Properties
     var greeting = "Hello World"
     
@@ -21,7 +21,9 @@ class FirstViewController: UIViewController {
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "SecondViewController" {
-//            let destinationVC = segue.destination as! SecondViewController
+//            guard let destinationVC = segue.destination as? SecondViewController else {
+//                return
+//            }
 //            destinationVC.greeting = greeting
 //        }
 //    }
@@ -34,7 +36,9 @@ class FirstViewController: UIViewController {
     // MARK: - Private Functions
     private func showSecondVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {
+            return
+        }
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .coverVertical
         viewController.greeting = greeting
