@@ -208,8 +208,9 @@ class RaceViewController: UIViewController {
     }
     
     private func createVerticalTimer() {
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { (timer) in
             self.animateBottom()
+            self.positionStone()
         }
     }
     
@@ -221,14 +222,22 @@ class RaceViewController: UIViewController {
         }
         stoneTopAnchor.isActive = false
         stoneBottomAnchor.isActive = true
-        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat]) {
+        UIView.animate(withDuration: 2.5, delay: 0.0, options: .repeat) {
             self.road.layoutIfNeeded()
         } completion: { _ in
             self.stoneCenterX?.constant = self.trueOrFalse ? -self.roadWidth / 4 : self.roadWidth / 4
         }
-        
-//        print(stone.frame.origin)
-//        print(car.frame.origin)
+    }
+    
+    private func positionStone() {
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+            
+            // Check for overlapping images
+            let pointStone = self.stone.layer.presentation()?.frame.intersects(self.car.frame)
+            if pointStone == true {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
     }
     
 }
