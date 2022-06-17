@@ -13,6 +13,18 @@ class RaceViewController: UIViewController {
     private let hapticFeedback = UINotificationFeedbackGenerator()
     private let roadWidth: CGFloat = 200
     private var trueOrFalse: Bool = true
+    private var score: Int = 0
+    private var stopTimer: Bool = false
+    
+    private var scoreLabel: UILabel = {
+        let scoreLabel = UILabel()
+        scoreLabel.text = "0"
+        scoreLabel.textAlignment = .center
+        scoreLabel.textColor = .white
+        scoreLabel.backgroundColor = UIColor(named: "colorRoad")
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        return scoreLabel
+    }()
     
     private var road: UIView = {
         let road = UIView()
@@ -75,6 +87,7 @@ class RaceViewController: UIViewController {
         super.viewDidLoad()
         
         setupRoad()
+        setupScoreLabel()
         setupLeftButton()
         setupRightButton()
         setupWhiteLine()
@@ -98,6 +111,7 @@ class RaceViewController: UIViewController {
         }
         carCenterX.constant -= roadWidth / 9
         if carCenterX.constant <= -roadWidth / 2.5 {
+            self.stopTimer = true
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -109,6 +123,7 @@ class RaceViewController: UIViewController {
         }
         carCenterX.constant += roadWidth / 9
         if carCenterX.constant >= roadWidth / 2.5 {
+            self.stopTimer = true
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -124,6 +139,18 @@ class RaceViewController: UIViewController {
             road.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             road.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             road.widthAnchor.constraint(equalToConstant: roadWidth)
+        ])
+    }
+    
+    // scoreLabel constraints
+    private func setupScoreLabel() {
+        view.addSubview(scoreLabel)
+        
+        NSLayoutConstraint.activate([
+            scoreLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            scoreLabel.leadingAnchor.constraint(equalTo: road.trailingAnchor, constant: 10),
+            scoreLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            scoreLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -214,6 +241,13 @@ class RaceViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { (timer) in
             self.animateBottom()
             self.positionStone()
+            self.score += 1
+            self.scoreLabel.text = String(self.score)
+            
+            // Stop and reset the timer
+            if self.stopTimer {
+                timer.invalidate()
+            }
         }
     }
     
@@ -238,6 +272,7 @@ class RaceViewController: UIViewController {
             // Check for overlapping images
             let pointStone = self.stone.layer.presentation()?.frame.intersects(self.car.frame)
             if pointStone == true {
+                self.stopTimer = true
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }
