@@ -68,7 +68,6 @@ class RaceViewController: UIViewController {
     var stoneBottomAnchor: NSLayoutConstraint?
     
     var stoneIsTop: Bool = true
-    var stoneIsBottom: Bool = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -92,7 +91,9 @@ class RaceViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func tapLeftButton() {
-        guard let carCenterX = carCenterX else { return }
+        guard let carCenterX = carCenterX else {
+            return
+        }
         carCenterX.constant -= roadWidth / 9
         if carCenterX.constant <= -roadWidth / 2.5 {
             navigationController?.popToRootViewController(animated: true)
@@ -100,7 +101,9 @@ class RaceViewController: UIViewController {
     }
     
     @objc private func tapRightButton() {
-        guard let carCenterX = carCenterX else { return }
+        guard let carCenterX = carCenterX else {
+            return
+        }
         carCenterX.constant += roadWidth / 9
         if carCenterX.constant >= roadWidth / 2.5 {
             navigationController?.popToRootViewController(animated: true)
@@ -224,8 +227,8 @@ class RaceViewController: UIViewController {
             self.stoneCenterX?.constant = self.trueOrFalse ? -self.roadWidth / 4 : self.roadWidth / 4
         }
         
-        print(stone.frame.origin)
-        print(car.frame.origin)
+//        print(stone.frame.origin)
+//        print(car.frame.origin)
     }
     
 }
