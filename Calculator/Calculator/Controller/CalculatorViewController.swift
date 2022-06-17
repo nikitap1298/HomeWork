@@ -125,7 +125,7 @@ class CalculatorViewController: UIViewController {
             isTyping = false
         default:
             
-            // Используя return
+            // Using return
             let isInt = floor(currentValue) == currentValue
             if isInt == false {
                 return
@@ -134,7 +134,7 @@ class CalculatorViewController: UIViewController {
                 valueLabel.text = (valueLabel.text ?? "0") + "."
             }
             
-            // Вариант кода который был в четверг
+            // Another Version to write ","
 //            if isTyping && commaPlaced == false {
 //                valueLabel.text = (valueLabel.text ?? "0") + "."
 //                commaPlaced = true
