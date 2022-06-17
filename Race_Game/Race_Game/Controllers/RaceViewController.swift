@@ -10,6 +10,7 @@ import UIKit
 class RaceViewController: UIViewController {
     
     // MARK: - Private Properties
+    private let hapticFeedback = UINotificationFeedbackGenerator()
     private let roadWidth: CGFloat = 200
     private var trueOrFalse: Bool = true
     
@@ -91,6 +92,7 @@ class RaceViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func tapLeftButton() {
+        hapticFeedback.notificationOccurred(.success)
         guard let carCenterX = carCenterX else {
             return
         }
@@ -101,6 +103,7 @@ class RaceViewController: UIViewController {
     }
     
     @objc private func tapRightButton() {
+        hapticFeedback.notificationOccurred(.success)
         guard let carCenterX = carCenterX else {
             return
         }
