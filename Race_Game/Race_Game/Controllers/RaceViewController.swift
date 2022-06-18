@@ -100,6 +100,8 @@ class RaceViewController: UIViewController {
         
         leftButton.layer.cornerRadius = leftButton.frame.height / 2
         rightButton.layer.cornerRadius = rightButton.frame.height / 2
+        scoreLabel.layer.masksToBounds = true
+        scoreLabel.layer.cornerRadius = scoreLabel.frame.height / 2
     }
     
     override func viewWillDisappear(_ animated: Bool) {
