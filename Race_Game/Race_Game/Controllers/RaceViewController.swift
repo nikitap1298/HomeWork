@@ -73,7 +73,6 @@ class RaceViewController: UIViewController {
     }()
     
     // MARK: - Public Properties
-    var carCenterX: NSLayoutConstraint?
     var carTopAnchor: NSLayoutConstraint?
     var carLeadingAnchor: NSLayoutConstraint?
     var carTrailingAnchor: NSLayoutConstraint?
@@ -81,8 +80,6 @@ class RaceViewController: UIViewController {
     var stoneTopAnchor: NSLayoutConstraint?
     var stoneCenterX: NSLayoutConstraint?
     var stoneBottomAnchor: NSLayoutConstraint?
-    
-    var stoneIsTop: Bool = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -286,6 +283,12 @@ class RaceViewController: UIViewController {
             if pointStone == true {
                 self.navigationController?.popToRootViewController(animated: true)
             }
+            
+            // Stop and reset the timer
+            if self.stopTimer == true {
+                timer.invalidate()
+            }
+
         }
     }
     
