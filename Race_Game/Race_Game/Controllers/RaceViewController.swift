@@ -75,6 +75,8 @@ class RaceViewController: UIViewController {
     // MARK: - Public Properties
     var carCenterX: NSLayoutConstraint?
     var carTopAnchor: NSLayoutConstraint?
+    var carLeadingAnchor: NSLayoutConstraint?
+    var carTrailingAnchor: NSLayoutConstraint?
     
     var stoneTopAnchor: NSLayoutConstraint?
     var stoneCenterX: NSLayoutConstraint?
@@ -103,27 +105,35 @@ class RaceViewController: UIViewController {
         rightButton.layer.cornerRadius = rightButton.frame.height / 2
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopTimer = true
+    }
+    
     // MARK: - Actions
     @objc private func tapLeftButton() {
         hapticFeedback.notificationOccurred(.success)
-        guard let carCenterX = carCenterX else {
+        guard let carLeadingAnchor = carLeadingAnchor,
+              let carTrailingAnchor = carTrailingAnchor else {
             return
         }
-        carCenterX.constant -= roadWidth / 9
-        if carCenterX.constant <= -roadWidth / 2.5 {
-            self.stopTimer = true
+        carLeadingAnchor.constant -= 20
+        carTrailingAnchor.constant -= 20
+        if carLeadingAnchor.constant <= -25 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
     
     @objc private func tapRightButton() {
         hapticFeedback.notificationOccurred(.success)
-        guard let carCenterX = carCenterX else {
+        guard let carLeadingAnchor = carLeadingAnchor,
+              let carTrailingAnchor = carTrailingAnchor else {
             return
         }
-        carCenterX.constant += roadWidth / 9
-        if carCenterX.constant >= roadWidth / 2.5 {
-            self.stopTimer = true
+        carLeadingAnchor.constant += 20
+        carTrailingAnchor.constant += 20
+        if carTrailingAnchor.constant >= 25 {
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -198,20 +208,22 @@ class RaceViewController: UIViewController {
     private func setupCar() {
         road.addSubview(car)
         
-        carCenterX = car.centerXAnchor.constraint(equalTo: road.centerXAnchor)
         carTopAnchor = car.topAnchor.constraint(equalTo: road.topAnchor, constant: 500)
+        carLeadingAnchor = car.leadingAnchor.constraint(equalTo: road.leadingAnchor, constant: roadWidth / 3)
+        carTrailingAnchor = car.trailingAnchor.constraint(equalTo: road.trailingAnchor, constant: -roadWidth / 3)
         
         NSLayoutConstraint.activate([
-            car.widthAnchor.constraint(equalToConstant: 60),
             car.heightAnchor.constraint(equalToConstant: 150)
         ])
         
-        guard let carCenterX = carCenterX,
-              let carTopAnchor = carTopAnchor else {
+        guard let carTopAnchor = carTopAnchor,
+              let carLeadingAnchor = carLeadingAnchor,
+              let carTrailingAnchor = carTrailingAnchor else {
             return
         }
-        carCenterX.isActive = true
         carTopAnchor.isActive = true
+        carLeadingAnchor.isActive = true
+        carTrailingAnchor.isActive = true
     }
     
     // stone constraints
@@ -272,7 +284,6 @@ class RaceViewController: UIViewController {
             // Check for overlapping images
             let pointStone = self.stone.layer.presentation()?.frame.intersects(self.car.frame)
             if pointStone == true {
-                self.stopTimer = true
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }
