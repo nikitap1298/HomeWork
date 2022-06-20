@@ -18,6 +18,7 @@ class OnboardingViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         view.backgroundColor = UIColor(named: "colorYellow")
+        buttonsLabel.forEach { $0.addShadow() }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,14 @@ class OnboardingViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-
 }
 
+// MARK: - UI
+extension UIView {
+    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 5, height: 5), opacity: Float = 0.3, radius: CGFloat = 10) {
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowOffset = offset
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = radius
+    }
+}

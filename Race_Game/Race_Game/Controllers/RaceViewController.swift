@@ -81,6 +81,8 @@ class RaceViewController: UIViewController {
     var stoneCenterX: NSLayoutConstraint?
     var stoneBottomAnchor: NSLayoutConstraint?
     
+    var timer: Timer?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +110,10 @@ class RaceViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         stopTimer = true
+    }
+    
+    deinit {
+        timer?.invalidate()
     }
     
     // MARK: - Actions
@@ -249,16 +255,11 @@ class RaceViewController: UIViewController {
     }
     
     private func createVerticalTimer() {
-        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { (timer) in
-            self.animateBottom()
-            self.positionStone()
-            self.score += 1
-            self.scoreLabel.text = String(self.score)
-            
-            // Stop and reset the timer
-            if self.stopTimer {
-                timer.invalidate()
-            }
+        timer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { [weak self] (timer) in
+            self?.animateBottom()
+            self?.positionStone()
+            self?.score += 1
+            self?.scoreLabel.text = String(self?.score ?? 0)
         }
     }
     
@@ -278,27 +279,15 @@ class RaceViewController: UIViewController {
     }
     
     private func positionStone() {
-        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] (timer) in
             
             // Check for overlapping images
-            let pointStone = self.stone.layer.presentation()?.frame.intersects(self.car.frame)
-            if pointStone == true {
-                self.navigationController?.popToRootViewController(animated: true)
+            if let pointStone = self?.stone.layer.presentation()?.frame.intersects(self?.car.frame ?? CGRect(x: 0, y: 0, width: 0, height: 0)) {
+                if pointStone == true {
+                    self?.navigationController?.popToRootViewController(animated: true)
+                }
             }
-            
-            // Stop and reset the timer
-            if self.stopTimer == true {
-                timer.invalidate()
-            }
-
         }
     }
     
-}
-
-// MARK: - Extension (Random  true or false)
-extension Bool {
-    static func random() -> Bool {
-        return arc4random_uniform(2) == 0
-    }
 }
