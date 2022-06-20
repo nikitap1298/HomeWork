@@ -24,21 +24,20 @@ class CircleViewController: UIViewController {
         return square
     }()
     
-    // MARK: - Public Properties
-    var squareTopAnchor: NSLayoutConstraint?
-    var squareLeadingAnchor: NSLayoutConstraint?
-    var squareTrailingAnchor: NSLayoutConstraint?
-    var squareBottomAnchor: NSLayoutConstraint?
+    private var squareTopAnchor: NSLayoutConstraint?
+    private var squareLeadingAnchor: NSLayoutConstraint?
+    private var squareTrailingAnchor: NSLayoutConstraint?
+    private var squareBottomAnchor: NSLayoutConstraint?
     
-    var circleTopAnchor: NSLayoutConstraint?
-    var circleLeadingAnchor: NSLayoutConstraint?
-    var circleTrailingAnchor: NSLayoutConstraint?
-    var circleBottomAnchor: NSLayoutConstraint?
-    var circleWidth: NSLayoutConstraint?
-    var circleHeight: NSLayoutConstraint?
+    private var circleTopAnchor: NSLayoutConstraint?
+    private var circleLeadingAnchor: NSLayoutConstraint?
+    private var circleTrailingAnchor: NSLayoutConstraint?
+    private var circleBottomAnchor: NSLayoutConstraint?
+    private var circleWidth: NSLayoutConstraint?
+    private var circleHeight: NSLayoutConstraint?
     
-    var isTop: Bool = true
-    var isLeading: Bool = true
+    private var isTop: Bool = true
+    private var isLeading: Bool = true
     
     // MARK: - Life Cycle
     override func viewDidLoad() {

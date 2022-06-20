@@ -72,16 +72,15 @@ class RaceViewController: UIViewController {
         return stone
     }()
     
-    // MARK: - Public Properties
-    var carTopAnchor: NSLayoutConstraint?
-    var carLeadingAnchor: NSLayoutConstraint?
-    var carTrailingAnchor: NSLayoutConstraint?
+    private var carTopAnchor: NSLayoutConstraint?
+    private var carLeadingAnchor: NSLayoutConstraint?
+    private var carTrailingAnchor: NSLayoutConstraint?
     
-    var stoneTopAnchor: NSLayoutConstraint?
-    var stoneCenterX: NSLayoutConstraint?
-    var stoneBottomAnchor: NSLayoutConstraint?
+    private var stoneTopAnchor: NSLayoutConstraint?
+    private var stoneCenterX: NSLayoutConstraint?
+    private var stoneBottomAnchor: NSLayoutConstraint?
     
-    var timer: Timer?
+    private var timer: Timer?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {

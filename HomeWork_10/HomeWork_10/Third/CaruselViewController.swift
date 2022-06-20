@@ -14,26 +14,25 @@ class CaruselViewController: UIViewController {
     
     private var imageArray = ImageModel.fetchImages()
     
-    // MARK: - Public Properties
-    var image1TopAnchor: NSLayoutConstraint?
-    var image1LeadingAnchor: NSLayoutConstraint?
-    var image1TrailingAnchor: NSLayoutConstraint?
-    var image1BottomAnchor: NSLayoutConstraint?
+    private var image1TopAnchor: NSLayoutConstraint?
+    private var image1LeadingAnchor: NSLayoutConstraint?
+    private var image1TrailingAnchor: NSLayoutConstraint?
+    private var image1BottomAnchor: NSLayoutConstraint?
     
-    var image2TopAnchor: NSLayoutConstraint?
-    var image2LeadingAnchor: NSLayoutConstraint?
-    var image2TrailingAnchor: NSLayoutConstraint?
-    var image2BottomAnchor: NSLayoutConstraint?
+    private var image2TopAnchor: NSLayoutConstraint?
+    private var image2LeadingAnchor: NSLayoutConstraint?
+    private var image2TrailingAnchor: NSLayoutConstraint?
+    private var image2BottomAnchor: NSLayoutConstraint?
     
-    var image3TopAnchor: NSLayoutConstraint?
-    var image3LeadingAnchor: NSLayoutConstraint?
-    var image3TrailingAnchor: NSLayoutConstraint?
-    var image3BottomAnchor: NSLayoutConstraint?
+    private var image3TopAnchor: NSLayoutConstraint?
+    private var image3LeadingAnchor: NSLayoutConstraint?
+    private var image3TrailingAnchor: NSLayoutConstraint?
+    private var image3BottomAnchor: NSLayoutConstraint?
     
-    var image4TopAnchor: NSLayoutConstraint?
-    var image4LeadingAnchor: NSLayoutConstraint?
-    var image4TrailingAnchor: NSLayoutConstraint?
-    var image4BottomAnchor: NSLayoutConstraint?
+    private var image4TopAnchor: NSLayoutConstraint?
+    private var image4LeadingAnchor: NSLayoutConstraint?
+    private var image4TrailingAnchor: NSLayoutConstraint?
+    private var image4BottomAnchor: NSLayoutConstraint?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
