@@ -236,3 +236,12 @@ class CaruselViewController: UIViewController {
         }
     }
 }
+
+extension UIImageView {
+    func addShadow(shadow: UIColor = .black, offset: CGSize = .init(width: 10, height: 10), opacity: Float = 0.5, radius: CGFloat = 10) {
+        layer.shadowColor = shadow.cgColor
+        layer.shadowOffset = offset
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = radius
+    }
+}

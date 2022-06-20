@@ -19,14 +19,7 @@ class OnboardingViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "colorYellow")
         buttonsLabel.forEach { $0.addShadow() }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        for i in buttonsLabel {
-            i.layer.cornerRadius = i.frame.height / 2
-        }
+        buttonsLabel.forEach { $0.addCornerRadius() }
     }
     
     // MARK: - IBActions
@@ -70,5 +63,9 @@ extension UIView {
         layer.shadowOffset = offset
         layer.shadowOpacity = opacity
         layer.shadowRadius = radius
+    }
+    
+    func addCornerRadius() {
+        layer.cornerRadius = layer.frame.height / 2
     }
 }
