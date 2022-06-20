@@ -14,7 +14,6 @@ class RaceViewController: UIViewController {
     private let roadWidth: CGFloat = 200
     private var trueOrFalse: Bool = true
     private var score: Int = 0
-    private var stopTimer: Bool = false
     
     private var scoreLabel: UILabel = {
         let scoreLabel = UILabel()
@@ -103,12 +102,6 @@ class RaceViewController: UIViewController {
         rightButton.layer.cornerRadius = rightButton.frame.height / 2
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = scoreLabel.frame.height / 2
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        stopTimer = true
     }
     
     deinit {
