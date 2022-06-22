@@ -98,10 +98,10 @@ class RaceViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        leftButton.layer.cornerRadius = leftButton.frame.height / 2
-        rightButton.layer.cornerRadius = rightButton.frame.height / 2
+        leftButton.addCornerRadius()
+        rightButton.addCornerRadius()
         scoreLabel.layer.masksToBounds = true
-        scoreLabel.layer.cornerRadius = scoreLabel.frame.height / 2
+        scoreLabel.addCornerRadius()
     }
     
     deinit {

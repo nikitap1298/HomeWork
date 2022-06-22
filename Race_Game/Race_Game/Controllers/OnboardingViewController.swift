@@ -9,8 +9,12 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    // MARK: - Public Properties
+    var totalScore = 0
+    
     // MARK: - IBOutlets
     @IBOutlet var buttonsLabel: [UIButton]!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -20,6 +24,7 @@ class OnboardingViewController: UIViewController {
         view.backgroundColor = UIColor(named: "colorYellow")
         buttonsLabel.forEach { $0.addShadow() }
         buttonsLabel.forEach { $0.addCornerRadius() }
+        scoreLabel.text = "Total score: \(totalScore)"
     }
     
     // MARK: - IBActions
@@ -58,7 +63,7 @@ class OnboardingViewController: UIViewController {
 
 // MARK: - UI
 extension UIView {
-    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 5, height: 5), opacity: Float = 0.3, radius: CGFloat = 10) {
+    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 3, height: 3), opacity: Float = 0.3, radius: CGFloat = 10) {
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOffset = offset
         layer.shadowOpacity = opacity
