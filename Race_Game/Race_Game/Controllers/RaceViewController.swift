@@ -81,6 +81,11 @@ class RaceViewController: UIViewController {
     
     private var timer: Timer?
     
+    // MARK: - Public Properties
+    
+    // Helps to transfer data on OnboardingViewController
+    var resultCompletion: ((Int) -> ())?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +123,7 @@ class RaceViewController: UIViewController {
         carLeadingAnchor.constant -= 20
         carTrailingAnchor.constant -= 20
         if carLeadingAnchor.constant <= -25 {
+            self.resultCompletion?(self.score)
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -131,6 +137,7 @@ class RaceViewController: UIViewController {
         carLeadingAnchor.constant += 20
         carTrailingAnchor.constant += 20
         if carTrailingAnchor.constant >= 25 {
+            self.resultCompletion?(self.score)
             navigationController?.popToRootViewController(animated: true)
         }
     }
@@ -276,6 +283,7 @@ class RaceViewController: UIViewController {
             // Check for overlapping images
             if let pointStone = self?.stone.layer.presentation()?.frame.intersects(self?.car.frame ?? CGRect(x: 0, y: 0, width: 0, height: 0)) {
                 if pointStone == true {
+                    self?.resultCompletion?(self?.score ?? 0)
                     self?.navigationController?.popToRootViewController(animated: true)
                 }
             }

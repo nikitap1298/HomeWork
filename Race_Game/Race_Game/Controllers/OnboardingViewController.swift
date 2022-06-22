@@ -8,9 +8,6 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-
-    // MARK: - Public Properties
-    var totalScore = 0
     
     // MARK: - IBOutlets
     @IBOutlet var buttonsLabel: [UIButton]!
@@ -24,7 +21,7 @@ class OnboardingViewController: UIViewController {
         view.backgroundColor = UIColor(named: "colorYellow")
         buttonsLabel.forEach { $0.addShadow() }
         buttonsLabel.forEach { $0.addCornerRadius() }
-        scoreLabel.text = "Total score: \(totalScore)"
+        scoreLabel.text = "Total score: 0"
     }
     
     // MARK: - IBActions
@@ -43,7 +40,14 @@ class OnboardingViewController: UIViewController {
     // MARK: - Private Functions
     private func showRace() {
         let storyboard = UIStoryboard(name: "Race", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "RaceViewController")
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "RaceViewController") as? RaceViewController else {
+            return
+        }
+        
+        // Get data from RaceViewController
+        viewController.resultCompletion = { score in
+            self.scoreLabel.text = "Total score: \(score.toString())"
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -72,5 +76,19 @@ extension UIView {
     
     func addCornerRadius() {
         layer.cornerRadius = layer.frame.height / 2
+    }
+}
+
+// MARK: - Int
+extension Int {
+    
+    // Int to Double
+    func toDouble() -> Double {
+        Double(self)
+    }
+    
+    // Int to String
+    func toString() -> String {
+        String(self)
     }
 }
