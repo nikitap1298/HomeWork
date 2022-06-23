@@ -19,6 +19,15 @@
 		6D14CC342859EFE2003133CE /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14CC332859EFE2003133CE /* RaceViewController.swift */; };
 		6D14CC362859EFF0003133CE /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14CC352859EFF0003133CE /* RecordsViewController.swift */; };
 		6D14CC382859EFFB003133CE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14CC372859EFFB003133CE /* SettingsViewController.swift */; };
+		6D685ACD2864756700565726 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685AC42864756700565726 /* Merriweather-Bold.ttf */; };
+		6D685ACE2864756700565726 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685AC52864756700565726 /* Merriweather-Regular.ttf */; };
+		6D685ACF2864756700565726 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685AC62864756700565726 /* Merriweather-Light.ttf */; };
+		6D685AD02864756700565726 /* Merriweather-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685AC72864756700565726 /* Merriweather-BoldItalic.ttf */; };
+		6D685AD12864756700565726 /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685AC82864756700565726 /* Merriweather-BlackItalic.ttf */; };
+		6D685AD22864756700565726 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D685AC92864756700565726 /* OFL.txt */; };
+		6D685AD32864756700565726 /* Merriweather-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685ACA2864756700565726 /* Merriweather-Italic.ttf */; };
+		6D685AD42864756700565726 /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685ACB2864756700565726 /* Merriweather-Black.ttf */; };
+		6D685AD52864756700565726 /* Merriweather-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D685ACC2864756700565726 /* Merriweather-LightItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,15 @@
 		6D14CC332859EFE2003133CE /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
 		6D14CC352859EFF0003133CE /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		6D14CC372859EFFB003133CE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6D685AC42864756700565726 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		6D685AC52864756700565726 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		6D685AC62864756700565726 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
+		6D685AC72864756700565726 /* Merriweather-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6D685AC82864756700565726 /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
+		6D685AC92864756700565726 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		6D685ACA2864756700565726 /* Merriweather-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Italic.ttf"; sourceTree = "<group>"; };
+		6D685ACB2864756700565726 /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
+		6D685ACC2864756700565726 /* Merriweather-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-LightItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,7 @@
 			children = (
 				6D14CC172859EE6C003133CE /* AppDelegate.swift */,
 				6D14CC192859EE6C003133CE /* SceneDelegate.swift */,
+				6D685AD62864756C00565726 /* Fonts */,
 				6D14CC322859EFCF003133CE /* Controllers */,
 				6D14CC2B2859EF1D003133CE /* Views */,
 				6D14CC202859EE6D003133CE /* Assets.xcassets */,
@@ -99,6 +118,30 @@
 				6D14CC372859EFFB003133CE /* SettingsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6D685AC32864756700565726 /* Merriweather */ = {
+			isa = PBXGroup;
+			children = (
+				6D685AC42864756700565726 /* Merriweather-Bold.ttf */,
+				6D685AC52864756700565726 /* Merriweather-Regular.ttf */,
+				6D685AC62864756700565726 /* Merriweather-Light.ttf */,
+				6D685AC72864756700565726 /* Merriweather-BoldItalic.ttf */,
+				6D685AC82864756700565726 /* Merriweather-BlackItalic.ttf */,
+				6D685AC92864756700565726 /* OFL.txt */,
+				6D685ACA2864756700565726 /* Merriweather-Italic.ttf */,
+				6D685ACB2864756700565726 /* Merriweather-Black.ttf */,
+				6D685ACC2864756700565726 /* Merriweather-LightItalic.ttf */,
+			);
+			path = Merriweather;
+			sourceTree = "<group>";
+		};
+		6D685AD62864756C00565726 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6D685AC32864756700565726 /* Merriweather */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +202,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D685ACF2864756700565726 /* Merriweather-Light.ttf in Resources */,
+				6D685AD42864756700565726 /* Merriweather-Black.ttf in Resources */,
+				6D685ACD2864756700565726 /* Merriweather-Bold.ttf in Resources */,
+				6D685AD02864756700565726 /* Merriweather-BoldItalic.ttf in Resources */,
 				6D14CC2F2859EF49003133CE /* Records.storyboard in Resources */,
+				6D685AD52864756700565726 /* Merriweather-LightItalic.ttf in Resources */,
+				6D685AD32864756700565726 /* Merriweather-Italic.ttf in Resources */,
+				6D685AD12864756700565726 /* Merriweather-BlackItalic.ttf in Resources */,
+				6D685ACE2864756700565726 /* Merriweather-Regular.ttf in Resources */,
+				6D685AD22864756700565726 /* OFL.txt in Resources */,
 				6D14CC242859EE6D003133CE /* LaunchScreen.storyboard in Resources */,
 				6D14CC2D2859EF37003133CE /* Race.storyboard in Resources */,
 				6D14CC312859EF52003133CE /* Settings.storyboard in Resources */,

@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6x-54-ksp">
-                                <rect key="frame" x="134" y="338" width="122" height="20.333333333333314"/>
+                                <rect key="frame" x="30" y="338" width="330" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,9 +79,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j65-dX-FLc" secondAttribute="bottom" constant="30" id="VYE-Z6-aag"/>
                             <constraint firstItem="hou-nP-dVX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="WU9-eS-8cz"/>
                             <constraint firstItem="j65-dX-FLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="ipH-1F-5fZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6x-54-ksp" secondAttribute="trailing" constant="134" id="n6a-LX-Q3n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6x-54-ksp" secondAttribute="trailing" constant="30" id="n6a-LX-Q3n"/>
                             <constraint firstItem="m6x-54-ksp" firstAttribute="top" secondItem="hou-nP-dVX" secondAttribute="bottom" constant="120" id="owd-2N-CGd"/>
-                            <constraint firstItem="m6x-54-ksp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="p1D-Bd-Hf2"/>
+                            <constraint firstItem="m6x-54-ksp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="p1D-Bd-Hf2"/>
                             <constraint firstItem="hou-nP-dVX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="w3Z-fz-zeE"/>
                         </constraints>
                     </view>

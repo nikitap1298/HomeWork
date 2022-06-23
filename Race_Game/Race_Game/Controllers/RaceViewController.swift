@@ -101,7 +101,7 @@ class RaceViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+        super.viewDidLayoutSubviews()
         
         leftButton.addCornerRadius()
         rightButton.addCornerRadius()
