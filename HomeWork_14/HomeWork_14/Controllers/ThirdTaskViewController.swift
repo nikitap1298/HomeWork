@@ -98,7 +98,6 @@ class ThirdTaskViewController: UIViewController {
             }
             
             self.textLabel.text = "Wrong password: \(answer?.text ?? "Error")"
-            print(answer?.text ?? "Error. There is no value")
         }
         alert.addAction(submitAction)
         present(alert, animated: true)
