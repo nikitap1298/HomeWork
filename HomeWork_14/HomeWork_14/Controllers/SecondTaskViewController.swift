@@ -25,6 +25,12 @@ class SecondTaskViewController: UIViewController {
         setUpHelloButton()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        helloButton.layer.cornerRadius = helloButton.frame.height / 2
+    }
+    
     // MARK: - Private Functions
     private func setUpHelloButton() {
         view.addSubview(helloButton)
@@ -48,7 +54,7 @@ class SecondTaskViewController: UIViewController {
         customAlertTwoActions(alertTitle: "Select your age",
                               alertMessage: nil,
                               alertStyle: .actionSheet,
-                              firstActionTitle: "Under 18",
+                              firstActionTitle: "0-17",
                               firstActionStyle: .default,
                               secondActionTitle: "18+",
                               secondActionStyle: .default)
