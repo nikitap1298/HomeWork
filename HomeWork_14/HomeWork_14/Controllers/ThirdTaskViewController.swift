@@ -36,11 +36,16 @@ class ThirdTaskViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .orange
-        navigationController?.navigationBar.tintColor = .white
         
         customButtonFont()
         setUpCallAlertButton()
         setUpTextLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.tintColor = .white
     }
     
     override func viewDidLayoutSubviews() {
@@ -94,8 +99,11 @@ class ThirdTaskViewController: UIViewController {
         let submitAction = UIAlertAction(title: "Log In", style: .default) { _ in
             let answer = alert.textFields?.first
             
-            if answer?.text == "root" {
-                self.navigationController?.popToRootViewController(animated: true)
+            if answer?.text == "flower" {
+//                self.navigationController?.popToRootViewController(animated: true)
+                let storyboard = UIStoryboard(name: "HiddenWindow", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "HiddenWindowViewController")
+                self.navigationController?.pushViewController(viewController, animated: true)
             }
             
             self.textLabel.text = "Wrong password: \(answer?.text ?? "Error")"

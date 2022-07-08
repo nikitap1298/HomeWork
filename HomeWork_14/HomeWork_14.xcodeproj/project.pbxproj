@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D0AC56E28789160009B05D7 /* UsefulExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AC56D28789160009B05D7 /* UsefulExtensions.swift */; };
+		6DE87A982878AFF6009608D7 /* HiddenWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE87A972878AFF6009608D7 /* HiddenWindowViewController.swift */; };
+		6DE87A9A2878B02E009608D7 /* HiddenWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE87A992878B02E009608D7 /* HiddenWindow.storyboard */; };
 		6DF3F3BD28771E89002A5E31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3F3BC28771E89002A5E31 /* AppDelegate.swift */; };
 		6DF3F3BF28771E89002A5E31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3F3BE28771E89002A5E31 /* SceneDelegate.swift */; };
 		6DF3F3C128771E89002A5E31 /* FirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF3F3C028771E89002A5E31 /* FirstTaskViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		6D0AC56D28789160009B05D7 /* UsefulExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulExtensions.swift; sourceTree = "<group>"; };
+		6DE87A972878AFF6009608D7 /* HiddenWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenWindowViewController.swift; sourceTree = "<group>"; };
+		6DE87A992878B02E009608D7 /* HiddenWindow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiddenWindow.storyboard; sourceTree = "<group>"; };
 		6DF3F3B928771E89002A5E31 /* HomeWork_14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF3F3BC28771E89002A5E31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DF3F3BE28771E89002A5E31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				6DF3F3C228771E89002A5E31 /* First.storyboard */,
 				6DF3F3D02877208A002A5E31 /* Second.storyboard */,
 				6DF3F3D228772091002A5E31 /* Third.storyboard */,
+				6DE87A992878B02E009608D7 /* HiddenWindow.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 				6DF3F3C028771E89002A5E31 /* FirstTaskViewController.swift */,
 				6DF3F3D5287720E2002A5E31 /* SecondTaskViewController.swift */,
 				6DF3F3D728772119002A5E31 /* ThirdTaskViewController.swift */,
+				6DE87A972878AFF6009608D7 /* HiddenWindowViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 			files = (
 				6DF3F3D12877208A002A5E31 /* Second.storyboard in Resources */,
 				6DF3F3C928771E8A002A5E31 /* LaunchScreen.storyboard in Resources */,
+				6DE87A9A2878B02E009608D7 /* HiddenWindow.storyboard in Resources */,
 				6DF3F3C628771E8A002A5E31 /* Assets.xcassets in Resources */,
 				6DF3F3C428771E89002A5E31 /* First.storyboard in Resources */,
 				6DF3F3D328772091002A5E31 /* Third.storyboard in Resources */,
@@ -176,6 +183,7 @@
 				6DF3F3BD28771E89002A5E31 /* AppDelegate.swift in Sources */,
 				6D0AC56E28789160009B05D7 /* UsefulExtensions.swift in Sources */,
 				6DF3F3BF28771E89002A5E31 /* SceneDelegate.swift in Sources */,
+				6DE87A982878AFF6009608D7 /* HiddenWindowViewController.swift in Sources */,
 				6DF3F3D6287720E2002A5E31 /* SecondTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
