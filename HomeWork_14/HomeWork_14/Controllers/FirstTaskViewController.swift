@@ -79,11 +79,6 @@ class FirstTaskViewController: UIViewController {
     private func setUpBurgerButton() {
         view.addSubview(burgerButton)
         
-        NSLayoutConstraint.activate([
-            burgerButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            burgerButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
-        ])
-        
         burgerButton.addTarget(self, action: #selector(pressBurgerButton), for: .touchUpInside)
     }
     

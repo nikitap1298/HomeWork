@@ -6,7 +6,7 @@
 //
 
 
-// Enter "secondtask" in UIAlertController
+// Enter "firsttask" in UIAlertController
 
 import UIKit
 
@@ -93,22 +93,14 @@ class ThirdTaskViewController: UIViewController {
         let submitAction = UIAlertAction(title: "Log In", style: .default) { _ in
             let answer = alert.textFields?.first
             
-            if answer?.text == "secondtask" {
-                self.showSecondTaskVC()
+            if answer?.text == "firsttask" {
+                self.navigationController?.popToRootViewController(animated: true)
             }
             
             self.textLabel.text = "Wrong password: \(answer?.text ?? "Error")"
         }
         alert.addAction(submitAction)
         present(alert, animated: true)
-    }
-    
-    private func showSecondTaskVC() {
-        let storyboard = UIStoryboard(name: "Second", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SecondTaskViewController")
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.modalTransitionStyle = .coverVertical
-        present(viewController, animated: true)
     }
     
 }
