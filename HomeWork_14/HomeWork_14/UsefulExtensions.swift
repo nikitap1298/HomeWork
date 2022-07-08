@@ -23,6 +23,19 @@ extension UIView {
         layer.cornerRadius = layer.frame.height / divider
     }
     
+    // Gradient
+    func addGradient(_ firstColor: UIColor, _ secondColor: UIColor, _ gradientType: CAGradientLayerType) {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = [firstColor.cgColor, secondColor.cgColor]
+        gradient.startPoint = .init(x: 0, y: 0)
+        gradient.endPoint = .init(x: 1, y: 1)
+        gradient.type = gradientType
+        gradient.cornerRadius = layer.cornerRadius
+        gradient.maskedCorners = [.layerMaxXMinYCorner]
+        layer.addSublayer(gradient)
+    }
+    
 }
 
 // MARK: - Int

@@ -22,6 +22,8 @@ class SecondTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.tintColor = .brown
+        
         setUpHelloButton()
     }
     

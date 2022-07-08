@@ -36,6 +36,7 @@ class ThirdTaskViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .orange
+        navigationController?.navigationBar.tintColor = .white
         
         customButtonFont()
         setUpCallAlertButton()

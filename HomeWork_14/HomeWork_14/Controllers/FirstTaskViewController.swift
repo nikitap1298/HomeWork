@@ -20,7 +20,7 @@ class FirstTaskViewController: UIViewController {
     
     private var menuView: UIView = {
         let menuView = UIView()
-        menuView.backgroundColor = .gray
+//        menuView.backgroundColor = .gray
         menuView.translatesAutoresizingMaskIntoConstraints = false
         return menuView
     }()
@@ -35,6 +35,7 @@ class FirstTaskViewController: UIViewController {
         secondButton.backgroundColor = .white
         secondButton.setTitle("Second Task", for: .normal)
         secondButton.setTitleColor(UIColor.black, for: .normal)
+        secondButton.addShadow()
         secondButton.translatesAutoresizingMaskIntoConstraints = false
         return secondButton
     }()
@@ -44,6 +45,7 @@ class FirstTaskViewController: UIViewController {
         thirdButton.backgroundColor = .white
         thirdButton.setTitle("Third Task", for: .normal)
         thirdButton.setTitleColor(UIColor.black, for: .normal)
+        thirdButton.addShadow()
         thirdButton.translatesAutoresizingMaskIntoConstraints = false
         return thirdButton
     }()
@@ -70,7 +72,9 @@ class FirstTaskViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         menuView.layer.cornerRadius = 30
-        menuView.layer.maskedCorners = [.layerMaxXMinYCorner]
+        menuView.addGradient(UIColor(named: "ColorLightGreen") ?? .white, UIColor(named: "ColorDarkGreen") ?? .white, .axial)
+        menuView.bringSubviewToFront(secondButton)
+        menuView.bringSubviewToFront(thirdButton)
         secondButton.layer.cornerRadius = 15
         thirdButton.layer.cornerRadius = 15
     }
@@ -87,7 +91,7 @@ class FirstTaskViewController: UIViewController {
         
         if n % 2 == 0 {
             menuViewLeadingAnchor?.constant = 0
-            UIView.animate(withDuration: 1.0, delay: 0.0) {
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
                 self.view.layoutIfNeeded()
             }
             
@@ -96,7 +100,7 @@ class FirstTaskViewController: UIViewController {
             view.bringSubviewToFront(menuView)
         } else {
             menuViewLeadingAnchor?.constant = -view.frame.width / 2.3
-            UIView.animate(withDuration: 1.0, delay: 0.0) {
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
                 self.view.layoutIfNeeded()
             }
             view.removeBlur()
