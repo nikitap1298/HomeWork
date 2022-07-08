@@ -6,7 +6,7 @@
 //
 
 
-// Enter "firsttask" in UIAlertController
+// Enter "root" in UIAlertController
 
 import UIKit
 
@@ -94,7 +94,7 @@ class ThirdTaskViewController: UIViewController {
         let submitAction = UIAlertAction(title: "Log In", style: .default) { _ in
             let answer = alert.textFields?.first
             
-            if answer?.text == "firsttask" {
+            if answer?.text == "root" {
                 self.navigationController?.popToRootViewController(animated: true)
             }
             

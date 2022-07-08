@@ -34,6 +34,7 @@ class SecondTaskViewController: UIViewController {
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(pressNextButton))
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,13 +63,30 @@ class SecondTaskViewController: UIViewController {
 //                             alertStyle: .alert,
 //                             actionTitle: "18+",
 //                             actionStyle: .default)
-        customAlertTwoActions(alertTitle: "Select your age",
-                              alertMessage: nil,
-                              alertStyle: .actionSheet,
-                              firstActionTitle: "0-17",
-                              firstActionStyle: .default,
-                              secondActionTitle: "18+",
-                              secondActionStyle: .default)
+//        customAlertTwoActions(alertTitle: "Select your age",
+//                              alertMessage: nil,
+//                              alertStyle: .actionSheet,
+//                              firstActionTitle: "0-17",
+//                              firstActionStyle: .default,
+//                              secondActionTitle: "18+",
+//                              secondActionStyle: .default)
+        let alert = UIAlertController(title: "Select your age",
+                                      message: nil,
+                                      preferredStyle: .actionSheet)
+        let firstAction = UIAlertAction(title: "0-17", style: .default) { action in
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        let secondAction = UIAlertAction(title: "18+", style: .default) { action in
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        let thirdAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            
+        }
+        alert.addAction(firstAction)
+        alert.addAction(secondAction)
+        alert.addAction(thirdAction)
+        present(alert, animated: true)
+        
     }
     
     @objc private func pressNextButton() {
