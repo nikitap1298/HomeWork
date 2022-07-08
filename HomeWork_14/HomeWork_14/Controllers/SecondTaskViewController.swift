@@ -22,9 +22,18 @@ class SecondTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpHelloButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         navigationController?.navigationBar.tintColor = .brown
         
-        setUpHelloButton()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(pressNextButton))
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,6 +70,13 @@ class SecondTaskViewController: UIViewController {
                               secondActionTitle: "18+",
                               secondActionStyle: .default)
     }
+    
+    @objc private func pressNextButton() {
+        let storyboard = UIStoryboard(name: "Third", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ThirdTaskViewController")
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 
 // Extension for UiViewController using Alert

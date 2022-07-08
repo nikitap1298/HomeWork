@@ -11,7 +11,10 @@ import UIKit
 extension UIView {
     
     // Add shadows
-    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 10, height: 10), opacity: Float = 0.3, radius: CGFloat = 8) {
+    func addShadow(shadowColor: UIColor = .black,
+                   offset: CGSize = .init(width: 0, height: 10),
+                   opacity: Float = 0.3,
+                   radius: CGFloat = 8) {
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOffset = offset
         layer.shadowOpacity = opacity
@@ -24,7 +27,9 @@ extension UIView {
     }
     
     // Gradient
-    func addGradient(_ firstColor: UIColor, _ secondColor: UIColor, _ gradientType: CAGradientLayerType) {
+    func addGradient(_ firstColor: UIColor,
+                     _ secondColor: UIColor,
+                     _ gradientType: CAGradientLayerType) {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [firstColor.cgColor, secondColor.cgColor]

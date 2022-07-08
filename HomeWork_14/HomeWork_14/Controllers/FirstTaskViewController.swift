@@ -30,24 +30,14 @@ class FirstTaskViewController: UIViewController {
     private var menuViewBottomAnchor: NSLayoutConstraint?
     private var menuViewWidthAnchor: NSLayoutConstraint?
     
-    private var secondButton: UIButton = {
-        let secondButton = UIButton()
-        secondButton.backgroundColor = .white
-        secondButton.setTitle("Second Task", for: .normal)
-        secondButton.setTitleColor(UIColor.black, for: .normal)
-        secondButton.addShadow()
-        secondButton.translatesAutoresizingMaskIntoConstraints = false
-        return secondButton
-    }()
-    
-    private var thirdButton: UIButton = {
-        let thirdButton = UIButton()
-        thirdButton.backgroundColor = .white
-        thirdButton.setTitle("Third Task", for: .normal)
-        thirdButton.setTitleColor(UIColor.black, for: .normal)
-        thirdButton.addShadow()
-        thirdButton.translatesAutoresizingMaskIntoConstraints = false
-        return thirdButton
+    private var otherTasksButton: UIButton = {
+        let otherTasksButton = UIButton()
+        otherTasksButton.backgroundColor = .white
+        otherTasksButton.setTitle("Other Tasks", for: .normal)
+        otherTasksButton.setTitleColor(UIColor.gray, for: .normal)
+        otherTasksButton.addShadow()
+        otherTasksButton.translatesAutoresizingMaskIntoConstraints = false
+        return otherTasksButton
     }()
     
     private var n: Int = 1
@@ -63,9 +53,7 @@ class FirstTaskViewController: UIViewController {
         
         setUpBurgerButton()
         setUpMenuView()
-        setUpSecondButton()
-        setUpThirdButton()
-        
+        setUpOtherTasksButton()
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,10 +61,8 @@ class FirstTaskViewController: UIViewController {
         
         menuView.layer.cornerRadius = 30
         menuView.addGradient(UIColor(named: "ColorLightGreen") ?? .white, UIColor(named: "ColorDarkGreen") ?? .white, .axial)
-        menuView.bringSubviewToFront(secondButton)
-        menuView.bringSubviewToFront(thirdButton)
-        secondButton.layer.cornerRadius = 15
-        thirdButton.layer.cornerRadius = 15
+        menuView.bringSubviewToFront(otherTasksButton)
+        otherTasksButton.layer.cornerRadius = 15
     }
     
     // MARK: - Private Functions
@@ -127,41 +113,22 @@ class FirstTaskViewController: UIViewController {
         menuViewLeadingAnchor.isActive = true
     }
     
-    private func setUpSecondButton() {
-        menuView.addSubview(secondButton)
+    private func setUpOtherTasksButton() {
+        menuView.addSubview(otherTasksButton)
         
         NSLayoutConstraint.activate([
-            secondButton.topAnchor.constraint(equalTo: menuView.topAnchor, constant: 30),
-            secondButton.leadingAnchor.constraint(equalTo: menuView.leadingAnchor, constant: 20),
-            secondButton.trailingAnchor.constraint(equalTo: menuView.trailingAnchor, constant: -20),
-            secondButton.heightAnchor.constraint(equalToConstant: 40)
+            otherTasksButton.topAnchor.constraint(equalTo: menuView.topAnchor, constant: 30),
+            otherTasksButton.leadingAnchor.constraint(equalTo: menuView.leadingAnchor, constant: 20),
+            otherTasksButton.trailingAnchor.constraint(equalTo: menuView.trailingAnchor, constant: -20),
+            otherTasksButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
-        secondButton.addTarget(self, action: #selector(showSecondTask), for: .touchUpInside)
+        otherTasksButton.addTarget(self, action: #selector(showSecondTask), for: .touchUpInside)
     }
     
     @objc private func showSecondTask() {
         let storyboard = UIStoryboard(name: "Second", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SecondTaskViewController")
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    private func setUpThirdButton() {
-        menuView.addSubview(thirdButton)
-        
-        NSLayoutConstraint.activate([
-            thirdButton.topAnchor.constraint(equalTo: secondButton.bottomAnchor, constant: 30),
-            thirdButton.leadingAnchor.constraint(equalTo: menuView.leadingAnchor, constant: 20),
-            thirdButton.trailingAnchor.constraint(equalTo: menuView.trailingAnchor, constant: -20),
-            thirdButton.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        
-        thirdButton.addTarget(self, action: #selector(showThirdTask), for: .touchUpInside)
-    }
-    
-    @objc private func showThirdTask() {
-        let storyboard = UIStoryboard(name: "Third", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ThirdTaskViewController")
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
