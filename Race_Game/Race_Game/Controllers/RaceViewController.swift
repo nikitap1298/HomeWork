@@ -57,15 +57,15 @@ class RaceViewController: UIViewController {
     
     private var car: UIImageView = {
         let car = UIImageView()
-        car.image = UIImage(named: "car")
-        car.contentMode = .scaleToFill
+        car.image = UIImage(named: "Car_Image")
+        car.contentMode = .scaleAspectFit
         car.translatesAutoresizingMaskIntoConstraints = false
         return car
     }()
     
     private var stone: UIImageView = {
         let stone = UIImageView()
-        stone.image = UIImage(named: "stone")
+        stone.image = UIImage(named: "Grass_Image")
         stone.contentMode = .scaleToFill
         stone.translatesAutoresizingMaskIntoConstraints = false
         return stone
