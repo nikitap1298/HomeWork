@@ -9,18 +9,67 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
+    // MARK: - Private Properties
+    private var burgerButton: UIButton = {
+        let burgerButton = UIButton()
+        burgerButton.setImage(UIImage(systemName: "ellipsis.circle.fill"), for: .normal)
+        burgerButton.tintColor = .white
+        burgerButton.translatesAutoresizingMaskIntoConstraints = false
+        return burgerButton
+    }()
+    
+    private var menuView: UIView = {
+        let menuView = UIView()
+        menuView.translatesAutoresizingMaskIntoConstraints = false
+        return menuView
+    }()
+    
+    private var menuViewTopAnchor: NSLayoutConstraint?
+    private var menuViewLeadingAnchor: NSLayoutConstraint?
+    private var menuViewBottomAnchor: NSLayoutConstraint?
+    private var menuViewWidthAnchor: NSLayoutConstraint?
+    
+    private var recordsButton: UIButton = {
+        let recordsButton = UIButton()
+        recordsButton.backgroundColor = .systemBlue
+        recordsButton.setTitle("Records", for: .normal)
+        recordsButton.setTitleColor(UIColor.white, for: .normal)
+        recordsButton.addShadow()
+        recordsButton.translatesAutoresizingMaskIntoConstraints = false
+        return recordsButton
+    }()
+    
+    private var settingsButton: UIButton = {
+        let settingsButton = UIButton()
+        settingsButton.backgroundColor = .systemBlue
+        settingsButton.setTitle("Serrings", for: .normal)
+        settingsButton.setTitleColor(UIColor.white, for: .normal)
+        settingsButton.addShadow()
+        settingsButton.translatesAutoresizingMaskIntoConstraints = false
+        return settingsButton
+    }()
+    
+    private var n: Int = 1
+    
     // MARK: - IBOutlets
-    @IBOutlet var buttonsLabel: [UIButton]!
+    @IBOutlet weak var raceButtonLabel: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         view.backgroundColor = UIColor(named: "colorYellow")
-        buttonsLabel.forEach { $0.addShadow() }
-        buttonsLabel.forEach { $0.addCornerRadius() }
+        let leftButton = UIBarButtonItem(customView: burgerButton)
+        navigationItem.leftBarButtonItem = leftButton
+        
+        setUpBurgerButton()
+        setUpMenuView()
+        setUpRecordsButton()
+        setUpSettingsButton()
+        
+        raceButtonLabel.addShadow()
+        raceButtonLabel.addCornerRadius()
         customFont()
         scoreLabel.font = UIFont(name: "Merriweather-Regular", size: 20)
     }
@@ -28,9 +77,21 @@ class OnboardingViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        for i in buttonsLabel {
-            i.titleLabel?.font = UIFont(name: "Merriweather-Bold", size: 15)
-        }
+        menuView.backgroundColor = .white
+        menuView.layer.cornerRadius = 30
+        menuView.layer.maskedCorners = [.layerMaxXMinYCorner]
+        recordsButton.layer.cornerRadius = 15
+        settingsButton.layer.cornerRadius = 15
+        
+        raceButtonLabel.titleLabel?.font = UIFont(name: "Merriweather-Bold", size: 15)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        menuViewLeadingAnchor?.constant = -view.frame.width / 2.3
+        view.removeBlur()
+        n = 1
     }
     
     // MARK: - IBActions
@@ -38,15 +99,81 @@ class OnboardingViewController: UIViewController {
         showRace()
     }
     
-    @IBAction func recordsButton(_ sender: UIButton) {
-        showRecords()
-    }
-    
-    @IBAction func settingsButton(_ sender: UIButton) {
-        showSettings()
-    }
-    
     // MARK: - Private Functions
+    private func setUpBurgerButton() {
+        view.addSubview(burgerButton)
+        
+        burgerButton.addTarget(self, action: #selector(pressBurgerButton), for: .touchUpInside)
+    }
+    
+    @objc private func pressBurgerButton() {
+        n += 1
+        
+        if n % 2 == 0 {
+            menuViewLeadingAnchor?.constant = 0
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
+                self.view.layoutIfNeeded()
+            }
+            
+            // Add BlueEffect when Menu appears
+            view.blurView(style: .dark)
+            view.bringSubviewToFront(menuView)
+        } else {
+            menuViewLeadingAnchor?.constant = -view.frame.width / 2.3
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
+                self.view.layoutIfNeeded()
+            }
+            view.removeBlur()
+        }
+        
+    }
+    
+    private func setUpMenuView() {
+        view.addSubview(menuView)
+        
+        menuViewTopAnchor = menuView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
+        menuViewBottomAnchor = menuView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        menuViewWidthAnchor = menuView.widthAnchor.constraint(equalToConstant: view.frame.width / 2.3)
+        menuViewLeadingAnchor = menuView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -view.frame.width / 2.3)
+        
+        guard let menuViewTopAnchor = menuViewTopAnchor,
+              let menuViewBottomAnchor = menuViewBottomAnchor,
+              let menuViewLeadingAnchor = menuViewLeadingAnchor,
+              let menuViewWidthAnchor = menuViewWidthAnchor else { return }
+        
+        menuViewTopAnchor.isActive = true
+        menuViewBottomAnchor.isActive = true
+        menuViewWidthAnchor.isActive = true
+        menuViewLeadingAnchor.isActive = true
+    }
+    
+    private func setUpRecordsButton() {
+        menuView.addSubview(recordsButton)
+        
+        NSLayoutConstraint.activate([
+            recordsButton.topAnchor.constraint(equalTo: menuView.topAnchor, constant: 30),
+            recordsButton.leadingAnchor.constraint(equalTo: menuView.leadingAnchor, constant: 20),
+            recordsButton.trailingAnchor.constraint(equalTo: menuView.trailingAnchor, constant: -20),
+            recordsButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        recordsButton.addTarget(self, action: #selector(showRecords), for: .touchUpInside)
+    }
+    
+    private func setUpSettingsButton() {
+        menuView.addSubview(settingsButton)
+        
+        NSLayoutConstraint.activate([
+            settingsButton.topAnchor.constraint(equalTo: recordsButton.bottomAnchor, constant: 30),
+            settingsButton.leadingAnchor.constraint(equalTo: menuView.leadingAnchor, constant: 20),
+            settingsButton.trailingAnchor.constraint(equalTo: menuView.trailingAnchor, constant: -20),
+            settingsButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        settingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
+        
+    }
+    
     private func showRace() {
         let storyboard = UIStoryboard(name: "Race", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "RaceViewController") as? RaceViewController else {
@@ -72,13 +199,13 @@ class OnboardingViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    private func showRecords() {
+    @objc private func showRecords() {
         let storyboard = UIStoryboard(name: "Records", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "RecordsViewController")
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    private func showSettings() {
+    @objc private func showSettings() {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -102,7 +229,7 @@ class OnboardingViewController: UIViewController {
 
 // MARK: - UI
 extension UIView {
-    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 3, height: 3), opacity: Float = 0.3, radius: CGFloat = 10) {
+    func addShadow(shadowColor: UIColor = .black, offset: CGSize = .init(width: 0, height: 10), opacity: Float = 0.3, radius: CGFloat = 8) {
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOffset = offset
         layer.shadowOpacity = opacity
@@ -126,4 +253,24 @@ extension Int {
     func toString() -> String {
         String(self)
     }
+}
+
+// MARK: - Extension (add and remove blur)
+extension UIView {
+    func blurView(style: UIBlurEffect.Style) {
+        var blurEffectView = UIVisualEffectView()
+        let blurEffect = UIBlurEffect(style: style)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        addSubview(blurEffectView)
+    }
+    
+    func removeBlur() {
+        for view in self.subviews {
+            if let view = view as? UIVisualEffectView {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
 }

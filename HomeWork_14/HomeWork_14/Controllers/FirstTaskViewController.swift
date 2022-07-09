@@ -47,8 +47,8 @@ class FirstTaskViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "ColorYellow")
         
-        let backButton = UIBarButtonItem(customView: burgerButton)
-        navigationItem.leftBarButtonItem = backButton
+        let leftButton = UIBarButtonItem(customView: burgerButton)
+        navigationItem.leftBarButtonItem = leftButton
         
         setUpBurgerButton()
         setUpMenuView()
