@@ -20,7 +20,6 @@ class FirstTaskViewController: UIViewController {
     
     private var menuView: UIView = {
         let menuView = UIView()
-//        menuView.backgroundColor = .gray
         menuView.translatesAutoresizingMaskIntoConstraints = false
         return menuView
     }()
@@ -63,6 +62,14 @@ class FirstTaskViewController: UIViewController {
         menuView.addGradient(UIColor(named: "ColorLightGreen") ?? .white, UIColor(named: "ColorDarkGreen") ?? .white, .axial)
         menuView.bringSubviewToFront(otherTasksButton)
         otherTasksButton.layer.cornerRadius = 15
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        menuViewLeadingAnchor?.constant = -view.frame.width / 2.3
+        view.removeBlur()
+        n = 1
     }
     
     // MARK: - Private Functions
