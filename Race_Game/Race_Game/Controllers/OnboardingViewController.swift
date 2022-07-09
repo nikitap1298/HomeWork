@@ -42,7 +42,7 @@ class OnboardingViewController: UIViewController {
     private var settingsButton: UIButton = {
         let settingsButton = UIButton()
         settingsButton.backgroundColor = .systemBlue
-        settingsButton.setTitle("Serrings", for: .normal)
+        settingsButton.setTitle("Settings", for: .normal)
         settingsButton.setTitleColor(UIColor.white, for: .normal)
         settingsButton.addShadow()
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -255,7 +255,7 @@ extension Int {
     }
 }
 
-// MARK: - Extension (add and remove blur)
+// MARK: - Blur
 extension UIView {
     func blurView(style: UIBlurEffect.Style) {
         var blurEffectView = UIVisualEffectView()
