@@ -275,7 +275,17 @@ class RaceViewController: UIViewController {
     }
     
     private func createVerticalTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: true) { [weak self] (timer) in
+        let speed = UserDefaults.standard.value(forKey: "Speed") as? Double
+        switch speed {
+        case 2.5:
+            AllSettings.singleton.speed = 2.5
+        case 3.5:
+            AllSettings.singleton.speed = 3.5
+        default:
+            break
+        }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: AllSettings.singleton.speed, repeats: true) { [weak self] (timer) in
             self?.animateBottom()
             self?.positionStone()
             self?.score += 1
@@ -291,7 +301,7 @@ class RaceViewController: UIViewController {
         }
         stoneTopAnchor.isActive = false
         stoneBottomAnchor.isActive = true
-        UIView.animate(withDuration: 2.5, delay: 0.0, options: .repeat) {
+        UIView.animate(withDuration: AllSettings.singleton.speed, delay: 0.0, options: .repeat) {
             self.road.layoutIfNeeded()
         } completion: { _ in
             self.stoneCenterX?.constant = self.trueOrFalse ? -self.roadWidth / 4 : self.roadWidth / 4

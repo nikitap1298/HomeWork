@@ -99,10 +99,10 @@ class SettingsViewController: UIViewController {
     private func speedAlert() {
         let alert = UIAlertController(title: nil, message: "Choose speed", preferredStyle: .actionSheet)
         let firstAction = UIAlertAction(title: "Default", style: .default) { action in
-            
+            UserDefaults.standard.set(2.5, forKey: "Speed")
         }
         let secondAction = UIAlertAction(title: "Slower", style: .default) { action in
-            
+            UserDefaults.standard.set(3.5, forKey: "Speed")
         }
         let thirdAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(firstAction)
