@@ -58,6 +58,7 @@ class RaceViewController: UIViewController {
     private var car: UIImageView = {
         let car = UIImageView()
         car.image = UIImage(named: "Car_Image")
+        car.tintColor = .systemYellow
         car.contentMode = .scaleAspectFit
         car.translatesAutoresizingMaskIntoConstraints = false
         return car
