@@ -49,13 +49,18 @@ class SettingsViewController: UIViewController {
     private func colorAlert() {
         let alert = UIAlertController(title: nil, message: "Choose car color", preferredStyle: .actionSheet)
         let firstAction = UIAlertAction(title: "Default", style: .default) { action in
-            
+            UserDefaults.standard.set("Yellow", forKey: "CarColor")
         }
         let secondAction = UIAlertAction(title: "Red", style: .default) { action in
+            UserDefaults.standard.set("Red", forKey: "CarColor")
+//            let redColor = UserDefaults.standard.value(forKey: "CarRedColor") as? String
+//            if redColor == "Red" {
+//                AllSettings.singleton.carColor = .systemRed
+//            }
             
         }
         let thirdAction = UIAlertAction(title: "Blue", style: .default) { action in
-            
+            UserDefaults.standard.set("Blue", forKey: "CarColor")
         }
         let fourthAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(firstAction)

@@ -58,7 +58,18 @@ class RaceViewController: UIViewController {
     private var car: UIImageView = {
         let car = UIImageView()
         car.image = UIImage(named: "Car_Image")
-        car.tintColor = .systemYellow
+        let color = UserDefaults.standard.value(forKey: "CarColor") as? String
+        switch color {
+        case "Yellow":
+            AllSettings.singleton.carColor = .systemYellow
+        case "Red":
+            AllSettings.singleton.carColor = .systemRed
+        case "Blue":
+            AllSettings.singleton.carColor = .systemBlue
+        default:
+            break
+        }
+        car.tintColor = AllSettings.singleton.carColor
         car.contentMode = .scaleAspectFit
         car.translatesAutoresizingMaskIntoConstraints = false
         return car
