@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IYn-vW-bMG">
-                                <rect key="frame" x="30" y="450" width="330" height="100"/>
+                                <rect key="frame" x="30" y="500" width="330" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grk-KT-qLb">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="100"/>
@@ -43,11 +43,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="B0C-B1-bln"/>
+                                    <constraint firstAttribute="height" constant="100" id="Ak7-5X-W1q"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tPq-ia-P8w">
-                                <rect key="frame" x="30" y="590" width="330" height="100"/>
+                                <rect key="frame" x="30" y="650" width="330" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-Eh-FRk">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="100"/>
@@ -71,35 +71,19 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Q5f-j8-auC"/>
+                                    <constraint firstAttribute="height" constant="100" id="gOi-yA-fG5"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-OJ-pk2">
-                                <rect key="frame" x="130" y="730" width="130" height="60"/>
-                                <color key="backgroundColor" name="colorBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Je9-RC-4Pu"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                <connections>
-                                    <action selector="saveButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7rP-Fe-cJv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eMp-OJ-pk2" secondAttribute="trailing" constant="130" id="3PN-6m-qyu"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IYn-vW-bMG" secondAttribute="trailing" constant="30" id="Bnu-5M-dCo"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tPq-ia-P8w" secondAttribute="trailing" constant="30" id="NJ7-Pg-rSS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="eMp-OJ-pk2" secondAttribute="bottom" constant="20" id="PtF-Lt-lka"/>
-                            <constraint firstItem="eMp-OJ-pk2" firstAttribute="top" secondItem="tPq-ia-P8w" secondAttribute="bottom" constant="40" id="TF6-zF-POc"/>
-                            <constraint firstItem="eMp-OJ-pk2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="130" id="VH7-b4-bpP"/>
-                            <constraint firstItem="tPq-ia-P8w" firstAttribute="top" secondItem="IYn-vW-bMG" secondAttribute="bottom" constant="40" id="Xfj-Sx-d2w"/>
-                            <constraint firstItem="tPq-ia-P8w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="cdv-Fs-wJT"/>
-                            <constraint firstItem="IYn-vW-bMG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="jPx-Ev-XQa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tPq-ia-P8w" secondAttribute="trailing" constant="30" id="0xS-bP-oka"/>
+                            <constraint firstItem="IYn-vW-bMG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="44V-z4-cUd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tPq-ia-P8w" secondAttribute="bottom" constant="60" id="G0f-Cw-0Cu"/>
+                            <constraint firstItem="tPq-ia-P8w" firstAttribute="top" secondItem="IYn-vW-bMG" secondAttribute="bottom" constant="50" id="dnN-yY-W3d"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IYn-vW-bMG" secondAttribute="trailing" constant="30" id="eIc-gh-avD"/>
+                            <constraint firstItem="tPq-ia-P8w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="gen-y1-ejE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -107,7 +91,6 @@
                         <outletCollection property="buttonsLabel" destination="RLz-EZ-i2I" collectionClass="NSMutableArray" id="7P8-Ug-WI4"/>
                         <outletCollection property="buttonsLabel" destination="uEc-Eh-FRk" collectionClass="NSMutableArray" id="4q2-4w-K4j"/>
                         <outletCollection property="buttonsLabel" destination="Mfo-hM-L03" collectionClass="NSMutableArray" id="3Tw-CM-ysc"/>
-                        <outletCollection property="buttonsLabel" destination="eMp-OJ-pk2" collectionClass="NSMutableArray" id="VVm-6f-a2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -116,9 +99,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="colorBlue">
-            <color red="0.55699998140335083" green="0.79199999570846558" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="colorGreen">
             <color red="0.43999999761581421" green="0.73000001907348633" blue="0.61000001430511475" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

@@ -73,10 +73,10 @@ class SettingsViewController: UIViewController {
     private func barrierAlert() {
         let alert = UIAlertController(title: nil, message: "Choose barrier", preferredStyle: .actionSheet)
         let firstAction = UIAlertAction(title: "Default", style: .default) { action in
-            
+            UserDefaults.standard.set("Grass", forKey: "BarrierImage")
         }
         let secondAction = UIAlertAction(title: "Barrier", style: .default) { action in
-            
+            UserDefaults.standard.set("Barrier", forKey: "BarrierImage")
         }
         let thirdAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(firstAction)

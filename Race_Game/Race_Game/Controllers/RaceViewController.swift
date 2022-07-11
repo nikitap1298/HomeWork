@@ -77,7 +77,16 @@ class RaceViewController: UIViewController {
     
     private var stone: UIImageView = {
         let stone = UIImageView()
-        stone.image = UIImage(named: "Grass_Image")
+        let barrierImage = UserDefaults.standard.value(forKey: "BarrierImage") as? String
+        switch barrierImage {
+        case "Grass":
+            AllSettings.singleton.barrier = UIImage(named: "Grass_Image")!
+        case "Barrier":
+            AllSettings.singleton.barrier = UIImage(named: "Barrier_Image")!
+        default:
+            break
+        }
+        stone.image = AllSettings.singleton.barrier
         stone.contentMode = .scaleToFill
         stone.translatesAutoresizingMaskIntoConstraints = false
         return stone
