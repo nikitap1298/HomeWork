@@ -32,17 +32,13 @@ class SettingsViewController: UIViewController {
     @IBAction func carColorButton(_ sender: UIButton) {
         colorAlert()
     }
+    
     @IBAction func barrierButton(_ sender: UIButton) {
         barrierAlert()
     }
-    @IBAction func nameButton(_ sender: UIButton) {
-        nameAlert()
-    }
+    
     @IBAction func speedButton(_ sender: UIButton) {
         speedAlert()
-    }
-    @IBAction func saveButton(_ sender: UIButton) {
-        
     }
     
     // MARK: - Private Functions
@@ -82,17 +78,6 @@ class SettingsViewController: UIViewController {
         alert.addAction(firstAction)
         alert.addAction(secondAction)
         alert.addAction(thirdAction)
-        present(alert, animated: true)
-    }
-    
-    private func nameAlert() {
-        let alert = UIAlertController(title: nil, message: "Enter your name", preferredStyle: .alert)
-        alert.addTextField()
-        let submitAction = UIAlertAction(title: "Done", style: .default) { _ in
-//            let name = alert.textFields?.first
-            
-        }
-        alert.addAction(submitAction)
         present(alert, animated: true)
     }
     

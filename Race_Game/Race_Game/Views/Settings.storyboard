@@ -46,50 +46,34 @@
                                     <constraint firstAttribute="height" constant="100" id="Ak7-5X-W1q"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tPq-ia-P8w">
-                                <rect key="frame" x="30" y="650" width="330" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-Eh-FRk">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="100"/>
-                                        <color key="backgroundColor" name="colorGreen"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Your name"/>
-                                        <connections>
-                                            <action selector="nameButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OiV-Wu-Der"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-hM-L03">
-                                        <rect key="frame" x="185" y="0.0" width="145" height="100"/>
-                                        <color key="backgroundColor" name="colorGreen"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Speed"/>
-                                        <connections>
-                                            <action selector="speedButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Usz-jY-Iba"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-hM-L03">
+                                <rect key="frame" x="30" y="670" width="330" height="100"/>
+                                <color key="backgroundColor" name="colorGreen"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="gOi-yA-fG5"/>
+                                    <constraint firstAttribute="height" constant="100" id="SXk-15-DBN"/>
                                 </constraints>
-                            </stackView>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Speed"/>
+                                <connections>
+                                    <action selector="speedButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Usz-jY-Iba"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tPq-ia-P8w" secondAttribute="trailing" constant="30" id="0xS-bP-oka"/>
                             <constraint firstItem="IYn-vW-bMG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="44V-z4-cUd"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tPq-ia-P8w" secondAttribute="bottom" constant="60" id="G0f-Cw-0Cu"/>
-                            <constraint firstItem="tPq-ia-P8w" firstAttribute="top" secondItem="IYn-vW-bMG" secondAttribute="bottom" constant="50" id="dnN-yY-W3d"/>
+                            <constraint firstItem="Mfo-hM-L03" firstAttribute="top" secondItem="IYn-vW-bMG" secondAttribute="bottom" constant="70" id="AmC-6M-kLi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Mfo-hM-L03" secondAttribute="bottom" constant="40" id="R5O-Ba-hgV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IYn-vW-bMG" secondAttribute="trailing" constant="30" id="eIc-gh-avD"/>
-                            <constraint firstItem="tPq-ia-P8w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="gen-y1-ejE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Mfo-hM-L03" secondAttribute="trailing" constant="30" id="kfb-N6-fXh"/>
+                            <constraint firstItem="Mfo-hM-L03" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="uVd-Hh-5Ay"/>
                         </constraints>
                     </view>
                     <connections>
                         <outletCollection property="buttonsLabel" destination="grk-KT-qLb" collectionClass="NSMutableArray" id="ZbQ-P1-vCJ"/>
                         <outletCollection property="buttonsLabel" destination="RLz-EZ-i2I" collectionClass="NSMutableArray" id="7P8-Ug-WI4"/>
-                        <outletCollection property="buttonsLabel" destination="uEc-Eh-FRk" collectionClass="NSMutableArray" id="4q2-4w-K4j"/>
                         <outletCollection property="buttonsLabel" destination="Mfo-hM-L03" collectionClass="NSMutableArray" id="3Tw-CM-ysc"/>
                     </connections>
                 </viewController>

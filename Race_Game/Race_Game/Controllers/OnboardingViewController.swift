@@ -96,7 +96,16 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func raceButton(_ sender: UIButton) {
-        showRace()
+        let alert = UIAlertController(title: nil, message: "Enter your name", preferredStyle: .alert)
+        alert.addTextField()
+        let submitAction = UIAlertAction(title: "Done", style: .default) { _ in
+//            let name = alert.textFields?.first
+            self.showRace()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(submitAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
     
     // MARK: - Private Functions
