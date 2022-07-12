@@ -99,19 +99,9 @@ class OnboardingViewController: UIViewController {
         let alert = UIAlertController(title: nil, message: "Enter your name", preferredStyle: .alert)
         alert.addTextField()
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
-            
-//            let name = alert.textFields?.first?.text
             let name = alert.textFields?.first?.text
-            
             User.singleton.userName = name!
-            
-            // Dictionary[Name] = Score
-            User.singleton.userInfo[User.singleton.userName] = User.singleton.userScore
-            
-//            print(User.singleton.userInfo.keys)
-//            
-//            print(Array(User.singleton.userInfo.values))
-//            
+    
             self.showRace()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
