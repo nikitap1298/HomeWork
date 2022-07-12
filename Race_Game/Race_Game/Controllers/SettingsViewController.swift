@@ -49,11 +49,6 @@ class SettingsViewController: UIViewController {
         }
         let secondAction = UIAlertAction(title: "Red", style: .default) { action in
             UserDefaults.standard.set("Red", forKey: "CarColor")
-//            let redColor = UserDefaults.standard.value(forKey: "CarRedColor") as? String
-//            if redColor == "Red" {
-//                AllSettings.singleton.carColor = .systemRed
-//            }
-            
         }
         let thirdAction = UIAlertAction(title: "Blue", style: .default) { action in
             UserDefaults.standard.set("Blue", forKey: "CarColor")

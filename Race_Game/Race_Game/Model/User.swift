@@ -8,10 +8,15 @@
 import UIKit
 
 class User {
-    static let singleton = User(userInfo: [String: Int]())
+    static let singleton = User(userInfo: [String: Int](), userName: "", userScore: 0)
     
     var userInfo: [String: Int]
-    private init(userInfo: [String: Int]) {
+    var userName: String
+    var userScore: Int
+    
+    private init(userInfo: [String: Int], userName: String, userScore: Int) {
         self.userInfo = userInfo
+        self.userName = userName
+        self.userScore = userScore
     }
 }

@@ -11,6 +11,9 @@ class RecordsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let userDictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int]
+        print(userDictionary!.keys)
+        print(userDictionary?.values)
     }
 }
