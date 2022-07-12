@@ -19,7 +19,7 @@ class RecordsViewController: UIViewController {
         if let userDictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int] {
             for (key, value) in userDictionary {
 //                label.text = "User: \(key); Score: \(value)"
-                print("\(key) -> \(value)")
+                print("User: \(key); Score: \(value)")
             }
         }
 //        print(userDictionary?.keys ?? "User not found")
