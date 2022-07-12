@@ -13,7 +13,7 @@ class RecordsViewController: UIViewController {
         super.viewDidLoad()
 
         let userDictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int]
-        print(userDictionary!.keys)
-        print(userDictionary!.values)
+        print(userDictionary?.keys ?? "User not found")
+        print(userDictionary?.values ?? 0)
     }
 }
