@@ -9,11 +9,21 @@ import UIKit
 
 class RecordsViewController: UIViewController {
     
+    // MARK: -  IBOutlet
+    @IBOutlet weak var label: UILabel!
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let userDictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int]
-        print(userDictionary?.keys ?? "User not found")
-        print(userDictionary?.values ?? 0)
+        if let userDictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int] {
+            for (key, value) in userDictionary {
+//                label.text = "User: \(key); Score: \(value)"
+                print("\(key) -> \(value)")
+            }
+        }
+//        print(userDictionary?.keys ?? "User not found")
+//        print(userDictionary?.values ?? 0)
+        
     }
 }
