@@ -14,6 +14,6 @@ class RecordsViewController: UIViewController {
 
         let userDictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int]
         print(userDictionary!.keys)
-        print(userDictionary?.values)
+        print(userDictionary!.values)
     }
 }
