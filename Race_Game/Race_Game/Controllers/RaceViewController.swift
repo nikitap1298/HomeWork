@@ -137,10 +137,10 @@ class RaceViewController: UIViewController {
         
         // Add new value to the existing values in the Dictionary (User.singleton.userInfo)
         // Dictionary[Name] = Score
-        var dictionary = UserDefaults.standard.object(forKey: "DictionaryKey") as? [String: Int] ?? [:]
+        var dictionary = UserDefaults.standard.object(forKey: K.userDefaultsKey) as? [String: Int] ?? [:]
         User.singleton.userInfo[User.singleton.userName] = User.singleton.userScore
         dictionary[User.singleton.userName] = User.singleton.userScore
-        UserDefaults.standard.set(dictionary, forKey: "DictionaryKey")
+        UserDefaults.standard.set(dictionary, forKey: K.userDefaultsKey)
     }
     
     // MARK: - Actions

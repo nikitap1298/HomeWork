@@ -11,4 +11,5 @@ struct K {
     static let car = "CarColor"
     static let barrier = "BarrierImage"
     static let speed = "Speed"
+    static let userDefaultsKey = "DictionaryKey"
 }
