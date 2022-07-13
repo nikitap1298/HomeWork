@@ -58,7 +58,7 @@ class RaceViewController: UIViewController {
     private var car: UIImageView = {
         let car = UIImageView()
         car.image = UIImage(named: "Car_Image")
-        let color = UserDefaults.standard.value(forKey: "CarColor") as? String
+        let color = UserDefaults.standard.value(forKey: K.car) as? String
         switch color {
         case "Yellow":
             AllSettings.singleton.carColor = .systemYellow
@@ -77,7 +77,7 @@ class RaceViewController: UIViewController {
     
     private var stone: UIImageView = {
         let stone = UIImageView()
-        let barrierImage = UserDefaults.standard.value(forKey: "BarrierImage") as? String
+        let barrierImage = UserDefaults.standard.value(forKey: K.barrier) as? String
         switch barrierImage {
         case "Grass":
             AllSettings.singleton.barrier = UIImage(named: "Grass_Image")!
@@ -284,7 +284,7 @@ class RaceViewController: UIViewController {
     }
     
     private func createVerticalTimer() {
-        let speed = UserDefaults.standard.value(forKey: "Speed") as? Double
+        let speed = UserDefaults.standard.value(forKey: K.speed) as? Double
         switch speed {
         case 2.5:
             AllSettings.singleton.speed = 2.5

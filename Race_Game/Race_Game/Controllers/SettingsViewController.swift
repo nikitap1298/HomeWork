@@ -45,13 +45,13 @@ class SettingsViewController: UIViewController {
     private func colorAlert() {
         let alert = UIAlertController(title: nil, message: "Choose car color", preferredStyle: .actionSheet)
         let firstAction = UIAlertAction(title: "Default", style: .default) { action in
-            UserDefaults.standard.set("Yellow", forKey: "CarColor")
+            UserDefaults.standard.set("Yellow", forKey: K.car)
         }
         let secondAction = UIAlertAction(title: "Red", style: .default) { action in
-            UserDefaults.standard.set("Red", forKey: "CarColor")
+            UserDefaults.standard.set("Red", forKey: K.car)
         }
         let thirdAction = UIAlertAction(title: "Blue", style: .default) { action in
-            UserDefaults.standard.set("Blue", forKey: "CarColor")
+            UserDefaults.standard.set("Blue", forKey: K.car)
         }
         let fourthAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(firstAction)
@@ -64,10 +64,10 @@ class SettingsViewController: UIViewController {
     private func barrierAlert() {
         let alert = UIAlertController(title: nil, message: "Choose barrier", preferredStyle: .actionSheet)
         let firstAction = UIAlertAction(title: "Default", style: .default) { action in
-            UserDefaults.standard.set("Grass", forKey: "BarrierImage")
+            UserDefaults.standard.set("Grass", forKey: K.barrier)
         }
         let secondAction = UIAlertAction(title: "Barrier", style: .default) { action in
-            UserDefaults.standard.set("Barrier", forKey: "BarrierImage")
+            UserDefaults.standard.set("Barrier", forKey: K.barrier)
         }
         let thirdAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(firstAction)
@@ -79,10 +79,10 @@ class SettingsViewController: UIViewController {
     private func speedAlert() {
         let alert = UIAlertController(title: nil, message: "Choose speed", preferredStyle: .actionSheet)
         let firstAction = UIAlertAction(title: "Default", style: .default) { action in
-            UserDefaults.standard.set(2.5, forKey: "Speed")
+            UserDefaults.standard.set(2.5, forKey: K.speed)
         }
         let secondAction = UIAlertAction(title: "Slower", style: .default) { action in
-            UserDefaults.standard.set(3.5, forKey: "Speed")
+            UserDefaults.standard.set(3.5, forKey: K.speed)
         }
         let thirdAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(firstAction)

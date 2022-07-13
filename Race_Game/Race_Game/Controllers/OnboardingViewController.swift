@@ -49,7 +49,7 @@ class OnboardingViewController: UIViewController {
         return settingsButton
     }()
     
-    private var n: Int = 1
+    private var isAppear: Bool = false
     
     // MARK: - IBOutlets
     @IBOutlet weak var raceButtonLabel: UIButton!
@@ -91,7 +91,7 @@ class OnboardingViewController: UIViewController {
         
         menuViewLeadingAnchor?.constant = -view.frame.width / 2.3
         view.removeBlur()
-        n = 1
+       isAppear = false
     }
     
     // MARK: - IBActions
@@ -118,9 +118,13 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc private func pressBurgerButton() {
-        n += 1
+        if menuViewLeadingAnchor?.constant == 0 {
+            isAppear = false
+        } else if menuViewLeadingAnchor?.constant  == -view.frame.width / 2.3 {
+            isAppear = true
+        }
         
-        if n % 2 == 0 {
+        if isAppear == true {
             menuViewLeadingAnchor?.constant = 0
             UIView.animate(withDuration: 0.5, delay: 0.0) {
                 self.view.layoutIfNeeded()
