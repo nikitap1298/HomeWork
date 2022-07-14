@@ -41,6 +41,7 @@
                 <constraint firstItem="ict-OK-O1t" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lSG-sw-bOv"/>
                 <constraint firstItem="ict-OK-O1t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pBn-Ns-HEs"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="100"/>
         </view>
     </objects>

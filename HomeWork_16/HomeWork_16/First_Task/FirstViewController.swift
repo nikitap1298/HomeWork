@@ -12,7 +12,7 @@ class FirstViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var customView: CustomView!
     
-    // MARK: - Life Cecle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
