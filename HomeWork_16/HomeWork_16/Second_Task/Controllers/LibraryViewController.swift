@@ -9,14 +9,21 @@ import UIKit
 
 class LibraryViewController: UIViewController {
     
+    // MARK: - Private Properties
+    private let fileManager = FileManager.default
+    private var imagePath: URL?
+    
     // MARK: - IBOutlets
     @IBOutlet var buttonsLabel: [UIButton]!
+    @IBOutlet weak var imageView: UIImageView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "ColorGreen")
+        
+        setUpFileManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +45,7 @@ class LibraryViewController: UIViewController {
         pressPhotoButton()
     }
     @IBAction func showPhotosButton(_ sender: UIButton) {
-        
+        showPhotos()
     }
     
     // MARK: - Private Functions
@@ -47,6 +54,35 @@ class LibraryViewController: UIViewController {
         pickerController.sourceType = .camera
         pickerController.delegate = self
         present(pickerController, animated: true)
+    }
+    
+    private func setUpFileManager() {
+        let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        guard let imagesDirectoryPath = documentsPath?.appendingPathComponent("Images") else  { return }
+        print(documentsPath?.path)
+        imagePath = imagesDirectoryPath
+        
+        if fileManager.fileExists(atPath: imagesDirectoryPath.path) == false {
+            print("fff")
+            
+            do {
+                try fileManager.createDirectory(atPath: imagesDirectoryPath.path, withIntermediateDirectories: true)
+            } catch {
+                print("error")
+            }
+        }
+    }
+    
+    private func showPhotos() {
+        guard let imagePath = imagePath?.appendingPathComponent("image.jpeg") else {
+            return
+        }
+
+        guard let data = try? Data(contentsOf: imagePath) else { return }
+        let image = UIImage(data: data)
+        
+        imageView.image = image
+
     }
     
 }
@@ -58,6 +94,11 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
             
             // Get image
             print(image.scale)
+            
+            guard let data = image.jpegData(compressionQuality: 10),
+                  let imagePath = imagePath?.appendingPathComponent("image.jpeg") else { return }
+            
+            fileManager.createFile(atPath: imagePath.path, contents: data)
         }
         
         // Close picker after choose photo

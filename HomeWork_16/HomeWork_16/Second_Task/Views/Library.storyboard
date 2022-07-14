@@ -43,19 +43,27 @@
                                     <action selector="showPhotosButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AiE-Ju-7Wg"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-cA-0uT">
+                                <rect key="frame" x="30" y="94" width="330" height="396"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bRP-cA-0uT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="15b-2F-z5Y"/>
                             <constraint firstItem="fVa-lc-SZA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="130" id="Abx-ft-F6C"/>
+                            <constraint firstItem="bRP-cA-0uT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="IJJ-de-PrE"/>
+                            <constraint firstItem="fVa-lc-SZA" firstAttribute="top" secondItem="bRP-cA-0uT" secondAttribute="bottom" constant="50" id="Ik0-Ey-4sJ"/>
                             <constraint firstItem="Lf0-Nt-2V5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="Quh-87-9YH"/>
                             <constraint firstItem="Lf0-Nt-2V5" firstAttribute="top" secondItem="fVa-lc-SZA" secondAttribute="bottom" constant="50" id="bCw-oX-uc5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lf0-Nt-2V5" secondAttribute="trailing" constant="110" id="fn0-SE-xWL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fVa-lc-SZA" secondAttribute="trailing" constant="130" id="gEb-Hu-2Gm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Lf0-Nt-2V5" secondAttribute="bottom" constant="80" id="rgI-N1-GT8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bRP-cA-0uT" secondAttribute="trailing" constant="30" id="z8V-Lz-kn5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="bRP-cA-0uT" id="LDY-FS-sdD"/>
                         <outletCollection property="buttonsLabel" destination="fVa-lc-SZA" collectionClass="NSMutableArray" id="BWf-pq-AqX"/>
                         <outletCollection property="buttonsLabel" destination="Lf0-Nt-2V5" collectionClass="NSMutableArray" id="KFr-Zw-iyM"/>
                     </connections>
