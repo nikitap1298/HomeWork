@@ -41,7 +41,7 @@ class LibraryViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         for buttons in buttonsLabel {
-            buttons.layer.cornerRadius = 30
+            buttons.layer.cornerRadius = 15
         }
     }
     
@@ -54,11 +54,15 @@ class LibraryViewController: UIViewController {
     @IBAction func showPhotosButton(_ sender: UIButton) {
         showPhotos()
     }
+    @IBAction func deleteButton(_ sender: UIButton) {
+        deletePhotos()
+    }
+    
     
     // MARK: - Private Functions
     private func pressPhotoButton() {
         let pickerController = UIImagePickerController()
-        pickerController.sourceType = .photoLibrary
+        pickerController.sourceType = .camera
         pickerController.delegate = self
         present(pickerController, animated: true)
     }
@@ -97,6 +101,25 @@ class LibraryViewController: UIViewController {
         } catch {
             print("error")
         }
+    }
+    
+    private func deletePhotos() {
+        let alert = UIAlertController(title: "Delete file", message: nil, preferredStyle: .alert)
+        alert.addTextField()
+        let submitAction = UIAlertAction(title: "Delete", style: .default) { [self] _ in
+            let name = alert.textFields?.first?.text
+            
+            guard let imagePath = imagePath?.appendingPathComponent("\(name!).jpeg") else { return }
+            
+            do {
+                try fileManager.removeItem(at: imagePath)
+            } catch {
+                print("error")
+            }
+        }
+        alert.addAction(submitAction)
+        present(alert, animated: true)
+        
     }
     
 }
