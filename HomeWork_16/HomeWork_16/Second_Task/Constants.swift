@@ -9,5 +9,5 @@ import UIKit
 
 class K {
     static let photoArray = "PhotoArray"
-    static let imageNumber = "Image Number"
+    static let imageNumber = "ImageNumber"
 }

@@ -27,10 +27,10 @@ class LibraryViewController: UIViewController {
         
         setUpFileManager()
         
-        let photos = UserDefaults.standard.object(forKey: "PhotoArray") as? [Data]
+        let photos = UserDefaults.standard.object(forKey: K.photoArray) as? [Data]
         photoArray = photos ?? [Data]()
         
-        let number = UserDefaults.standard.value(forKey: "ImageNumber") as? Int
+        let number = UserDefaults.standard.value(forKey: K.imageNumber) as? Int
         imageNumber = number ?? 0
     }
     
@@ -52,7 +52,7 @@ class LibraryViewController: UIViewController {
     @IBAction func addPhotoButton(_ sender: UIButton) {
         pressPhotoButton()
         imageNumber += 1
-        UserDefaults.standard.set(imageNumber, forKey: "ImageNumber")
+        UserDefaults.standard.set(imageNumber, forKey: K.imageNumber)
     }
     @IBAction func showPhotosButton(_ sender: UIButton) {
         showPhotos()
@@ -109,7 +109,7 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
             
             let encoded = try! PropertyListEncoder().encode(data)
             photoArray.append(encoded)
-            UserDefaults.standard.set(photoArray, forKey: "PhotoArray")
+            UserDefaults.standard.set(photoArray, forKey: K.photoArray)
         }
         
         // Close picker after choose photo
