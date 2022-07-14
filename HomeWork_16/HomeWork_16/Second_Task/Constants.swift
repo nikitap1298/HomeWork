@@ -7,7 +7,7 @@
 
 import UIKit
 
-class K {
+struct K {
     static let photoArray = "PhotoArray"
     static let imageNumber = "ImageNumber"
 }
