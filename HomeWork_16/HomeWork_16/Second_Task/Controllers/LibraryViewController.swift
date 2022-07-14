@@ -61,7 +61,7 @@ class LibraryViewController: UIViewController {
     // MARK: - Private Functions
     private func pressPhotoButton() {
         let pickerController = UIImagePickerController()
-        pickerController.sourceType = .camera
+        pickerController.sourceType = .photoLibrary
         pickerController.delegate = self
         present(pickerController, animated: true)
     }
@@ -91,7 +91,7 @@ class LibraryViewController: UIViewController {
 //        guard let data = try? Data(contentsOf: imagePath) else { return }
 //        let image = UIImage(data: data)
         
-        print(photoArray.count)
+        print("Number of photos in directory: \(photoArray.count)")
     }
     
 }
