@@ -30,7 +30,7 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - Private Functions
     private func showPasswordAlert() {
-        let alert = UIAlertController(title: nil, message: "Enter the password", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Enter the password", message: "Hint: 000", preferredStyle: .alert)
         alert.addTextField()
         alert.textFields?.first?.isSecureTextEntry = true
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
