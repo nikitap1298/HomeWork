@@ -27,6 +27,10 @@ class LibraryViewController: UIViewController {
         
         setUpFileManager()
         
+        // Save photos into array
+//        let photos = UserDefaults.standard.object(forKey: K.photoArray) as? [Data]
+//        photoArray = photos ?? [Data]()
+        
         let number = UserDefaults.standard.value(forKey: K.imageNumber) as? Int
         imageNumber = number ?? 0
     }
@@ -85,13 +89,6 @@ class LibraryViewController: UIViewController {
     }
     
     private func showPhotos() {
-//        guard let imagePath = imagePath?.appendingPathComponent("image_\(imageNumber).jpeg") else {
-//            return
-//        }
-//
-//        guard let data = try? Data(contentsOf: imagePath) else { return }
-//        let image = UIImage(data: data)
-        
         do {
             let items = try fileManager.contentsOfDirectory(atPath: imagePath!.path)
 
@@ -101,6 +98,17 @@ class LibraryViewController: UIViewController {
         } catch {
             print("error")
         }
+        
+        // Save photos into array
+//        do {
+//            let items = try fileManager.contentsOfDirectory(atPath: imagePath!.path)
+//
+//            for item in items {
+//                print("Found picture in Image directory: \(item)")
+//            }
+//        } catch {
+//            print("error")
+//        }
     }
     
     private func deletePhotos() {
@@ -134,6 +142,11 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
                   let imagePath = imagePath?.appendingPathComponent("image_\(imageNumber).jpeg") else { return }
             
             fileManager.createFile(atPath: imagePath.path, contents: data)
+            
+            // Save images into array
+//            let encoder = try! PropertyListEncoder().encode(data)
+//            photoArray.append(encoder)
+//            UserDefaults.standard.set(photoArray, forKey: K.photoArray)
         }
         
         // Close picker after choose photo
