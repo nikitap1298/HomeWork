@@ -14,11 +14,14 @@ class CustomView: UIView {
     @IBOutlet weak var button: UIButton!
     
     // MARK: - Life Cycle
+    
+    // Использется при создании UI элементов кодом
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
+    // Используется при создании UI элементов через XIB
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
