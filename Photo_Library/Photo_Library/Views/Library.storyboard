@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Library View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LibraryViewController" id="Y6W-OH-hqX" customClass="LibraryViewController" customModule="HomeWork_16" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jBG-m5-3bz">
+                                <rect key="frame" x="40" y="620" width="310" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjc-qG-tdt">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.68235294120000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZHY-gd-RRe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVa-lc-SZA">
+                                        <rect key="frame" x="170" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.68235294120000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhotoButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ojE-6S-4lA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="n6v-PX-MTZ"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf0-Nt-2V5">
+                                <rect key="frame" x="110" y="710" width="170" height="50"/>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.68235294120000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kaX-3Q-S5S"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Photos"/>
+                                <connections>
+                                    <action selector="showPhotosButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AiE-Ju-7Wg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-cA-0uT">
+                                <rect key="frame" x="30" y="94" width="330" height="476"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lf0-Nt-2V5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="0kh-q9-lk1"/>
+                            <constraint firstItem="Lf0-Nt-2V5" firstAttribute="top" secondItem="jBG-m5-3bz" secondAttribute="bottom" constant="40" id="3AI-TP-dt3"/>
+                            <constraint firstItem="jBG-m5-3bz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="4lZ-ic-MzP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bRP-cA-0uT" secondAttribute="trailing" constant="30" id="6wv-9R-bD1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jBG-m5-3bz" secondAttribute="trailing" constant="40" id="8kG-2N-Ucx"/>
+                            <constraint firstItem="bRP-cA-0uT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="IrL-4M-dE5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Lf0-Nt-2V5" secondAttribute="bottom" constant="50" id="Lcl-YS-1Hf"/>
+                            <constraint firstItem="jBG-m5-3bz" firstAttribute="top" secondItem="bRP-cA-0uT" secondAttribute="bottom" constant="50" id="VJq-Iw-lOe"/>
+                            <constraint firstItem="bRP-cA-0uT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="cjb-L3-NsK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lf0-Nt-2V5" secondAttribute="trailing" constant="110" id="gVi-qf-GvU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="bRP-cA-0uT" id="LDY-FS-sdD"/>
+                        <outletCollection property="buttonsLabel" destination="Lf0-Nt-2V5" collectionClass="NSMutableArray" id="KFr-Zw-iyM"/>
+                        <outletCollection property="buttonsLabel" destination="Jjc-qG-tdt" collectionClass="NSMutableArray" id="5ik-ER-UBn"/>
+                        <outletCollection property="buttonsLabel" destination="fVa-lc-SZA" collectionClass="NSMutableArray" id="BWf-pq-AqX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.46153846153845" y="97.393364928909946"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
