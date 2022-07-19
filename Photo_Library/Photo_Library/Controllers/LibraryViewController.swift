@@ -91,6 +91,7 @@ class LibraryViewController: UIViewController {
         view.backgroundColor = UIColor(named: "ColorGreen")
         rootView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressView)))
         scrollView.isScrollEnabled = false
+        customBar()
         
         setUpFileManager()
         
@@ -237,7 +238,7 @@ class LibraryViewController: UIViewController {
     }
     
     @objc private func pressCommentButton() {
-        print("hi")
+        print("Comment Button")
         setUpTextView()
     }
     
@@ -334,5 +335,21 @@ extension LibraryViewController: UITextFieldDelegate {
         let newString = currentString.replacingCharacters(in: range, with: string)
         
         return newString.count <= maxLenght
+    }
+}
+
+extension LibraryViewController {
+    func customBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "ColorGreen")
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        
+        // Remove bottom border in NavifationBar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layoutIfNeeded()
+        
     }
 }
