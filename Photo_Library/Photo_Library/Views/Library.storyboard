@@ -34,8 +34,6 @@
                                     <constraint firstItem="yMr-cT-r1K" firstAttribute="leading" secondItem="DZg-jH-XNu" secondAttribute="leading" id="fn4-Tr-iHi"/>
                                     <constraint firstAttribute="bottom" secondItem="yMr-cT-r1K" secondAttribute="bottom" id="oCu-K0-97N"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="MpS-iF-j85"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="o1p-F8-Gmn"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -53,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="rootView" destination="yMr-cT-r1K" id="YvJ-dd-wYc"/>
+                        <outlet property="scrollView" destination="DZg-jH-XNu" id="mLu-jC-lKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

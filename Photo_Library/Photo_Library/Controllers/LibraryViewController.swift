@@ -18,7 +18,8 @@ class LibraryViewController: UIViewController {
     private var deleteButton: UIButton = {
         let deleteButton = UIButton()
         deleteButton.setTitle("Delete", for: .normal)
-        deleteButton.backgroundColor = .systemBlue
+        deleteButton.backgroundColor = UIColor(named: "ColorBlue")
+        deleteButton.layer.cornerRadius = 18
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
         return deleteButton
     }()
@@ -26,7 +27,8 @@ class LibraryViewController: UIViewController {
     private var addButton: UIButton = {
         let addButton = UIButton()
         addButton.setTitle("Add Photos", for: .normal)
-        addButton.backgroundColor = .systemBlue
+        addButton.backgroundColor = UIColor(named: "ColorBlue")
+        addButton.layer.cornerRadius = 18
         addButton.translatesAutoresizingMaskIntoConstraints = false
         return addButton
     }()
@@ -34,7 +36,8 @@ class LibraryViewController: UIViewController {
     private var showButton: UIButton = {
         let showButton = UIButton()
         showButton.setTitle("Show Photos", for: .normal)
-        showButton.backgroundColor = .systemBlue
+        showButton.backgroundColor = UIColor(named: "ColorBlue")
+        showButton.layer.cornerRadius = 18
         showButton.translatesAutoresizingMaskIntoConstraints = false
         return showButton
     }()
@@ -78,6 +81,7 @@ class LibraryViewController: UIViewController {
     }()
     
     // MARK: - IBOutlets
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var rootView: UIView!
     
     // MARK: - Life Cycle
@@ -86,6 +90,7 @@ class LibraryViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "ColorGreen")
         rootView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressView)))
+        scrollView.isScrollEnabled = false
         
         setUpFileManager()
         
