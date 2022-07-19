@@ -15,6 +15,30 @@ class LibraryViewController: UIViewController {
     private var photoArray = [Data]()
     private var imageNumber = -1
     
+    private var deleteButton: UIButton = {
+        let deleteButton = UIButton()
+        deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.backgroundColor = .systemBlue
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        return deleteButton
+    }()
+    
+    private var addButton: UIButton = {
+        let addButton = UIButton()
+        addButton.setTitle("Add Photos", for: .normal)
+        addButton.backgroundColor = .systemBlue
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        return addButton
+    }()
+    
+    private var showButton: UIButton = {
+        let showButton = UIButton()
+        showButton.setTitle("Show Photos", for: .normal)
+        showButton.backgroundColor = .systemBlue
+        showButton.translatesAutoresizingMaskIntoConstraints = false
+        return showButton
+    }()
+    
     private var mainView: UIView = {
         let mainView = UIView()
         mainView.backgroundColor = .white
@@ -28,8 +52,6 @@ class LibraryViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    private var imageViewTopAnchor: NSLayoutConstraint?
     
     private var likeButton: UIButton = {
         let likeButton = UIButton()
@@ -56,17 +78,19 @@ class LibraryViewController: UIViewController {
     }()
     
     // MARK: - IBOutlets
-    @IBOutlet var buttonsLabel: [UIButton]!
+    @IBOutlet weak var rootView: UIView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "ColorGreen")
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressView)))
+        rootView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressView)))
         
         setUpFileManager()
+        
         setUpMainView()
+        setUpButtons()
         
         // Save photos into array
 //        let photos = UserDefaults.standard.object(forKey: K.photoArray) as? [Data]
@@ -82,32 +106,10 @@ class LibraryViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        for buttons in buttonsLabel {
-            buttons.layer.cornerRadius = 15
-        }
-    }
-    
-    // MARK: - IBActions
-    @IBAction func addPhotoButton(_ sender: UIButton) {
-        pressPhotoButton()
-        imageNumber += 1
-        UserDefaults.standard.set(imageNumber, forKey: K.imageNumber)
-    }
-    @IBAction func showPhotosButton(_ sender: UIButton) {
-        showPhotos()
-    }
-    @IBAction func deleteButton(_ sender: UIButton) {
-        deletePhotos()
-    }
-    
-    
     // MARK: - Private Functions
     private func pressPhotoButton() {
         let pickerController = UIImagePickerController()
-        pickerController.sourceType = .camera
+        pickerController.sourceType = .photoLibrary
         pickerController.delegate = self
         present(pickerController, animated: true)
     }
@@ -129,7 +131,7 @@ class LibraryViewController: UIViewController {
         }
     }
     
-    private func showPhotos() {
+    @objc private func showPhotos() {
         do {
             let items = try fileManager.contentsOfDirectory(atPath: imagePath!.path)
 
@@ -152,7 +154,7 @@ class LibraryViewController: UIViewController {
 //        }
     }
     
-    private func deletePhotos() {
+    @objc private func deletePhotos() {
         let alert = UIAlertController(title: "Delete file", message: nil, preferredStyle: .alert)
         alert.addTextField()
         let submitAction = UIAlertAction(title: "Delete", style: .default) { [self] _ in
@@ -168,17 +170,22 @@ class LibraryViewController: UIViewController {
         }
         alert.addAction(submitAction)
         present(alert, animated: true)
-        
+    }
+    
+    @objc private func pressAddButton() {
+        pressPhotoButton()
+        imageNumber += 1
+        UserDefaults.standard.set(imageNumber, forKey: K.imageNumber)
     }
     
     // MARK: - ScrollView
     private func setUpMainView() {
-        view.addSubview(mainView)
+        rootView.addSubview(mainView)
         
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            mainView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
-            mainView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            mainView.topAnchor.constraint(equalTo: rootView.topAnchor, constant: 10),
+            mainView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
+            mainView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
             mainView.heightAnchor.constraint(equalToConstant: 500)
         ])
         
@@ -196,14 +203,6 @@ class LibraryViewController: UIViewController {
             imageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 330)
         ])
-        
-        imageViewTopAnchor = imageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 0)
-        
-        guard let imageViewTopAnchor = imageViewTopAnchor else {
-            return
-        }
-
-        imageViewTopAnchor.isActive = true
     }
     
     private func setUpLikeButton() {
@@ -245,6 +244,33 @@ class LibraryViewController: UIViewController {
             textField.heightAnchor.constraint(equalToConstant: 60),
             textField.topAnchor.constraint(equalTo: likeButton.bottomAnchor, constant: 20)
         ])
+    }
+    
+    private func setUpButtons() {
+        rootView.addSubview(showButton)
+        rootView.addSubview(deleteButton)
+        rootView.addSubview(addButton)
+        
+        NSLayoutConstraint.activate([
+            deleteButton.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 50),
+            deleteButton.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
+            deleteButton.widthAnchor.constraint(equalToConstant: 120),
+            deleteButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            addButton.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 50),
+            addButton.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
+            addButton.widthAnchor.constraint(equalToConstant: 120),
+            addButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            showButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 50),
+            showButton.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0),
+            showButton.widthAnchor.constraint(equalToConstant: 120),
+            showButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        deleteButton.addTarget(self, action: #selector(deletePhotos), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(pressAddButton), for: .touchUpInside)
+        showButton.addTarget(self, action: #selector(showPhotos), for: .touchUpInside)
     }
     
     @objc private func pressView() {
