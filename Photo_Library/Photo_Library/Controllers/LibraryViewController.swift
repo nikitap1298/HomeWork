@@ -304,12 +304,14 @@ class LibraryViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: showNotification, object: nil, queue: .main) { notification in
             if let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                 self.scrollView.contentOffset = CGPoint(x: 0, y: keyBoardSize.height - 100)
+                self.scrollView1.isScrollEnabled = false
             }
         }
         
         let hideNotification = UIResponder.keyboardWillHideNotification
         NotificationCenter.default.addObserver(forName: hideNotification, object: nil, queue: .main) { _ in
             self.scrollView.contentOffset = CGPoint(x: 0, y: -100)
+            self.scrollView1.isScrollEnabled = true
         }
     }
     
