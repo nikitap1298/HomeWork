@@ -140,6 +140,7 @@ class LibraryViewController: UIViewController {
     }
     
     @objc private func showPhotos() {
+        // Get images from FileManager
         do {
             let items = try fileManager.contentsOfDirectory(atPath: imagePath!.path)
 
@@ -150,16 +151,6 @@ class LibraryViewController: UIViewController {
             print("error")
         }
         
-        // Save photos into array
-//        do {
-//            let items = try fileManager.contentsOfDirectory(atPath: imagePath!.path)
-//
-//            for item in items {
-//                print("Found picture in Image directory: \(item)")
-//            }
-//        } catch {
-//            print("error")
-//        }
     }
     
     @objc private func deletePhotos() {
@@ -306,7 +297,7 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             
-            // Get image
+            // Save image
             guard let data = image.jpegData(compressionQuality: 10),
                   let imagePath = imagePath?.appendingPathComponent("image_\(imageNumber).jpeg") else { return }
             
