@@ -15,17 +15,58 @@ class LibraryViewController: UIViewController {
     private var photoArray = [Data]()
     private var imageNumber = -1
     
+    private var mainView: UIView = {
+        let mainView = UIView()
+        mainView.backgroundColor = .white
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        return mainView
+    }()
+    
+    private var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "flower")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private var imageViewTopAnchor: NSLayoutConstraint?
+    
+    private var likeButton: UIButton = {
+        let likeButton = UIButton()
+        likeButton.setImage(UIImage(systemName: "hand.thumbsup.fill"), for: .normal)
+        likeButton.tintColor = .black
+        likeButton.translatesAutoresizingMaskIntoConstraints = false
+        return likeButton
+    }()
+    
+    private var commentButton: UIButton = {
+        let commentButton = UIButton()
+        commentButton.setImage(UIImage(systemName: "message.fill"), for: .normal)
+        commentButton.tintColor = .black
+        commentButton.translatesAutoresizingMaskIntoConstraints = false
+        return commentButton
+    }()
+    
+    private var textField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Comment"
+        textField.textAlignment = .center
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     // MARK: - IBOutlets
     @IBOutlet var buttonsLabel: [UIButton]!
-    @IBOutlet weak var imageView: UIImageView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "ColorGreen")
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressView)))
         
         setUpFileManager()
+        setUpMainView()
         
         // Save photos into array
 //        let photos = UserDefaults.standard.object(forKey: K.photoArray) as? [Data]
@@ -130,6 +171,86 @@ class LibraryViewController: UIViewController {
         
     }
     
+    // MARK: - ScrollView
+    private func setUpMainView() {
+        view.addSubview(mainView)
+        
+        NSLayoutConstraint.activate([
+            mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            mainView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
+            mainView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            mainView.heightAnchor.constraint(equalToConstant: 500)
+        ])
+        
+        setUpImageView()
+        setUpLikeButton()
+        setUpCommentButton()
+    }
+    
+    private func setUpImageView() {
+        mainView.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 0),
+            imageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 330)
+        ])
+        
+        imageViewTopAnchor = imageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 0)
+        
+        guard let imageViewTopAnchor = imageViewTopAnchor else {
+            return
+        }
+
+        imageViewTopAnchor.isActive = true
+    }
+    
+    private func setUpLikeButton() {
+        mainView.addSubview(likeButton)
+        
+        NSLayoutConstraint.activate([
+            likeButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            likeButton.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 30),
+            likeButton.widthAnchor.constraint(equalToConstant: 30),
+            likeButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    private func setUpCommentButton() {
+        mainView.addSubview(commentButton)
+        
+        NSLayoutConstraint.activate([
+            commentButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            commentButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -30),
+            commentButton.widthAnchor.constraint(equalToConstant: 30),
+            commentButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        commentButton.addTarget(self, action: #selector(pressCommentButton), for: .touchUpInside)
+    }
+    
+    @objc private func pressCommentButton() {
+        print("hi")
+        setUpTextView()
+    }
+    
+    private func setUpTextView() {
+        mainView.addSubview(textField)
+        textField.delegate = self
+        
+        NSLayoutConstraint.activate([
+            textField.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 30),
+            textField.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -30),
+            textField.heightAnchor.constraint(equalToConstant: 60),
+            textField.topAnchor.constraint(equalTo: likeButton.bottomAnchor, constant: 20)
+        ])
+    }
+    
+    @objc private func pressView() {
+        view.endEditing(true)
+    }
+    
 }
 
 // MARK: - Extension for using PhotoPicker
@@ -151,5 +272,12 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         // Close picker after choose photo
         picker.dismiss(animated: true)
+    }
+}
+
+extension LibraryViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return tru
     }
 }
