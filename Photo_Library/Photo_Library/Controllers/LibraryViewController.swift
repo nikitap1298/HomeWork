@@ -42,6 +42,14 @@ class LibraryViewController: UIViewController {
         return showButton
     }()
     
+    private var scrollView1: UIScrollView = {
+        let scrollView1 = UIScrollView()
+        scrollView1.isScrollEnabled = true
+        scrollView1.alwaysBounceVertical = true
+        scrollView1.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView1
+    }()
+    
     private var mainView: UIView = {
         let mainView = UIView()
         mainView.backgroundColor = .white
@@ -95,7 +103,7 @@ class LibraryViewController: UIViewController {
         
         setUpFileManager()
         
-        setUpMainView()
+        setUpScrollView1()
         setUpButtons()
         
         registerForKeyboardNotifications()
@@ -178,14 +186,29 @@ class LibraryViewController: UIViewController {
     }
     
     // MARK: - ScrollView
-    private func setUpMainView() {
-        rootView.addSubview(mainView)
+    private func setUpScrollView1() {
+        rootView.addSubview(scrollView1)
         
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: rootView.topAnchor, constant: 10),
-            mainView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
-            mainView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
-            mainView.heightAnchor.constraint(equalToConstant: 500)
+            scrollView1.topAnchor.constraint(equalTo: rootView.topAnchor, constant: 10),
+            scrollView1.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
+            scrollView1.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
+            scrollView1.heightAnchor.constraint(equalToConstant: 500)
+        ])
+        
+        setUpMainView()
+    }
+    
+    private func setUpMainView() {
+        scrollView1.addSubview(mainView)
+        
+        NSLayoutConstraint.activate([
+            mainView.topAnchor.constraint(equalTo: scrollView1.topAnchor, constant: 0),
+            mainView.leadingAnchor.constraint(equalTo: scrollView1.leadingAnchor, constant: 0),
+            mainView.trailingAnchor.constraint(equalTo: scrollView1.trailingAnchor, constant: 0),
+            mainView.bottomAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 0),
+            mainView.centerXAnchor.constraint(equalTo: scrollView1.centerXAnchor),
+            mainView.centerYAnchor.constraint(equalTo: scrollView1.centerYAnchor)
         ])
         
         setUpImageView()
@@ -251,12 +274,12 @@ class LibraryViewController: UIViewController {
         rootView.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            deleteButton.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 50),
+            deleteButton.topAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 50),
             deleteButton.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
             deleteButton.widthAnchor.constraint(equalToConstant: 120),
             deleteButton.heightAnchor.constraint(equalToConstant: 50),
             
-            addButton.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 50),
+            addButton.topAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 50),
             addButton.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
             addButton.widthAnchor.constraint(equalToConstant: 120),
             addButton.heightAnchor.constraint(equalToConstant: 50),
