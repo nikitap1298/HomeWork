@@ -97,6 +97,8 @@ class LibraryViewController: UIViewController {
         setUpMainView()
         setUpButtons()
         
+        registerForKeyboardNotifications()
+        
         // Save photos into array
 //        let photos = UserDefaults.standard.object(forKey: K.photoArray) as? [Data]
 //        photoArray = photos ?? [Data]()
@@ -280,6 +282,20 @@ class LibraryViewController: UIViewController {
     
     @objc private func pressView() {
         view.endEditing(true)
+    }
+    
+    private func registerForKeyboardNotifications() {
+        let showNotification = UIResponder.keyboardWillShowNotification
+        NotificationCenter.default.addObserver(forName: showNotification, object: nil, queue: .main) { notification in
+            if let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                self.scrollView.contentOffset = CGPoint(x: 0, y: keyBoardSize.height - 100)
+            }
+        }
+        
+        let hideNotification = UIResponder.keyboardWillHideNotification
+        NotificationCenter.default.addObserver(forName: hideNotification, object: nil, queue: .main) { _ in
+            self.scrollView.contentOffset = CGPoint(x: 0, y: -100)
+        }
     }
     
 }
