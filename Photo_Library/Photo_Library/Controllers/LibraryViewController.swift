@@ -12,7 +12,7 @@ class LibraryViewController: UIViewController {
     // MARK: - Private Properties
     private let fileManager = FileManager.default
     private var imagePath: URL?
-    private var photoArray = [Data]()
+    private var photoArray = [UIImage]()
     private var imageNumber = -1
     
     private var deleteButton: UIButton = {
@@ -101,8 +101,8 @@ class LibraryViewController: UIViewController {
         registerForKeyboardNotifications()
         
         // Save photos into array
-//        let photos = UserDefaults.standard.object(forKey: K.photoArray) as? [Data]
-//        photoArray = photos ?? [Data]()
+        let photos = UserDefaults.standard.imageArray(forKey: K.photoArray)
+        photoArray = photos ?? [UIImage]()
         
         let number = UserDefaults.standard.value(forKey: K.imageNumber) as? Int
         imageNumber = number ?? 0
@@ -150,7 +150,7 @@ class LibraryViewController: UIViewController {
         } catch {
             print("error")
         }
-        
+        imageView.image = photoArray.last
     }
     
     @objc private func deletePhotos() {
@@ -304,13 +304,26 @@ extension LibraryViewController: UIImagePickerControllerDelegate, UINavigationCo
             fileManager.createFile(atPath: imagePath.path, contents: data)
             
             // Save images into array
-//            let encoder = try! PropertyListEncoder().encode(data)
-//            photoArray.append(encoder)
-//            UserDefaults.standard.set(photoArray, forKey: K.photoArray)
+            photoArray.append(image)
+            UserDefaults.standard.set(photoArray, forKey: K.photoArray)
         }
         
         // Close picker after choose photo
         picker.dismiss(animated: true)
+    }
+}
+
+// Helps to save array of UIImages into UserDefaults
+extension UserDefaults {
+    func imageArray(forKey key: String) -> [UIImage]? {
+        guard let array = self.array(forKey: key) as? [Data] else {
+            return nil
+        }
+        return array.compactMap() { UIImage(data: $0) }
+    }
+    
+    func set(_ imageArray: [UIImage], forKey key: String) {
+        self.set(imageArray.compactMap({ $0.pngData() }), forKey: key)
     }
 }
 
