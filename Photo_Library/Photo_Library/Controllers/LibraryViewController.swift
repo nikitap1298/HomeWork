@@ -57,6 +57,8 @@ class LibraryViewController: UIViewController {
         return mainView
     }()
     
+    private var mainViewTopAnchor: NSLayoutConstraint?
+    
     private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "flower")
@@ -159,6 +161,19 @@ class LibraryViewController: UIViewController {
             print("error")
         }
         imageView.image = photoArray.last
+        
+        // Не понимаю как сделать, чтобы в ScrollView1 корректно отображались фотографии и две кнопки
+//        photoArray.forEach { image in
+//            let topPosition = 0
+//            imageView.image = image
+//            print(imageView.image)
+//            if image == photoArray.first {
+//                mainViewTopAnchor?.constant = 0
+//            } else {
+//                guard let index = photoArray.firstIndex(where: { $0 == image }) else { return }
+//                mainViewTopAnchor?.constant = CGFloat(400 * index)
+//            }
+//        }
     }
     
     @objc private func deletePhotos() {
@@ -202,14 +217,20 @@ class LibraryViewController: UIViewController {
     private func setUpMainView() {
         scrollView1.addSubview(mainView)
         
+        mainViewTopAnchor = mainView.topAnchor.constraint(equalTo: scrollView1.topAnchor, constant: 0)
+        
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: scrollView1.topAnchor, constant: 0),
             mainView.leadingAnchor.constraint(equalTo: scrollView1.leadingAnchor, constant: 0),
             mainView.trailingAnchor.constraint(equalTo: scrollView1.trailingAnchor, constant: 0),
             mainView.bottomAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 0),
             mainView.centerXAnchor.constraint(equalTo: scrollView1.centerXAnchor),
             mainView.centerYAnchor.constraint(equalTo: scrollView1.centerYAnchor)
         ])
+        
+        guard let mainViewTopAnchor = mainViewTopAnchor else {
+            return
+        }
+        mainViewTopAnchor.isActive = true
         
         setUpImageView()
         setUpLikeButton()
@@ -310,8 +331,8 @@ class LibraryViewController: UIViewController {
         
         let hideNotification = UIResponder.keyboardWillHideNotification
         NotificationCenter.default.addObserver(forName: hideNotification, object: nil, queue: .main) { _ in
-            self.scrollView.contentOffset = CGPoint(x: 0, y: -100)
             self.scrollView1.isScrollEnabled = true
+            self.scrollView.contentOffset = CGPoint(x: 0, y: -100)
         }
     }
     
