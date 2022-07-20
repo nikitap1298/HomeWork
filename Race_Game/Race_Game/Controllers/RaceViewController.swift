@@ -141,6 +141,18 @@ class RaceViewController: UIViewController {
         User.singleton.userInfo[User.singleton.userName] = User.singleton.userScore
         dictionary[User.singleton.userName] = User.singleton.userScore
         UserDefaults.standard.set(dictionary, forKey: K.userDefaultsKey)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM yyyy, h:mm:ss a"
+        let dateString = dateFormatter.string(from: Date())
+        print(dateString)
+        
+        // Add new date to the existing value in the Dictionary (User.singleton.date)
+        // Dictionary[Name] = DateString
+        var dateDictionary = UserDefaults.standard.object(forKey: K.userDate) as? [String: String] ?? [:]
+        dateDictionary[User.singleton.userName] = dateString
+        User.singleton.date[User.singleton.userName] = dateString
+        UserDefaults.standard.set(dateDictionary, forKey: K.userDate)
     }
     
     // MARK: - Actions

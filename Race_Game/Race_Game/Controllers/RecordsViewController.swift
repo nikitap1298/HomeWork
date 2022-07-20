@@ -18,12 +18,14 @@ class RecordsViewController: UIViewController {
 
         if let userDictionary = UserDefaults.standard.object(forKey: K.userDefaultsKey) as? [String: Int] {
             for (key, value) in userDictionary {
-//                label.text = "User: \(key); Score: \(value)"
                 print("User: \(key); Score: \(value)")
             }
         }
-//        print(userDictionary?.keys ?? "User not found")
-//        print(userDictionary?.values ?? 0)
         
+        if let dateDict = UserDefaults.standard.object(forKey: K.userDate) as? [String: String] {
+            for (key, value) in dateDict {
+                print("User: \(key); Date: \(value)")
+            }
+        }
     }
 }
