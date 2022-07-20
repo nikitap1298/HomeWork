@@ -144,7 +144,7 @@ class RaceViewController: UIViewController {
         let dateString = dateFormatter.string(from: Date())
         print(dateString)
         
-        // Add new date to the existing value in the dateDictionary)
+        // Add new date to the existing value in the dateDictionary
         // Dictionary[Name] = DateString
         var dateDictionary = UserDefaults.standard.object(forKey: K.userDateKey) as? [String: String] ?? [:]
         dateDictionary[User.singleton.userName] = dateString
