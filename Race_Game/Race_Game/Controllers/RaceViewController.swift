@@ -149,10 +149,10 @@ class RaceViewController: UIViewController {
         
         // Add new date to the existing value in the Dictionary (User.singleton.date)
         // Dictionary[Name] = DateString
-        var dateDictionary = UserDefaults.standard.object(forKey: K.userDate) as? [String: String] ?? [:]
+        var dateDictionary = UserDefaults.standard.object(forKey: K.userDateKey) as? [String: String] ?? [:]
         dateDictionary[User.singleton.userName] = dateString
         User.singleton.date[User.singleton.userName] = dateString
-        UserDefaults.standard.set(dateDictionary, forKey: K.userDate)
+        UserDefaults.standard.set(dateDictionary, forKey: K.userDateKey)
     }
     
     // MARK: - Actions

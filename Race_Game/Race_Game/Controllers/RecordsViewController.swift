@@ -22,7 +22,7 @@ class RecordsViewController: UIViewController {
             }
         }
         
-        if let dateDict = UserDefaults.standard.object(forKey: K.userDate) as? [String: String] {
+        if let dateDict = UserDefaults.standard.object(forKey: K.userDateKey) as? [String: String] {
             for (key, value) in dateDict {
                 print("User: \(key); Date: \(value)")
             }

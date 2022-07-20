@@ -12,5 +12,5 @@ struct K {
     static let barrier = "BarrierImage"
     static let speed = "Speed"
     static let userDefaultsKey = "DictionaryKey"
-    static let userDate = "UserDateKey"
+    static let userDateKey = "UserDateKey"
 }
