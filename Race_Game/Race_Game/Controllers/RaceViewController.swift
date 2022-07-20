@@ -133,13 +133,10 @@ class RaceViewController: UIViewController {
     deinit {
         timer?.invalidate()
         
-        User.singleton.userScore = score
-        
-        // Add new value to the existing values in the Dictionary (User.singleton.userInfo)
+        // Add new value to the existing values in the dictionary
         // Dictionary[Name] = Score
         var dictionary = UserDefaults.standard.object(forKey: K.userDefaultsKey) as? [String: Int] ?? [:]
-        User.singleton.userInfo[User.singleton.userName] = User.singleton.userScore
-        dictionary[User.singleton.userName] = User.singleton.userScore
+        dictionary[User.singleton.userName] = score
         UserDefaults.standard.set(dictionary, forKey: K.userDefaultsKey)
         
         let dateFormatter = DateFormatter()
@@ -147,11 +144,10 @@ class RaceViewController: UIViewController {
         let dateString = dateFormatter.string(from: Date())
         print(dateString)
         
-        // Add new date to the existing value in the Dictionary (User.singleton.date)
+        // Add new date to the existing value in the dateDictionary)
         // Dictionary[Name] = DateString
         var dateDictionary = UserDefaults.standard.object(forKey: K.userDateKey) as? [String: String] ?? [:]
         dateDictionary[User.singleton.userName] = dateString
-        User.singleton.date[User.singleton.userName] = dateString
         UserDefaults.standard.set(dateDictionary, forKey: K.userDateKey)
     }
     
