@@ -157,6 +157,7 @@ extension OnboardingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         showBrowserVC()
+        textField.text = ""
         textField.resignFirstResponder()
         return true
     }
