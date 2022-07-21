@@ -159,15 +159,14 @@ class LibraryViewController: UIViewController {
             print("error")
         }
         
-        // Не понимаю как сделать, чтобы в ScrollView1 корректно отображались фотографии и две кнопки
-        photoArray.forEach { image in
-            if image == photoArray.first {
-                mainViewTopAnchor?.constant = 0
-                imageView.image = image
-            } else {
-//                guard let index = photoArray.firstIndex(where: { $0 == image }) else { return }
-//                mainViewTopAnchor?.constant = CGFloat(500 * index)
-            }
+        // Пишет ошибку в констрейнтах
+        for i in 0..<photoArray.count {
+            
+            imageView.image = photoArray[i]
+            mainViewTopAnchor?.constant = 500 * CGFloat(i)
+            print(i)
+            setUpMainView()
+            scrollView1.contentSize.height = scrollView1.frame.height * CGFloat(photoArray.count)
         }
     }
     
@@ -209,7 +208,7 @@ class LibraryViewController: UIViewController {
     private func setUpMainView() {
         viewForScrollView.addSubview(mainView)
         
-        mainViewTopAnchor = mainView.topAnchor.constraint(equalTo: viewForScrollView.topAnchor, constant: 0)
+        mainViewTopAnchor = mainView.topAnchor.constraint(equalTo: scrollView1.topAnchor, constant: 0)
         
         NSLayoutConstraint.activate([
             mainView.leadingAnchor.constraint(equalTo: viewForScrollView.leadingAnchor, constant: 0),
