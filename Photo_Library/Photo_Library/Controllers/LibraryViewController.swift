@@ -50,6 +50,13 @@ class LibraryViewController: UIViewController {
         return scrollView1
     }()
     
+    private var viewForScrollView: UIView = {
+        let viewForScrollView = UIView()
+        viewForScrollView.backgroundColor = .white
+        viewForScrollView.translatesAutoresizingMaskIntoConstraints = false
+        return viewForScrollView
+    }()
+    
     private var mainView: UIView = {
         let mainView = UIView()
         mainView.backgroundColor = .white
@@ -211,20 +218,33 @@ class LibraryViewController: UIViewController {
             scrollView1.heightAnchor.constraint(equalToConstant: 500)
         ])
         
+        setUpViewForScrollView()
+    }
+    
+    private func setUpViewForScrollView() {
+        scrollView1.addSubview(viewForScrollView)
+        
+        NSLayoutConstraint.activate([
+            viewForScrollView.topAnchor.constraint(equalTo: scrollView1.topAnchor, constant: 0),
+            viewForScrollView.leadingAnchor.constraint(equalTo: scrollView1.leadingAnchor, constant: 0),
+            viewForScrollView.trailingAnchor.constraint(equalTo: scrollView1.trailingAnchor, constant: 0),
+            viewForScrollView.bottomAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 0),
+            viewForScrollView.centerXAnchor.constraint(equalTo: scrollView1.centerXAnchor),
+            viewForScrollView.centerYAnchor.constraint(equalTo: scrollView1.centerYAnchor)
+        ])
+        
         setUpMainView()
     }
     
     private func setUpMainView() {
-        scrollView1.addSubview(mainView)
+        viewForScrollView.addSubview(mainView)
         
-        mainViewTopAnchor = mainView.topAnchor.constraint(equalTo: scrollView1.topAnchor, constant: 0)
+        mainViewTopAnchor = mainView.topAnchor.constraint(equalTo: viewForScrollView.topAnchor, constant: 0)
         
         NSLayoutConstraint.activate([
-            mainView.leadingAnchor.constraint(equalTo: scrollView1.leadingAnchor, constant: 0),
-            mainView.trailingAnchor.constraint(equalTo: scrollView1.trailingAnchor, constant: 0),
-            mainView.bottomAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 0),
-            mainView.centerXAnchor.constraint(equalTo: scrollView1.centerXAnchor),
-            mainView.centerYAnchor.constraint(equalTo: scrollView1.centerYAnchor)
+            mainView.leadingAnchor.constraint(equalTo: viewForScrollView.leadingAnchor, constant: 0),
+            mainView.trailingAnchor.constraint(equalTo: viewForScrollView.trailingAnchor, constant: 0),
+            mainView.bottomAnchor.constraint(equalTo: viewForScrollView.bottomAnchor, constant: 0),
         ])
         
         guard let mainViewTopAnchor = mainViewTopAnchor else {
