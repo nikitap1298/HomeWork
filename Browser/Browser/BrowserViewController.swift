@@ -38,6 +38,8 @@ class BrowserViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Welcome to Google"
         textField.textAlignment = .center
+        textField.backgroundColor = .systemOrange
+        textField.layer.cornerRadius = 15
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -52,6 +54,8 @@ class BrowserViewController: UIViewController {
         setupRootView()
         setupLabel()
         setupTextField()
+        
+        registerForKeyboardNotifications()
     }
     
     // MARK: - Private Functions
@@ -90,7 +94,7 @@ class BrowserViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0),
-            label.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 0),
+            label.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: -50),
             label.widthAnchor.constraint(equalToConstant: 180),
             label.heightAnchor.constraint(equalToConstant: 100)
         ])
@@ -102,10 +106,10 @@ class BrowserViewController: UIViewController {
         textField.delegate = self
         
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50),
+            textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 100),
             textField.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 30),
             textField.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -30),
-            textField.heightAnchor.constraint(equalToConstant: 100)
+            textField.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -123,6 +127,21 @@ class BrowserViewController: UIViewController {
         let range5 = (text as NSString).range(of: "e")
         attrString.addAttribute(.foregroundColor, value: UIColor.systemRed, range: range5)
         label.attributedText = attrString
+    }
+    
+    private func registerForKeyboardNotifications() {
+        let showNotification = UIResponder.keyboardWillShowNotification
+        NotificationCenter.default.addObserver(forName: showNotification, object: nil, queue: .main) { notification in
+            if let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                self.scrollView.contentOffset = CGPoint(x: 0.0, y: keyBoardSize.height - 150)
+            }
+        }
+        
+        let hideNotification = UIResponder.keyboardWillHideNotification
+        NotificationCenter.default.addObserver(forName: hideNotification, object: nil, queue: .main) { _ in
+            self.scrollView.contentOffset = .zero
+        }
+        
     }
     
 }
