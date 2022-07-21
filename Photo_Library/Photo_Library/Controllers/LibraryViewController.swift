@@ -15,15 +15,6 @@ class LibraryViewController: UIViewController {
     private var photoArray = [UIImage]()
     private var imageNumber = -1
     
-    private var deleteButton: UIButton = {
-        let deleteButton = UIButton()
-        deleteButton.setTitle("Delete", for: .normal)
-        deleteButton.backgroundColor = UIColor(named: "ColorBlue")
-        deleteButton.layer.cornerRadius = 18
-        deleteButton.translatesAutoresizingMaskIntoConstraints = false
-        return deleteButton
-    }()
-    
     private var addButton: UIButton = {
         let addButton = UIButton()
         addButton.setTitle("Add Photos", for: .normal)
@@ -167,38 +158,17 @@ class LibraryViewController: UIViewController {
         } catch {
             print("error")
         }
-        imageView.image = photoArray.last
         
         // Не понимаю как сделать, чтобы в ScrollView1 корректно отображались фотографии и две кнопки
-//        photoArray.forEach { image in
-//            let topPosition = 0
-//            imageView.image = image
-//            print(imageView.image)
-//            if image == photoArray.first {
-//                mainViewTopAnchor?.constant = 0
-//            } else {
+        photoArray.forEach { image in
+            if image == photoArray.first {
+                mainViewTopAnchor?.constant = 0
+                imageView.image = image
+            } else {
 //                guard let index = photoArray.firstIndex(where: { $0 == image }) else { return }
-//                mainViewTopAnchor?.constant = CGFloat(400 * index)
-//            }
-//        }
-    }
-    
-    @objc private func deletePhotos() {
-        let alert = UIAlertController(title: "Delete file", message: nil, preferredStyle: .alert)
-        alert.addTextField()
-        let submitAction = UIAlertAction(title: "Delete", style: .default) { [self] _ in
-            let name = alert.textFields?.first?.text
-            
-            guard let imagePath = imagePath?.appendingPathComponent("\(name!).jpeg") else { return }
-            
-            do {
-                try fileManager.removeItem(at: imagePath)
-            } catch {
-                print("error")
+//                mainViewTopAnchor?.constant = CGFloat(500 * index)
             }
         }
-        alert.addAction(submitAction)
-        present(alert, animated: true)
     }
     
     @objc private func pressAddButton() {
@@ -311,27 +281,21 @@ class LibraryViewController: UIViewController {
     
     private func setUpButtons() {
         rootView.addSubview(showButton)
-        rootView.addSubview(deleteButton)
         rootView.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            deleteButton.topAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 50),
-            deleteButton.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
-            deleteButton.widthAnchor.constraint(equalToConstant: 120),
-            deleteButton.heightAnchor.constraint(equalToConstant: 50),
             
             addButton.topAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 50),
-            addButton.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
+            addButton.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 50),
             addButton.widthAnchor.constraint(equalToConstant: 120),
             addButton.heightAnchor.constraint(equalToConstant: 50),
             
-            showButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 50),
-            showButton.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0),
+            showButton.topAnchor.constraint(equalTo: scrollView1.bottomAnchor, constant: 50),
+            showButton.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -50),
             showButton.widthAnchor.constraint(equalToConstant: 120),
             showButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        deleteButton.addTarget(self, action: #selector(deletePhotos), for: .touchUpInside)
         addButton.addTarget(self, action: #selector(pressAddButton), for: .touchUpInside)
         showButton.addTarget(self, action: #selector(showPhotos), for: .touchUpInside)
     }
