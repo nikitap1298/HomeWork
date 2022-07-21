@@ -44,7 +44,7 @@ class OnboardingViewController: UIViewController {
         return textField
     }()
     
-    // MARK: - LifeCycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -144,10 +144,19 @@ class OnboardingViewController: UIViewController {
         
     }
     
+    private func showBrowserVC() {
+        let storyBoard = UIStoryboard(name: "Browser", bundle: nil)
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "BrowserViewController") as? BrowserViewController else { return }
+        viewController.searchText = textField.text ?? ""
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 
 extension OnboardingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        showBrowserVC()
         textField.resignFirstResponder()
         return true
     }
