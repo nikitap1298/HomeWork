@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BrowserViewController: UIViewController {
+class OnboardingViewController: UIViewController {
     
     // MARK: - Private Properties
     private var scrollView: UIScrollView = {
@@ -146,7 +146,7 @@ class BrowserViewController: UIViewController {
     
 }
 
-extension BrowserViewController: UITextFieldDelegate {
+extension OnboardingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
