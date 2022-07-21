@@ -94,7 +94,7 @@ class OnboardingViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0),
-            label.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: -50),
+            label.topAnchor.constraint(equalTo: rootView.topAnchor, constant: view.frame.height / 3.5),
             label.widthAnchor.constraint(equalToConstant: 180),
             label.heightAnchor.constraint(equalToConstant: 100)
         ])
@@ -106,7 +106,7 @@ class OnboardingViewController: UIViewController {
         textField.delegate = self
         
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 100),
+            textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 130),
             textField.leadingAnchor.constraint(equalTo: rootView.leadingAnchor, constant: 30),
             textField.trailingAnchor.constraint(equalTo: rootView.trailingAnchor, constant: -30),
             textField.heightAnchor.constraint(equalToConstant: 60)
@@ -133,13 +133,13 @@ class OnboardingViewController: UIViewController {
         let showNotification = UIResponder.keyboardWillShowNotification
         NotificationCenter.default.addObserver(forName: showNotification, object: nil, queue: .main) { notification in
             if let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                self.scrollView.contentOffset = CGPoint(x: 0.0, y: keyBoardSize.height - 150)
+                self.scrollView.contentOffset = CGPoint(x: 0.0, y: keyBoardSize.height - 250)
             }
         }
         
         let hideNotification = UIResponder.keyboardWillHideNotification
         NotificationCenter.default.addObserver(forName: hideNotification, object: nil, queue: .main) { _ in
-            self.scrollView.contentOffset = .zero
+            self.scrollView.contentOffset = CGPoint(x: 0.0, y: -90)
         }
         
     }
