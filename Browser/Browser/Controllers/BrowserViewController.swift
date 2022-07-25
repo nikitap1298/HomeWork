@@ -40,6 +40,15 @@ class BrowserViewController: UIViewController {
         return reloadButton
     }()
     
+    private var textField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Search something"
+        textField.textAlignment = .center
+        textField.backgroundColor = .systemGray
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     // MARK: - Public Properties
     var searchText: String = ""
     
@@ -47,16 +56,54 @@ class BrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapView)))
+        
+        setupTextField()
         setupWebView()
         setupUI()
     }
     
+    // MARK: - Actions
+    @objc private func didTapView() {
+        view.endEditing(true)
+    }
+    
+    @objc private func pressPreviousButton() {
+        if webView.canGoBack == true {
+            webView.goBack()
+        }
+    }
+    
+    @objc private func pressNextButton() {
+        if webView.canGoForward == true {
+            webView.goForward()
+        }
+    }
+    
+    /* Добавил кнопку перезагрузки страницы. Не совсем понимаю для чего нужно ставить загрузку на паузу как в задании.
+    А так, чтобы остановить загрузку надо написать webView.stopLoading() */
+    @objc private func pressReloadButton() {
+        webView.reload()
+    }
+    
     // MARK: - Private Functions
+    private func setupTextField() {
+        view.addSubview(textField)
+        textField.delegate = self
+        
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            textField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            textField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            textField.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
     private func setupWebView() {
         view.addSubview(webView)
         
         NSLayoutConstraint.activate([
-            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            webView.topAnchor.constraint(equalTo: textField.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             webView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             webView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60)
@@ -94,22 +141,22 @@ class BrowserViewController: UIViewController {
         nextButton.addTarget(self, action: #selector(pressNextButton), for: .touchUpInside)
         reloadButton.addTarget(self, action: #selector(pressReloadButton), for: .touchUpInside)
     }
-    
-    @objc private func pressPreviousButton() {
-        if webView.canGoBack == true {
-            webView.goBack()
-        }
+}
+
+extension BrowserViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchText = textField.text ?? ""
+        setupWebView()
+        textField.text = ""
+        textField.resignFirstResponder()
+        return true
     }
     
-    @objc private func pressNextButton() {
-        if webView.canGoForward == true {
-            webView.goForward()
-        }
-    }
-    
-    /* Добавил кнопку перезагрузки страницы. Не совсем понимаю для чего нужно ставить загрузку на паузу как в задании.
-    А так, чтобы остановить загрузку надо написать webView.stopLoading() */
-    @objc private func pressReloadButton() {
-        webView.reload()
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLenght = 30
+        let currentString = (textField.text ?? "") as NSString
+        let newString = currentString.replacingCharacters(in: range, with: string)
+        
+        return newString.count <= maxLenght
     }
 }
