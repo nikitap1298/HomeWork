@@ -16,26 +16,9 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOX-U9-WnX">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WOX-U9-WnX" secondAttribute="trailing" id="2Uc-4P-AKi"/>
-                            <constraint firstItem="WOX-U9-WnX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DMj-IP-vIW"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WOX-U9-WnX" secondAttribute="bottom" id="akt-7F-xKb"/>
-                            <constraint firstItem="WOX-U9-WnX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kej-4l-tkg"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="WOX-U9-WnX" id="Ymz-99-8P6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
