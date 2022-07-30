@@ -18,7 +18,7 @@ class CustomCell: UITableViewCell {
     
     // MARK: - IBAction
     @IBAction func button(_ sender: UIButton) {
-        currentColor = mainView.backgroundColor!
+        currentColor = mainView.backgroundColor ?? .white
         callBack?(currentColor)
     }
     
