@@ -18,8 +18,17 @@ class ViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        setUpTableView()
     }
 
+}
+
+private extension ViewController {
+    func setUpTableView() {
+        let customCell = UINib(nibName: "CustomCell", bundle: nil)
+        tableView.register(customCell, forCellReuseIdentifier: "CustomCell")
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -28,8 +37,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "\(indexPath.row)"
+//        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+//        cell.textLabel?.text = "\(indexPath.row)"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomCell else {
+            return UITableViewCell()
+        }
+        cell.setUpView(with: .random())
+        cell.setUpLabel(with: "\(indexPath.row)")
         return cell
     }
 
