@@ -43,6 +43,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomCell else {
             return UITableViewCell()
         }
+        cell.callBack = { color in
+            self.view.backgroundColor = color
+        }
         cell.setUpView(with: .random())
         cell.setUpLabel(with: "\(indexPath.row)")
         return cell

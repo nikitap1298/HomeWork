@@ -13,9 +13,13 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var label: UILabel!
     
+    var currentColor: UIColor = .red
+    var callBack: ((UIColor) -> ())?
+    
     // MARK: - IBAction
     @IBAction func button(_ sender: UIButton) {
-        
+        currentColor = mainView.backgroundColor!
+        callBack?(currentColor)
     }
     
     override func awakeFromNib() {
