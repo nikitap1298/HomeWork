@@ -8,7 +8,7 @@
 import UIKit
 
 struct Q: Decodable {
-    let quiz: [Quiz]
+    let quiz: Quiz
 }
 
 struct Quiz: Decodable {

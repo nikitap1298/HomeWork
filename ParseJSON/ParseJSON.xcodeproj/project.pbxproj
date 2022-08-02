@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D9B292528993D0D008A54AB /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D9B292428993D0D008A54AB /* example.json */; };
+		6D2E18D5289968800028E01D /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D2E18D4289968800028E01D /* example.json */; };
 		6DCF632A289934B400D56AD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF6329289934B400D56AD4 /* AppDelegate.swift */; };
 		6DCF632C289934B400D56AD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF632B289934B400D56AD4 /* SceneDelegate.swift */; };
 		6DCF632E289934B400D56AD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF632D289934B400D56AD4 /* ViewController.swift */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6D9B292428993D0D008A54AB /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
+		6D2E18D4289968800028E01D /* example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
 		6DCF6326289934B400D56AD4 /* ParseJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCF6329289934B400D56AD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DCF632B289934B400D56AD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,11 +60,11 @@
 		6DCF6328289934B400D56AD4 /* ParseJSON */ = {
 			isa = PBXGroup;
 			children = (
-				6D9B292428993D0D008A54AB /* example.json */,
 				6DCF6329289934B400D56AD4 /* AppDelegate.swift */,
 				6DCF632B289934B400D56AD4 /* SceneDelegate.swift */,
 				6DCF632D289934B400D56AD4 /* ViewController.swift */,
 				6DCF633F2899392A00D56AD4 /* Parse_JSON.swift */,
+				6D2E18D4289968800028E01D /* example.json */,
 				6DCF632F289934B400D56AD4 /* Main.storyboard */,
 				6DCF6332289934B500D56AD4 /* Assets.xcassets */,
 				6DCF6334289934B500D56AD4 /* LaunchScreen.storyboard */,
@@ -131,10 +131,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2E18D5289968800028E01D /* example.json in Resources */,
 				6DCF6336289934B500D56AD4 /* LaunchScreen.storyboard in Resources */,
 				6DCF6333289934B500D56AD4 /* Assets.xcassets in Resources */,
 				6DCF6331289934B400D56AD4 /* Main.storyboard in Resources */,
-				6D9B292528993D0D008A54AB /* example.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
