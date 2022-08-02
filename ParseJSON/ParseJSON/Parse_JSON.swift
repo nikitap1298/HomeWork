@@ -17,7 +17,7 @@ struct Quiz: Decodable {
 }
 
 struct Sport: Decodable {
-    let qS1: QS1
+    let q1: QS1
 }
 
 struct QS1: Decodable {
@@ -27,8 +27,8 @@ struct QS1: Decodable {
 }
 
 struct Maths: Decodable {
-    let qM1: QM1
-    let qM2: QM2
+    let q1: QM1
+    let q2: QM2
 }
 
 struct QM1: Decodable {
