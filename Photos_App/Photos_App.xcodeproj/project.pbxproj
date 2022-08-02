@@ -92,10 +92,18 @@
 				6D458911287F794F00A94778 /* Assets.xcassets */,
 				6D458913287F794F00A94778 /* LaunchScreen.storyboard */,
 				6D458916287F794F00A94778 /* Info.plist */,
+				6DCF631C289933C500D56AD4 /* CustomCell */,
+			);
+			path = Photos_App;
+			sourceTree = "<group>";
+		};
+		6DCF631C289933C500D56AD4 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
 				6DCF631828991EA900D56AD4 /* CustomCell.swift */,
 				6DCF631A28991ED600D56AD4 /* CustomCell.xib */,
 			);
-			path = Photos_App;
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

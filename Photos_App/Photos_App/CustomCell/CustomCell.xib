@@ -17,11 +17,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="535"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VBm-Wr-o2K">
-                        <rect key="frame" x="0.0" y="0.0" width="329" height="325"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VBm-Wr-o2K">
+                        <rect key="frame" x="0.0" y="0.0" width="329" height="315"/>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-eI-C69">
-                        <rect key="frame" x="50" y="425" width="229" height="50"/>
+                        <rect key="frame" x="50" y="415" width="229" height="50"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGO-e2-DEu">
                                 <rect key="frame" x="0.0" y="0.0" width="89.5" height="50"/>
@@ -36,21 +36,33 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="message.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="comment:" destination="qyi-nl-zCz" eventType="touchUpInside" id="gxj-YV-qbs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="0lp-WM-4aV"/>
                         </constraints>
                     </stackView>
+                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOo-GD-rDQ">
+                        <rect key="frame" x="70" y="485" width="189" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VBm-Wr-o2K" firstAttribute="leading" secondItem="ILu-jP-ORP" secondAttribute="leading" id="036-P9-awk"/>
+                    <constraint firstAttribute="trailing" secondItem="nOo-GD-rDQ" secondAttribute="trailing" constant="70" id="7RM-3a-gQT"/>
                     <constraint firstItem="Jkx-eI-C69" firstAttribute="top" secondItem="VBm-Wr-o2K" secondAttribute="bottom" constant="100" id="AI5-kt-sYc"/>
+                    <constraint firstItem="nOo-GD-rDQ" firstAttribute="top" secondItem="Jkx-eI-C69" secondAttribute="bottom" constant="20" id="Dpy-3e-co8"/>
                     <constraint firstItem="VBm-Wr-o2K" firstAttribute="top" secondItem="ILu-jP-ORP" secondAttribute="top" id="GI2-Y9-2mA"/>
                     <constraint firstAttribute="trailing" secondItem="Jkx-eI-C69" secondAttribute="trailing" constant="50" id="XxD-Oe-iFI"/>
                     <constraint firstAttribute="trailing" secondItem="VBm-Wr-o2K" secondAttribute="trailing" id="c0H-Zk-Xq8"/>
-                    <constraint firstAttribute="bottom" secondItem="Jkx-eI-C69" secondAttribute="bottom" constant="60" id="pe9-Vt-S2s"/>
+                    <constraint firstItem="nOo-GD-rDQ" firstAttribute="leading" secondItem="ILu-jP-ORP" secondAttribute="leading" constant="70" id="ouT-mb-ens"/>
+                    <constraint firstAttribute="bottom" secondItem="Jkx-eI-C69" secondAttribute="bottom" constant="70" id="pe9-Vt-S2s"/>
                     <constraint firstItem="Jkx-eI-C69" firstAttribute="leading" secondItem="ILu-jP-ORP" secondAttribute="leading" constant="50" id="pew-YL-5iS"/>
+                    <constraint firstAttribute="bottom" secondItem="nOo-GD-rDQ" secondAttribute="bottom" constant="20" id="v6Y-nk-hcL"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="332" height="535"/>
@@ -58,6 +70,7 @@
                 <outlet property="commentButton" destination="tbM-hT-SSk" id="qEx-ct-Vgr"/>
                 <outlet property="imageView" destination="VBm-Wr-o2K" id="7Br-7M-7OR"/>
                 <outlet property="likeButton" destination="hGO-e2-DEu" id="DqZ-B0-h6i"/>
+                <outlet property="textField" destination="nOo-GD-rDQ" id="F6E-I0-E7b"/>
             </connections>
             <point key="canvasLocation" x="269.56521739130437" y="167.07589285714286"/>
         </collectionViewCell>
