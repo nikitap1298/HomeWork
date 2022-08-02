@@ -42,6 +42,9 @@ class LibraryViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        collectionView.setCollectionViewLayout(generateLayout(), animated: true)
+        setUpCollection()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,10 +61,33 @@ class LibraryViewController: UIViewController {
     }
     @IBAction func showButton(_ sender: UIButton) {
         showPhotos()
+        collectionView.reloadData()
     }
     
     
     // MARK: - Private Functions
+    private func setUpCollection() {
+        let customCell = UINib(nibName: "CustomCell", bundle: nil)
+        collectionView.register(customCell, forCellWithReuseIdentifier: "CustomCell")
+    }
+    
+    private func generateLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { (section, layoutEnvironment) -> NSCollectionLayoutSection? in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(self.collectionView.frame.height))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+            group.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .paging
+            return section
+        }
+    }
+    
     private func pressPhotoButton() {
         let pickerController = UIImagePickerController()
         pickerController.sourceType = .photoLibrary
@@ -188,12 +214,14 @@ extension LibraryViewController {
 
 extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photoArray.count
+        return photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
-        cell.largeContentTitle = "Row"
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else {
+            return UICollectionViewCell()
+        }
+        cell.setImage(image: photoArray[indexPath.row])
         return cell
     }
     
